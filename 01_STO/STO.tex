@@ -1,4 +1,5 @@
 \documentclass{report}
+\usepackage{pdfpages}
 \usepackage{graphicx} 
 \usepackage{dirtytalk}
 \usepackage{amsmath}
@@ -10,6 +11,7 @@
 \usepackage[ngerman]{babel}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \begin{document}
+\includepdf[pages=-]{./PDFs/Deckblatt_P1.pdf}
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
@@ -51,13 +53,20 @@
 \newpage
 \chapter{Durchführung}
 \section{Versuchsprotokoll}
+\includepdf[pages=3-12]{./PDFs/Versuchsdurchfuehrung.pdf}
 
 \newpage
 \chapter{Auswertung}
 \section{Teilversuch I: Flugweiten verschiedener Kugeln}
 
 \newpage
-\section{Teilversuch II: Elastischer Stoß von Kugeln gleicher Masse}
+\section{Teilversuch II: Elastischer Stoß von Kugeln gleicher \newline Masse}
+    \subsection{Abweichung der Landepunkte von einer Kreisbahn}
+    Die Landepunkte der Projektil- und Targetkugel sollten laut Theorie auf einem gemeinsamen Kreis liegen.
+    Allerdings zeigt die Auswertung der Messreihe, dass die Landepunkte der Projektil- und Targetkugel auf unterschiedlichen Kreisbahnen liegen, die zueinader verschoben sind. \\
+    Aufgrund der endlichen Radien der Kugeln findet der Stoß der Kugeln nicht im Punkt O statt, wodurch der Auftreffpunkt der
+    Kugeln verschoben ist.
+
 
 \newpage
 \section{Teilversuch III: Bewegungsanalyse mit Hochgeschwindigkeitskamera}
