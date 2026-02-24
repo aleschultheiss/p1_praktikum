@@ -24,7 +24,7 @@
         Zum Versuchen STO
         
         \vspace{1.8cm}
-            
+
         \textbf{Jonas Müther \& Alejandro Schultheiss}
         \vfill
             
@@ -61,13 +61,87 @@
 
 \newpage
 \section{Teilversuch II: Elastischer Stoß von Kugeln gleicher \newline Masse}
-    \subsection{Abweichung der Landepunkte von einer Kreisbahn}
-    Die Landepunkte der Projektil- und Targetkugel sollten laut Theorie auf einem gemeinsamen Kreis liegen.
-    Allerdings zeigt die Auswertung der Messreihe, dass die Landepunkte der Projektil- und Targetkugel auf unterschiedlichen Kreisbahnen liegen, die zueinader verschoben sind. \\
-    Aufgrund der endlichen Radien der Kugeln findet der Stoß der Kugeln nicht im Punkt O statt, wodurch der Auftreffpunkt der
-    Kugeln verschoben ist.
+    \subsection{Theoretischer Hintergrund}
+    Im idealisierten Fall des Versuchsaufbaus liegen die Auftreffpunkte der Projektil- und Targetkugel unter Variation des Stoßparameters $b$ jeweils auf Kreisbahnen.
+    Der Mittelpunkt dieser Kreisbahnen liegt bei $\vec{M} = \vec{O} + \frac{1}{2} \vec{s}_{zentral}$, wobei $\vec{s}_{zentral}$ die Strecke zwischen Stoßpunkt $\vec{O}$ und Auftreffpunkt der Targetkugel beim Zentralen Stoß beschreibt.
+    Der Radius $r_i$ dieser Kreisbahnen ist umgekehrt proportional zur Masse der jeweiligen Kugel $m_i$.
+    Es gilt also:
+    \begin{equation*}
+        \frac{r_{target}}{r_{projektil}} = \frac{m_{projektil}}{m_{target}}
+    \end{equation*}
+    Somit folgt für $m_{projektil} = m_{target}$, dass die Auftreffpunkte der Kugeln auf dem selben Kreis liegen.
+    In unserem Fall mit Kugeln gleicher Masse gilt zudem für den Auftreffpunkt des Flugs ohne Stoß:
+    
+    \noindent
+    \textit{(Dieser muss noch um den Abstand zwischen Rampenende und Stoßursprungspunkt O von 2,5cm vergrößert werden)}
+    
+    \begin{equation*}
+        \vec{s}_{flug} = \vec{s}_{zentral}
+    \end{equation*}
+    und damit:
+    \begin{equation*}
+        \vec{M} = \vec{O} + \frac{1}{2} \vec{s}_{flug}
+    \end{equation*}
+    \subsection{Grafische Analyse der Landepunkte}
+    Um die Landepunkte zu visualisieren, wurden die mittleren Landepunkte der Projektil- und Targetkugel bei Variation des Stoßparameters $b$ ausgemessen und in Abbildung \ref*{fig:LandepunkteStoss} dargestellt. Hierzu wurden die jeweiligen durchschnittlichen Landepunkte sowie deren Unsicherheiten mithilfe eines Python-Skripts (matplotlib) in ein Koordinatensystem eingezeichnet.
+    Die Kreise um die Landepunkte der Kugeln stellen diese Unsicherheiten dar, welche sich hauptsächlich aus folgenden Aspekten zusammensetzt:
+    \begin{list}{-}{}
+        \item Streuung der Landepunkte über 4 Durchgänge
+        \item Ungenauigkeit des Abtragens des Rampenendes
+        \item Messungenauigkeit durch das manuelle Ausmessen mithilfe eines Lineals
+        \item Ungenauigkeit beim Schätzen des jeweiligen durchschnittlichen Landepunkts
+    \end{list}
+    Zusätzlich wurde die theoretisch vorhergesagte Kreisbahn eingezeichnet.
+    \newline
+    \textit{Anmerkung: Da die Projektilkugel für $b=0$ auf der Vorrichtung für die Targetkugel landet und dann zufällig abprallt, wurde die Koordinate des Projektils für $b=0$ auf den theoretischen Wert von (0, -2) korrigiert.}
+    \newpage
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{./Images/LandepunkteStoss.png}
+        \caption{Landepunkte der Projektil- und Targetkugel bei Variation des Stoßparameters b}
+        \label{fig:LandepunkteStoss}
+    \end{figure}
+    \newpage
+    \subsection{Abweichung von der Theorie}
+    Es ist zu erkennen, dass die bestimmten Landepositionen der Projektil- und Targetkugel tatsächlich annähernd auf Kreisbahnen liegen. 
+    Jedoch stimmen diese Kreisbahnen nicht vollständig mit der theoretischen Vorhersage überein.
+    \newline
+    Zunächst fällt auf, dass der Landepunkt der Projektilkugel für $b=0,3 cm$ stark in y-Richtung von der Kreisbahn abweicht, die durch die anderen Messwerte bestimmt wird. Hier ist davon auszugehen, dass dieser Fehler, wie auch für
+    $b=0$ durch ein abprallen der Kugel von der Haltevorrichtung für die Targetkugel verursacht wurde.
+    Physikalisch deutlich interessanter ist allerdings die generelle Abweichung der Kreisbahnen von Target- und Projektilkugel von der Theorie.
+    Für diese Abweichung gibt es mehrere Ursachen, von welchen hier die relevantesten diskutiert werden sollen.
 
-
+    \subsubsection{Abweichung durch endliche Radien der Kugeln}
+    Aufgrund der endlichen Radien der Kugeln findet der Stoß der Kugeln nicht im Punkt O statt. Wie man mithilfe von Abbildung \ref*{fig:Stoss}  erkennen kann ist der Startpunkt der Kugeln abhängig vom Stoßparameter b verschoben.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{./Images/Stoß.png}
+        \caption{Abweichung der Startpunkte der Kugeln von Punkt O aufgrund der endlichen Radien der Kugeln}
+        \label{fig:Stoss}
+    \end{figure}
+    \noindent
+    Entsprechend diser Grafik müssen die gemessenen Landepunkte des Targets um $b$ in x-Richtung und um $a = \sqrt{d_{kugel}^2 - b^2}$ in y-Richtung korrigiert werden.
+    Diese korrektur wurde in der folgenden Grafik \ref*{fig:StossKorrigiert} wieder mithilfe des Python-Skripts für jeden Landepunkt durchgeführt.
+    \textit{Anmerkung: In der Grafik wurden aus Gründen der Übersichtlichkeit nur die Mittelwerte angepasst, die Messungenauigkeit der Originalwerte gilt allerdings natürlich weiterhin.}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{./Images/LandepunkteStossUndKorrektur.png}
+        \caption{Abweichung der Startpunkte der Kugeln von Punkt O aufgrund der endlichen Radien der Kugeln}
+        \label{fig:StossKorrigiert}
+    \end{figure}
+    In der Grafik \ref*{fig:StossKorrigiert} ist zu erkennen, dass diese korrigierten Landepunkte bereits deutlich besser mit der theoretischen Vorhersage übereinstimmen.
+    Insebesondere für große Stoßparameter $b$ liegen die korrigierten Landepunkte der Projektilkugel allerdings immer noch relativ deutlich von der Theorie entfernt, was darauf hindeutet, dass es noch weitetere Fehlerquellen gibt,
+    die diese Abweichung verursachen.
+    Bestimmt man die Abweichung in Abhängigkeit von b mithilfe eines weiteren Python Skripts, so ergibt sich ein Verlauf in Abhängigkeit des Stoßparameters $b$, wie er in Abbildung \ref*{fig:AbweichungKorrigierteLandepunkte} dargestellt ist.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{./Images/AbweichungenKorrigierteLandepunkte.png}
+        \caption{Abweichung der korrigierten Landepunkte der Kugeln von der theoretischen Vorhersage}
+        \label{fig:AbweichungKorrigierteLandepunkte}
+    \end{figure}
+    Beobachtet man diesen Verlauf, so fällt auf, die Abweichung der Landepunkt der Targetkugel keine eindeutige Tendenz aufweist. Die Abweichung der Landepunkte der Projektilkugel hingegen nimmt 
+    (unter vernachlässigung des Ausreißers für $b=0,3cm$) mit zunehmendem Stoßparameter $b$ zu.
+    
 \newpage
 \section{Teilversuch III: Bewegungsanalyse mit Hochgeschwindigkeitskamera}
 
