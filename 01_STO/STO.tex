@@ -129,6 +129,7 @@
         \caption{Abweichung der Startpunkte der Kugeln von Punkt O aufgrund der endlichen Radien der Kugeln}
         \label{fig:StossKorrigiert}
     \end{figure}
+    \newpage
     In der Grafik \ref*{fig:StossKorrigiert} ist zu erkennen, dass diese korrigierten Landepunkte bereits deutlich besser mit der theoretischen Vorhersage übereinstimmen.
     Insebesondere für große Stoßparameter $b$ liegen die korrigierten Landepunkte der Projektilkugel allerdings immer noch relativ deutlich von der Theorie entfernt, was darauf hindeutet, dass es noch weitetere Fehlerquellen gibt,
     die diese Abweichung verursachen.
@@ -139,9 +140,41 @@
         \caption{Abweichung der korrigierten Landepunkte der Kugeln von der theoretischen Vorhersage}
         \label{fig:AbweichungKorrigierteLandepunkte}
     \end{figure}
+    \noindent
     Beobachtet man diesen Verlauf, so fällt auf, die Abweichung der Landepunkt der Targetkugel keine eindeutige Tendenz aufweist. Die Abweichung der Landepunkte der Projektilkugel hingegen nimmt 
     (unter vernachlässigung des Ausreißers für $b=0,3cm$) mit zunehmendem Stoßparameter $b$ zu.
+    \newpage
+    \subsubsection{Abweichung durch Reibung und Abstand zwischen Rampe und Projektilhalterung}
+    Grafik \ref*{fig:AbweichungKorrigierteLandepunkte} zeigt insbesondere, dass die Abweichung der Landepunkte der Projektilkugel vom theoretischen Verlauf mit zunehmendem Stoßparameter
+    $b$ deutlich zunimmt. Dies liegt vermutlich unter anderem daran, dass die Gleitreibung während des Stoßes eine große Rolle spielt. Diese führt dazu,
+    dass die Kugeln, welche mit zunehmendem Stoßparameter $b$ länger aneinander entlang gleiten, stärker abgebremst werden und so eine geringere Flugweite
+    erreichen.    
     
+
+    \noindent
+    Hinzu kommt, dass infolge der Geometrie des Versuchsaufbaus das Projektil für größere Stoßparameter eine größere Strecke zwischen Rampe und Targetkugel unter Einfluss der Erdbeschleunigung zurücklegt,
+    bevor es die Targetkugel trifft. Dies führt dazu, dass die Targetkugel tiefer getroffen wird(Siehe Abbildungen \ref*{fig:Tieferer Stoss} und \ref*{fig:Noch Tieferer Stoss}), 
+    was dazu führt, dass die Projektilkugel eine größere Komponente in negative z-Richtung erhält. 
+    Hierdurch verkürzt sich die Flugweite, weshalb der Fehler mit zunehmendem Stoßparameter $b$ zunimmt.
+    \newline
+    Diese Effekte erklären auch, weshalb die Abweichung für die Targetkugel mit zunehmendem Stoßparameter $b$ keine eindeutige Tendenz aufweist.
+    Zwar ist auch die Targetkugel von der Gleitreibung betroffen, was eine verkürzung der Flugweite verursacht, 
+    allerdings wirkt für die Targetkugel der Effekt, tiefer getroffen zu werden in entgegengesetzter Richtung.
+    Da die targetkugel durch einen tieferen Treffer eine größere Komponente in positive z-Richtung erhält, verlängert sich die Flugweite.
+    Dadurch könnte es dazu kommen, dass die beiden Effekte sich teilweise gegenseitig aufheben, wodurch keine eindeutige Tendenz der Abweichung erkennbar wird.
+    \newpage
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{./Images/StoßWeiterUnten.png}
+        \caption{Stoßhöhe für $b=0$}
+        \label{fig:Tieferer Stoss}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{./Images/StoßNochWeiterUnten.png}
+        \caption{Stoßhöhe für $b > 0$}
+        \label{fig:Noch Tieferer Stoss}
+    \end{figure}
 \newpage
 \section{Teilversuch III: Bewegungsanalyse mit Hochgeschwindigkeitskamera}
 
