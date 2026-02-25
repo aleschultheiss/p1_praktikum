@@ -88,7 +88,7 @@
     Die Kreise um die Landepunkte der Kugeln stellen diese Unsicherheiten dar, welche sich hauptsächlich aus folgenden Aspekten zusammensetzt:
     \begin{list}{-}{}
         \item Streuung der Landepunkte über 4 Durchgänge
-        \item Ungenauigkeit des Abtragens des Rampenendes
+        \item Ungenauigkeit des Abschlagens des Rampenendes
         \item Messungenauigkeit durch das manuelle Ausmessen mithilfe eines Lineals
         \item Ungenauigkeit beim Schätzen des jeweiligen durchschnittlichen Landepunkts
     \end{list}
@@ -136,6 +136,27 @@
     Insebesondere für große Stoßparameter $b$ liegen die korrigierten Landepunkte der Projektilkugel allerdings immer noch relativ deutlich von der Theorie entfernt, was darauf hindeutet, dass es noch weitetere Fehlerquellen gibt,
     die diese Abweichung verursachen.
     Bestimmt man die Abweichung in Abhängigkeit von b mithilfe eines weiteren Python Scripts, so ergibt sich ein Verlauf in Abhängigkeit des Stoßparameters $b$, wie er in Abbildung \ref*{fig:AbweichungKorrigierteLandepunkte} dargestellt ist.
+    \begin{table}[H]
+    \centering
+    \caption{Abweichung vom Kreis in Abhängigkeit von $b$}
+    \begin{tabular}{c|cc}
+    \hline
+    $b$ (cm) & $\Delta_{\text{Proj}}$ (cm) & $\Delta_{\text{Target}}$ (cm) \\
+    \hline
+    0.00 & 0.000 & 1.000 \\
+    0.30 & 2.105 & 1.100 \\
+    0.40 & 0.266 & 1.125 \\
+    0.60 & 0.362 & 1.101 \\
+    0.90 & 0.409 & 0.579 \\
+    1.20 & 0.438 & 0.186 \\
+    1.50 & 0.910 & 0.438 \\
+    1.70 & 1.648 & 0.555 \\
+    1.80 & 1.931 & 0.619 \\
+    1.90 & 2.463 & 0.827 \\
+    1.95 & 2.647 & 0.731 \\
+    \hline
+    \end{tabular}
+    \end{table}
     \begin{figure}[H]
         \centering
         \includegraphics[width=1.0\textwidth]{./Images/AbweichungenKorrigierteLandepunkte.png}
@@ -144,7 +165,7 @@
     \end{figure}
     \noindent
     Beobachtet man diesen Verlauf, so fällt auf, die Abweichung der Landepunkt der Targetkugel keine eindeutige Tendenz aufweist. Die Abweichung der Landepunkte der Projektilkugel hingegen nimmt 
-    (unter vernachlässigung des Ausreißers für $b=0,3cm$) mit zunehmendem Stoßparameter $b$ zu.
+    (unter vernachlässigung des Ausreißers für $b=0,3cm$) mit zunehmendem Stoßparameter $b$ monoton zu.
     \newpage
     \subsubsection{Abweichung durch Reibung und Abstand zwischen Rampe und Projektilhalterung}
     Grafik \ref*{fig:AbweichungKorrigierteLandepunkte} zeigt insbesondere, dass die Abweichung der Landepunkte der Projektilkugel vom theoretischen Verlauf mit zunehmendem Stoßparameter
@@ -243,7 +264,7 @@
     \begin{equation}
         \Delta t = \frac{\partial t_{fall}}{\partial h} |_{h=h^*} \cdot \Delta h = \frac{1}{\sqrt{2gh^*}} \cdot \Delta h
     \end{equation}
-    Damit ergibt sich für die verschiedenen Höhen, die jeweils mit einer Unsicherheit von $\Delta h = \pm 3 \cdot 10^-3m$  gemessen wurden:
+    Damit ergibt sich für die verschiedenen Höhen, die jeweils mit einer Unsicherheit von $\Delta h = \pm 3 \cdot 10^{-3}m$  gemessen wurden:
     \begin{equation*}
         \Delta t^{(1)} = \frac{3 \cdot 10^{-3}m}{\sqrt{2g \cdot 0.530m}} = 9.4 \cdot 10^{-4} s
     \end{equation*}
@@ -263,6 +284,7 @@
     \begin{equation*}
         t^{(3)}_{fall_{the}} = (0.4660 \pm 0.0007)s
     \end{equation*}
+    \section{Experimentelle Falldauer}
     Die während des Experiments gemessenen Werte sind in der Tabelle \ref{tab:fallzeitenFallhoehe} dokumentiert. Hierbei sind starke Ausreißerwerte, die
     höchstwahrscheinlich auf eine Fehlmessung zurückzuführen sind geklammert. Bei den Messwerten, die nur knapp über der eingestellten Mindestverzögerung von
     0.1s liegen ist mit hoher Sicherheit davon auszugehen, dass das Startgeräusch nicht registriert wurde und dann zwei mal kurz aufeinander das Aufprallgeräusch registriert wurde. 
@@ -292,24 +314,103 @@
         \bar{t^{(3)}}_{fall_{mess}} = 0.478s
     \end{equation*}
     Die Messungenauigkeit kann man jeweils so abschätzen, dass ca. 2/3 der Messwerte innerhalb dieser Schranken liegen.
-    \textit{(Die Messungenauigkeit liegt mit dieser Abschätzung für jede der drei Messreihen bei 0.04s)}
+    \textit{(Die Messungenauigkeit liegt mit dieser Abschätzung für jede der drei Messreihen bei 0.004s)}
     \begin{equation*}
-        t^{(1)}_{fall_{mess}} = (0.343 \pm 0.04)s
+        t^{(1)}_{fall_{mess}} = (0.343 \pm 0.004)s
     \end{equation*}
     \begin{equation*}
-        t^{(2)}_{fall_{mess}} = (0.395 \pm 0.04)s
+        t^{(2)}_{fall_{mess}} = (0.395 \pm 0.004)s
     \end{equation*}
     \begin{equation*}
-        t^{(3)}_{fall_{mess}} = (0.478 \pm 0.04)s
+        t^{(3)}_{fall_{mess}} = (0.478 \pm 0.004)s
     \end{equation*}
+    \subsection{Gründe für die Abweichung von der Theorie}
+    Die gemessenen Werte unterscheiden sich  signifikant von den vorhergesagten Werten und sind somit im Rahmen der Unsicherheit nicht miteinander vereinbar.
+    Insgesamt sind die gemessenen Fallzeiten größer als die theoretisch vorhergesagten. Abbildung \ref{fig:FehlerJeMesslauf} zeigt den Verlauf des Fehlers über
+    die Messläufe mit unterschiedlichen Höhen.
+    \newline
+    \textit{Anmerkung: Da die jeweiligen Höhen, die bei den Messungen genutzt wurden keine spezifische Relation zueinander haben, wurde die Ausgleichsgerade
+    \textbf{nicht} eingefügt, um einen linearen Verlauf anzudeuten. Diese hat nur den Nutzen, die Tendenz des Fehlers hervorzuheben}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./Images/FehlerFallzeit.png}
+        \caption{Zeitunterschied zwischen Theorie und Messung}
+        \label{fig:FehlerJeMesslauf}
+    \end{figure}
+    \noindent
+    Es gibt mehrere mögliche Gründe für das Auftreten des Fehlers.
+    \subsubsection{Fehler durch unterschiedliche Abstände von Start- und Landeposition}
+    Das Smartphone, das zur Messung verwendet wurde, wurde in jedem Messdurchlauf auf einem Stuhl einer Höhe von ca. 40cm platziert.
+    Außerdem war das Smartphone in horizontale Richtung mit einem Abstand von $a=15cm$ entfernt. Da der Abstand zwischen Start- und Endpunkt nicht gleich ist,
+    muss die gemessene Fallzeit um $\Delta t = \frac{\Delta d}{v_{Schall}}$ (mit $\Delta d = d_2 - d_1$) korrigiert werden .
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./Images/FehlerDurchUnterschiedlicheAbstaende.png}
+        \caption{Fehler durch unterschiedliche Abstände des Mikrofons von Start- und Landeposition}
+        \label{fig:FehlerDurchUnterschiedlicheAbstaende}
+    \end{figure}
+    \noindent
+    Nach der Skizze gilt:
+    \begin{equation*}
+        d1 = \sqrt{({h_{fall} - h_{Stuhl}})^2 + a^2}
+    \end{equation*}
+    \begin{equation*}
+        d2 = \sqrt{{h_{Stuhl}}^2 + a^2}
+    \end{equation*}
+    Damit folgt:
+    \begin{equation}
+        \Delta t = \frac{\sqrt{{h_{Stuhl}}^2 + a^2} - \sqrt{({h_{fall} - h_{Stuhl}})^2 + a^2}}{v_{Schall}}
+    \end{equation}
+    Für die drei Höhen gilt somit:
+    \begin{equation*}
+        \Delta t_1 = \frac{\sqrt{(0.4m)^2 + (0.15m)^2}- \sqrt{({0.530m - 0.40m})^2 + (0.15)^2}}{343m/s} = (-6.67 \cdot 10^{-4})s
+    \end{equation*}
+    \begin{equation*}
+        \Delta t_2 = \frac{\sqrt{(0.715m)^2 + (0.15m)^2}- \sqrt{({0.530m - 0.40m})^2 + (0.15)^2}}{343m/s} = (-2.28 \cdot 10^{-4})s
+    \end{equation*}
+    \begin{equation*}
+        \Delta t_2 = \frac{\sqrt{(1.065m)^2 + (0.15m)^2}- \sqrt{({0.530m - 0.40m})^2 + (0.15)^2}}{343m/s} = (7.42 \cdot 10^{-4})s
+    \end{equation*}
+    Addiert man diese Korrekturen zu den Messwerten erhält man folgende Abweichung von der Theorie:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{./Images/FehlerFallzeitKorrigiert.png}
+        \caption{Zeitunterschied zwischen Theorie und Messung mit Korrektur}
+        \label{fig:FehlerJeMesslaufKorrigiert}
+    \end{figure}
+    Die Fehler der Messwerte sind nun mit Korrektur für jeden Messdurchlauf nahezu identisch.
 
-    Die gemessenen Werte unterscheiden sich somit so weit von den theoretischen werten, dass 
+    \subsubsection{Fehler durch Luftreibung}
+    Ein weiterer möglicher Grund für den Fehler ist die auftretende Luftreibung. Allerdings kann deren Effekt nicht sonderlich groß sein, da der Fehler ziemlich
+    Unabhängig von der Fallhöhe ist. Wenn Luftreibung eine große Rolle spielen würde, müsste allerdings die absolute Abweichung für größere Fallhöhen deutlich größer
+    sein als für kleinere, da dann die Reibungskraft über eine Längere Zeit hinweg wirkt.
+
+    \subsubsection{Systematischer Fehler beim Start}
+    Da die Messwerte sich mit einem konstanten Offset von ca. $0.013 \pm 0.004$ von der Theorie unterscheiden, ist davon auszugehen, dass es an einem bestimmten Punkt während des Versuchs
+    zu einer Verzögerung kommt. \\
+    Eine mögliche Erklärung wäre, dass die Kugel nicht sofort nach dem Schlag auf das Lineal beginnt frei zu fallen, sondern zunächst von diesem mitgezogen wird
+    und so erst kurz nach dem Erklingen des Geräuschs anfängt zu fallen. \\
+    Ein weiterer Grund könnte sein, dass die Kugel am Start zunächst eine Geschwindigkeitskomponente nach oben erhält und dadurch zunächst nach oben fliegt , bevor sie 
+    anfängt nach unten zu fallen. Diese Beschleunigung nach oben kommt zustande, da die Kugel in einer Vertiefung im Lineal eingebracht ist und so zunächst nach oben 
+    beschleunigt werden muss, um diese Vertiefung zu verlassen. Allerdings ist dieser zweite Effekt vermutlich vergleichsweise eher klein.
+
+    \section{Verbesserung des Versuchsaufbaus zur Minimierung von Fehlerquellen}
+    Um Fehlerquellen für systematische Abweichungen zu minimieren. Gibt es einige Möglichkeiten, das Experiment zu verbessern.
+    Zum einen ist es sinnvoll, das Smartphone immer so zu platzieren, dass es immer gleich weit von Start- und Landeposition ist. Hierdurch minimiert man den
+    Fehler, der ansonsten durch die unterschiedlichen Schalllaufzeiten entstehen würde.
+    Darüber hinaus könnte es sinnvoll sein. Statt einer Kugel zum beispiel einen Würfel zu verwenden. Zwar steigt dadurch die Luftreibung geringfügig (der $C_w$-Wert eines Würfel ist höher),
+    allerdings hat diese laut den bisherigen Ergebnissen nur einen sehr geringfügigen Einfluss auf das Ergebnis. Ein Würfel hätte den Vorteil, dass dieser im 
+    Gegensatz zu einer Kugel nicht rollt und somit nicht in einer Vertiefung platziert werden muss, sondern direkt an den Rand des Lineals gelegt werden könnte, sodass
+    er direkt nachdem das Lineal getroffen wird anfängt zu fallen. Außerdem wird er dann auch nicht durch das Verlassen der Vertiefung nach oben beschleunigt.
+
 
 
 
 \newpage
 \chapter{Anhang}
 \section{Python Scripts}
+Die Python Scripts, die zum Plotten der Grafiken verwendet wurden, wurden mit Unterstützung von ChatGPT erstellt und dann nach den eigenen Bedürfnissen weiter
+bearbeitet.
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}

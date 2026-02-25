@@ -59,4 +59,20 @@ ax2.legend()
 
 plt.tight_layout()
 plt.savefig("./01_STO/Images/AbweichungenKorrigierteLandepunkte.png", dpi=1000, bbox_inches='tight')
+
+print("\n% --- LaTeX Tabelle: Abweichungen vom Kreis ---")
+print("\\begin{table}[h!]")
+print("\\centering")
+print("\\caption{Abweichung vom Kreis in Abhängigkeit von $b$}")
+print("\\begin{tabular}{c|cc}")
+print("\\hline")
+print("$b$ (cm) & $\\Delta_{\\text{Proj}}$ (cm) & $\\Delta_{\\text{Target}}$ (cm) \\\\")
+print("\\hline")
+
+for i in range(len(b)):
+    print(f"{b[i]:.2f} & {dev_proj[i]:.3f} & {dev_targ[i]:.3f} \\\\")
+
+print("\\hline")
+print("\\end{tabular}")
+print("\\end{table}")
 plt.show()
