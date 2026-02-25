@@ -378,12 +378,13 @@
         \caption{Zeitunterschied zwischen Theorie und Messung mit Korrektur}
         \label{fig:FehlerJeMesslaufKorrigiert}
     \end{figure}
-    Die Fehler der Messwerte sind nun mit Korrektur für jeden Messdurchlauf nahezu identisch.
+    \noindent
+    Die Fehler der Messwerte sind nun nach der Korrektur für jeden Messdurchlauf nahezu identisch.
 
     \subsubsection{Fehler durch Luftreibung}
     Ein weiterer möglicher Grund für den Fehler ist die auftretende Luftreibung. Allerdings kann deren Effekt nicht sonderlich groß sein, da der Fehler ziemlich
     Unabhängig von der Fallhöhe ist. Wenn Luftreibung eine große Rolle spielen würde, müsste allerdings die absolute Abweichung für größere Fallhöhen deutlich größer
-    sein als für kleinere, da dann die Reibungskraft über eine Längere Zeit hinweg wirkt.
+    sein als für kleinere, da dann die Reibungskraft über eine längere Zeit hinweg wirkt.
 
     \subsubsection{Systematischer Fehler beim Start}
     Da die Messwerte sich mit einem konstanten Offset von ca. $0.013 \pm 0.004$ von der Theorie unterscheiden, ist davon auszugehen, dass es an einem bestimmten Punkt während des Versuchs
@@ -721,7 +722,66 @@ bearbeitet.
 
 
 \subsection{TV III:}
+
 \subsection{TV IV:}
+\subsubsection*{Plot: Abweichung der Fallzeit}
+\begin{scriptsize}
+\lstset{style=python}
+\begin{lstlisting}[language=python]
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    # Messindex
+    x = np.array([1, 2, 3])
+
+    # Zugehoerige Hoehen
+    hoehen = [0.53, 0.715, 1.065]
+
+    # Theorie- und Messwerte
+    t_the = np.array([0.3288, 0.3818, 0.4660])
+    t_mess = np.array([0.343, 0.395, 0.478])
+
+    # Messunsicherheit
+    err_mess = np.array([0.004, 0.004, 0.004])
+
+    # Fehler (Differenz)
+    delta_t = t_mess - t_the
+
+    # Lineare Ausgleichsgerade
+    coef = np.polyfit(x, delta_t, 1)
+    fit = np.poly1d(coef)
+
+    # Plot
+    plt.figure(figsize=(6,4))
+
+    plt.errorbar(x, delta_t, yerr=err_mess, fmt='o', capsize=3,
+                label=r'$\Delta t = t_{mess} - t_{the}$')
+
+    # Gerade nur zwischen 1 und 3
+    plt.plot([1,3], fit([1,3]), linestyle='--',
+            label='Tendenz')
+
+    plt.axhline(0, linestyle=':', linewidth=1)
+
+    # Eigene Tick-Beschriftung mit Hoehen
+    labels = [f"{i}\n(h = {h} m)" for i, h in zip(x, hoehen)]
+    plt.xticks(x, labels)
+
+    plt.xlabel("Messindex i")
+    plt.ylabel("Zeitdifferenz t (s)")
+    plt.title("Abweichung zwischen Messung und Theorie")
+    plt.grid(True)
+    plt.legend()
+
+    plt.tight_layout()
+    plt.savefig("./01_STO/Images/FehlerFallzeit.png")
+    plt.show()
+
+    # Geradengleichung
+    print("Ausgleichsgerade:")
+    print(f"t(x) = \{coef[0]:.6f\} * x + \{coef[1]:.6f\}")
+\end{lstlisting}
+\end{scriptsize}
 
 
 \section{Verwendete Daten}
@@ -750,5 +810,18 @@ bearbeitet.
     \end{center}
 \subsection{TV III:}
 \subsection{TV IV:}
+    \begin{scriptsize}
+    \begin{table}[H]
+    \centering
+    \caption{Fallzeiten in Abhängigkeit von der Fallhöhe}
+    \begin{tabular}{ c||c|c|c|c|c|c|c|c|c|c }
+        h & $t_1(s) $ & $t_2(s)$ & $t_3(s)$ & $t_4(s)$ & $t_5(s)$ & $t_6(s)$ & $t_7(s)$ & $t_8(s)$ & $t_9(s)$ & $t_{10}(s)$\\
+        \hline
+        0.530m & (0.160) & (0.104) & 0.346 & (0.133) & 0.334 & 0.339 & 0.355 & 0.340 & 0.345 & 0.342 \\
+        0.715m & 0.400 & 0.396 & 0.393 & 0.396 & 0.396 & 0.394 & 0.398 & 0.401 & 0.391 & 0.387 \\
+        1.065m & 0.479 & 0.476 & (0.421) & 0.477 & 0.489 & 0.477 & 0.469 & 0.478 & 0.476 & 0.483 \\
+    \end{tabular}
+    \end{table}
+    \end{scriptsize}
 
 \end{document}
