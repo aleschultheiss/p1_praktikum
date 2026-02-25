@@ -62,20 +62,20 @@ for xi, yi, r, bi in zip(x_p, y_p, unsicherheit1, b):
                        linewidth=1)
         ax.add_patch(kreis)
     ax.annotate(f"b={bi}",
-            (xi, yi),
-            backgroundcolor='white',
-            bbox=dict(
-                facecolor='white',
-                alpha=0.7,
-                edgecolor='none',
-                boxstyle='square,pad=0.05',
-            ),
-            zorder=5,
-            textcoords="offset points",
-            xytext=(3, -10),
-            fontsize=6,
-            color='blue',
-            ha = 'center')
+                (xi, yi),
+                backgroundcolor='white',
+                bbox=dict(
+                    facecolor='white',
+                    alpha=0.7,
+                    edgecolor='none',
+                    boxstyle='square,pad=0.05',
+                ),
+                zorder=5,
+                textcoords="offset points",
+                xytext=(3, -10),
+                fontsize=6,
+                color='blue',
+                ha = 'center')
 
 # Unsicherheitskreise für Datensatz 2
 for xi, yi, r, bi in zip(x_t, y_t, unsicherheit2, b):

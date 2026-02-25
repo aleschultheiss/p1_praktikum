@@ -6,8 +6,10 @@
 \usepackage{lmodern}
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{listings}
 \usepackage{float}
 \usepackage{siunitx}
+\usepackage{amsmath}
 \usepackage[ngerman]{babel}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \begin{document}
@@ -49,9 +51,8 @@
 \chapter{Vorbereitung}
 
 \section{Versuchsvorbereitung und Grundlagen des Versuchs}
+\includepdf[pages=-]{./PDFs/VorbereitungSTO.pdf}
 
-\newpage
-\chapter{Durchführung}
 \section{Versuchsprotokoll}
 \includepdf[pages=3-12]{./PDFs/Versuchsdurchfuehrung.pdf}
 
@@ -66,24 +67,24 @@
     Der Mittelpunkt dieser Kreisbahnen liegt bei $\vec{M} = \vec{O} + \frac{1}{2} \vec{s}_{zentral}$, wobei $\vec{s}_{zentral}$ die Strecke zwischen Stoßpunkt $\vec{O}$ und Auftreffpunkt der Targetkugel beim Zentralen Stoß beschreibt.
     Der Radius $r_i$ dieser Kreisbahnen ist umgekehrt proportional zur Masse der jeweiligen Kugel $m_i$.
     Es gilt also:
-    \begin{equation*}
+    \begin{equation}
         \frac{r_{target}}{r_{projektil}} = \frac{m_{projektil}}{m_{target}}
-    \end{equation*}
+    \end{equation}
     Somit folgt für $m_{projektil} = m_{target}$, dass die Auftreffpunkte der Kugeln auf dem selben Kreis liegen.
     In unserem Fall mit Kugeln gleicher Masse gilt zudem für den Auftreffpunkt des Flugs ohne Stoß:
     
     \noindent
     \textit{(Dieser muss noch um den Abstand zwischen Rampenende und Stoßursprungspunkt O von 2,5cm vergrößert werden)}
     
-    \begin{equation*}
+    \begin{equation}
         \vec{s}_{flug} = \vec{s}_{zentral}
-    \end{equation*}
+    \end{equation}
     und damit:
-    \begin{equation*}
+    \begin{equation}
         \vec{M} = \vec{O} + \frac{1}{2} \vec{s}_{flug}
-    \end{equation*}
+    \end{equation}
     \subsection{Grafische Analyse der Landepunkte}
-    Um die Landepunkte zu visualisieren, wurden die mittleren Landepunkte der Projektil- und Targetkugel bei Variation des Stoßparameters $b$ ausgemessen und in Abbildung \ref*{fig:LandepunkteStoss} dargestellt. Hierzu wurden die jeweiligen durchschnittlichen Landepunkte sowie deren Unsicherheiten mithilfe eines Python-Skripts (matplotlib) in ein Koordinatensystem eingezeichnet.
+    Um die Landepunkte zu visualisieren, wurden die mittleren Landepunkte der Projektil- und Targetkugel bei Variation des Stoßparameters $b$ ausgemessen und in Abbildung \ref*{fig:LandepunkteStoss} dargestellt. Hierzu wurden die jeweiligen durchschnittlichen Landepunkte sowie deren Unsicherheiten mithilfe eines Python-Scripts (matplotlib) in ein Koordinatensystem eingezeichnet.
     Die Kreise um die Landepunkte der Kugeln stellen diese Unsicherheiten dar, welche sich hauptsächlich aus folgenden Aspekten zusammensetzt:
     \begin{list}{-}{}
         \item Streuung der Landepunkte über 4 Durchgänge
@@ -121,7 +122,7 @@
     \end{figure}
     \noindent
     Entsprechend diser Grafik müssen die gemessenen Landepunkte des Targets um $b$ in x-Richtung und um $a = \sqrt{d_{kugel}^2 - b^2}$ in y-Richtung korrigiert werden.
-    Diese korrektur wurde in der folgenden Grafik \ref*{fig:StossKorrigiert} wieder mithilfe des Python-Skripts für jeden Landepunkt durchgeführt.
+    Diese korrektur wurde in der folgenden Grafik \ref*{fig:StossKorrigiert} wieder mithilfe des Python-Scripts für jeden Landepunkt durchgeführt.
     \textit{Anmerkung: In der Grafik wurden aus Gründen der Übersichtlichkeit nur die Mittelwerte angepasst, die Messungenauigkeit der Originalwerte gilt allerdings natürlich weiterhin.}
     \begin{figure}[H]
         \centering
@@ -130,10 +131,11 @@
         \label{fig:StossKorrigiert}
     \end{figure}
     \newpage
+    \noindent
     In der Grafik \ref*{fig:StossKorrigiert} ist zu erkennen, dass diese korrigierten Landepunkte bereits deutlich besser mit der theoretischen Vorhersage übereinstimmen.
     Insebesondere für große Stoßparameter $b$ liegen die korrigierten Landepunkte der Projektilkugel allerdings immer noch relativ deutlich von der Theorie entfernt, was darauf hindeutet, dass es noch weitetere Fehlerquellen gibt,
     die diese Abweichung verursachen.
-    Bestimmt man die Abweichung in Abhängigkeit von b mithilfe eines weiteren Python Skripts, so ergibt sich ein Verlauf in Abhängigkeit des Stoßparameters $b$, wie er in Abbildung \ref*{fig:AbweichungKorrigierteLandepunkte} dargestellt ist.
+    Bestimmt man die Abweichung in Abhängigkeit von b mithilfe eines weiteren Python Scripts, so ergibt sich ein Verlauf in Abhängigkeit des Stoßparameters $b$, wie er in Abbildung \ref*{fig:AbweichungKorrigierteLandepunkte} dargestellt ist.
     \begin{figure}[H]
         \centering
         \includegraphics[width=1.0\textwidth]{./Images/AbweichungenKorrigierteLandepunkte.png}
@@ -158,7 +160,7 @@
     Hierdurch verkürzt sich die Flugweite, weshalb der Fehler mit zunehmendem Stoßparameter $b$ zunimmt.
     \newline
     Diese Effekte erklären auch, weshalb die Abweichung für die Targetkugel mit zunehmendem Stoßparameter $b$ keine eindeutige Tendenz aufweist.
-    Zwar ist auch die Targetkugel von der Gleitreibung betroffen, was eine verkürzung der Flugweite verursacht, 
+    Zwar ist auch die Targetkugel von der Gleitreibung betroffen, was eine Verkürzung der Flugweite verursacht, 
     allerdings wirkt für die Targetkugel der Effekt, tiefer getroffen zu werden in entgegengesetzter Richtung.
     Da die targetkugel durch einen tieferen Treffer eine größere Komponente in positive z-Richtung erhält, verlängert sich die Flugweite.
     Dadurch könnte es dazu kommen, dass die beiden Effekte sich teilweise gegenseitig aufheben, wodurch keine eindeutige Tendenz der Abweichung erkennbar wird.
@@ -175,15 +177,451 @@
         \caption{Stoßhöhe für $b > 0$}
         \label{fig:Noch Tieferer Stoss}
     \end{figure}
+    \newpage
+    \subsection{Veränderung der Landepunkte bei unterschiedlichen Massen}
+    Wie bereits erwähnt gilt folgender Zusammenhang zwischen Massen und den Radien der Kreisbahnen der Landpunkte:
+    \begin{equation}
+        \frac{r_{target}}{r_{projektil}} = \frac{m_{projektil}}{m_{target}}
+    \end{equation}
+    Hierraus folgt, dass die Radien der Landekreise der Kugeln bei unterschiedlichen Massen unterschiedlich groß sein müssen.
+    Für $m_{projektil} < m_{target}$ muss der Radius des Landekreises der Projektilkugel größer sein als der Radius für die Targetkugel, da die leichtere Projektilkugel 
+    aufgrund ihrer geringeren Masse einen stärker abgelenkt wird und so eine größere Flugweite erreicht. Außerdem führt dies dazu, das der Winkel zwischen den
+    Geschwindigkeitsvektoren größer als 90° ist.
+    Für $m_{projektil} > m_{target}$ muss der Radius des Landekreises der Projektilkugel kleiner sein als der Radius für die Targetkugel, da die schwerere Projektilkugel
+    aufgrund ihrer größeren Masse weniger abgelenkt wird und so eine geringere Flugweite erreicht. Außerdem führt dies dazu, dass der Winkel zwischen den Geschwindigkeitsvektoren kleiner als 90° ist.
+    Daraus folgen folgen die Ortskurven, die in den Abbildungen \ref*{fig:Ortskurve_m_p_<_m_t}, \ref*{fig:Ortskurve_m_p_=_m_t} und \ref*{fig:Ortskurve_m_p_>_m_t} dargestellt sind.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./Images/Ortskurve_m_p_<_m_t.png}
+        \caption{Ortskurve für $m_{projektil} < m_{target}$}
+        \label{fig:Ortskurve_m_p_<_m_t}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./Images/Ortskurve_m_p_=_m_t.png}
+        \caption{Ortskurve für $m_{projektil} = m_{target}$}
+        \label{fig:Ortskurve_m_p_=_m_t}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{./Images/Ortskurve_m_p_>_m_t.png}
+        \caption{Ortskurve für $m_{projektil} > m_{target}$}
+        \label{fig:Ortskurve_m_p_>_m_t}
+    \end{figure}
+    
+
 \newpage
 \section{Teilversuch III: Bewegungsanalyse mit Hochgeschwindigkeitskamera}
 
 \newpage
 \section{Teilversuch IV: Bestimmung der Erdbeschleunigung}
+    \textit{Der Versuch wurde für drei Höhen (0.530m, 0.715m, 1,065m) durchgeführt. Die Auswertung erfolgt im folgenden parallel für alle drei Höhen.}
+    \subsection{Theoretischer Hintergrund}
+    Für die Bewegung im Freien Fall gilt folgende Formel:
+    \begin{equation}
+        y(t) = \frac{1}{2} g t^2
+        \label{eq:BewegungFreierFall}
+    \end{equation}
+    \subsection{Erwartete Falldauer}
+    Um die Erwartete Falldauer zu berechnen formt man die Formel \ref{eq:BewegungFreierFall} zu folgender Form um:
+    \begin{equation}
+        t_{fall} = \sqrt{\frac{2h}{g}}
+    \end{equation}
+    Hiermit errechnet man für die verschiedenen Höhen die mittleren Fallzeiten:
+    
+    \begin{equation*}
+        \bar{t^{(1)}}_{fall} = \sqrt{\frac{2h^{(1)}}{g}} = \sqrt{\frac{2 \cdot 0.530m}{g}} = 0.3288s
+    \end{equation*}
+    \begin{equation*}
+        \bar{t^{(2)}}_{fall} = \sqrt{\frac{2h^{(2)}}{g}} = \sqrt{\frac{2 \cdot 0.715m}{g}} = 0.3818s
+    \end{equation*}
+    \begin{equation*}
+        \bar{t^{(3)}}_{fall} = \sqrt{\frac{2h^{(3)}}{g}} = \sqrt{\frac{2 \cdot 1.065m}{g}} = 0.4660s
+    \end{equation*}
+
+    Für die Unsicherheiten der Messwerte erhält man mithilfe von Linearisierung:
+    \begin{equation}
+        \Delta t = \frac{\partial t_{fall}}{\partial h} |_{h=h^*} \cdot \Delta h = \frac{1}{\sqrt{2gh^*}} \cdot \Delta h
+    \end{equation}
+    Damit ergibt sich für die verschiedenen Höhen, die jeweils mit einer Unsicherheit von $\Delta h = \pm 3 \cdot 10^-3m$  gemessen wurden:
+    \begin{equation*}
+        \Delta t^{(1)} = \frac{3 \cdot 10^{-3}m}{\sqrt{2g \cdot 0.530m}} = 9.4 \cdot 10^{-4} s
+    \end{equation*}
+    \begin{equation*}
+        \Delta t^{(2)} = \frac{3 \cdot 10^{-3}m}{\sqrt{2g \cdot 0.715m}} = 8.1 \cdot 10^{-4} s
+    \end{equation*}
+    \begin{equation*}
+        \Delta t^{(3)} = \frac{3 \cdot 10^{-3}m}{\sqrt{2g \cdot 1.065m}} = 6.6 \cdot 10^{-4} s
+    \end{equation*}
+    Somit sind die errechneten Fallzeiten:
+    \begin{equation*}
+        t^{(1)}_{fall_{the}} = (0.3288 \pm 0.0010)s
+    \end{equation*}
+    \begin{equation*}
+        t^{(2)}_{fall_{the}} = (0.3818 \pm 0.0008)s
+    \end{equation*}    
+    \begin{equation*}
+        t^{(3)}_{fall_{the}} = (0.4660 \pm 0.0007)s
+    \end{equation*}
+    Die während des Experiments gemessenen Werte sind in der Tabelle \ref{tab:fallzeitenFallhoehe} dokumentiert. Hierbei sind starke Ausreißerwerte, die
+    höchstwahrscheinlich auf eine Fehlmessung zurückzuführen sind geklammert. Bei den Messwerten, die nur knapp über der eingestellten Mindestverzögerung von
+    0.1s liegen ist mit hoher Sicherheit davon auszugehen, dass das Startgeräusch nicht registriert wurde und dann zwei mal kurz aufeinander das Aufprallgeräusch registriert wurde. 
+    \begin{scriptsize}
+    \begin{table}[H]
+    \centering
+    \caption{Fallzeiten in Abhängigkeit von der Fallhöhe}
+    \label{tab:fallzeitenFallhoehe}
+    \begin{tabular}{ c||c|c|c|c|c|c|c|c|c|c }
+        h & $t_1(s) $ & $t_2(s)$ & $t_3(s)$ & $t_4(s)$ & $t_5(s)$ & $t_6(s)$ & $t_7(s)$ & $t_8(s)$ & $t_9(s)$ & $t_{10}(s)$\\
+        \hline
+        0.530m & (0.160) & (0.104) & 0.346 & (0.133) & 0.334 & 0.339 & 0.355 & 0.340 & 0.345 & 0.342 \\
+        0.715m & 0.400 & 0.396 & 0.393 & 0.396 & 0.396 & 0.394 & 0.398 & 0.401 & 0.391 & 0.387 \\
+        1.065m & 0.479 & 0.476 & (0.421) & 0.477 & 0.489 & 0.477 & 0.469 & 0.478 & 0.476 & 0.483 \\
+    \end{tabular}
+    \end{table}
+    \end{scriptsize}
+    \noindent
+    Berechnet man jeweils das Arithmetische Mittel der Messwerte erhält man folgende Mittelwerte:
+    \begin{equation*}
+        \bar{t^{(1)}}_{fall_{mess}} = 0.343s
+    \end{equation*}
+    \begin{equation*}
+        \bar{t^{(2)}}_{fall_{mess}} = 0.395s
+    \end{equation*}
+    \begin{equation*}
+        \bar{t^{(3)}}_{fall_{mess}} = 0.478s
+    \end{equation*}
+    Die Messungenauigkeit kann man jeweils so abschätzen, dass ca. 2/3 der Messwerte innerhalb dieser Schranken liegen.
+    \textit{(Die Messungenauigkeit liegt mit dieser Abschätzung für jede der drei Messreihen bei 0.04s)}
+    \begin{equation*}
+        t^{(1)}_{fall_{mess}} = (0.343 \pm 0.04)s
+    \end{equation*}
+    \begin{equation*}
+        t^{(2)}_{fall_{mess}} = (0.395 \pm 0.04)s
+    \end{equation*}
+    \begin{equation*}
+        t^{(3)}_{fall_{mess}} = (0.478 \pm 0.04)s
+    \end{equation*}
+
+    Die gemessenen Werte unterscheiden sich somit so weit von den theoretischen werten, dass 
+
+
 
 \newpage
 \chapter{Anhang}
-\section{Python Skripte}
+\section{Python Scripts}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\subsection{TV I:}
+\subsection{TV II:}
+\subsubsection*{Landepunkte der Kugeln}
+\begin{scriptsize}
+\lstset{style=python}
+\begin{lstlisting}[language=python]
+    
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Circle, Patch
+    from math import sqrt
+
+    mode = "korrigiert"  # "korrigiert" oder "unkorrigiert"
+
+
+    x_p = [0, 4, 4.9, 7, 9.8, 11.8, 11.9, 10.5, 9.3, 7, 5]
+    y_p = [-2, 0.9, -0.7, 0.6, 3.4, 7.4, 12.5, 15.7, 17.7, 19.9, 21.3]
+    unsicherheit1 = [0, 0.4, 0.3, 0.3, 0.3, 0.4, 0.4, 0.3, 0.4, 0.3, 0.3]
+
+    x_t = [0, -4, -5.4, -7.8, -11.0, -13.3, -13.9, -13.2, -12, -9.7, -7.6]
+    y_t = [26.7, 26.3, 25.9, 24.8, 21.7, 17.7, 12.3, 8.5, 6.1, 3.7, 0.5]
+    unsicherheit2 = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.4]
+
+    b = [0, 0.3, 0.4, 0.6, 0.9, 1.2, 1.5, 1.7, 1.8, 1.9, 1.95]
+    a = []
+    for i in b:
+        a.append(sqrt(2*2 - i*i))
+
+    y_p_corr = [y_p[i] + a[i] for i in range(len(y_p))]
+    x_t_corr = [x_t[i] + b[i] for i in range(len(x_t))]
+
+    fig, ax = plt.subplots()
+
+    if mode == "korrigiert":
+        ax.scatter(x_p, y_p_corr, marker='+', color='blue', zorder=3)
+        ax.scatter(x_t_corr, y_t, marker='+', color='red', zorder=3)
+        filename = "LandepunkteStossUndKorrektur.png"
+        alphaOrig = 0.3
+    else:
+        alphaOrig = 1
+        filename = "LandepunkteStoss.png"
+
+    ax.scatter(0, 0, marker='o', color='black', zorder=4, label='Ursprung',)
+    ax.annotate('O', (0, 0), textcoords="offset points", xytext=(10,10), ha='center')
+    ax.scatter(0, 25.7/2, marker='o', color='black', zorder=4, label='M')
+    ax.annotate('M', (0, 25.7/2), textcoords="offset points", xytext=(10,10), ha='center')
+    ax.scatter(0, 23.2, marker='o', color='black', zorder=4, label='Flugweite ohne Stoss')
+    ax.annotate('Flugweite ohne Stoss', (0, 23.2), textcoords="offset points", xytext=(0,-10), ha='center', fontsize=6)
+    ax.scatter(0, 25.7, marker='o', color='black', zorder=4, label='Korrigierte Flugweite')
+    ax.annotate('Korrigierte Flugweite', (0, 25.7), textcoords="offset points", xytext=(0,-10), ha='center', fontsize=6)
+    kreis_m = Circle((0, 25.7/2), 25.7/2,
+                    edgecolor='black',
+                    facecolor='none',
+                    alpha=0.6,
+                    linewidth=1)
+    ax.add_patch(kreis_m)
+
+    ax.scatter(x_p, y_p, marker='x', color='blue', zorder=3, alpha=alphaOrig)
+    ax.scatter(x_t, y_t, marker='x', color='red', zorder=3, alpha=alphaOrig)
+
+
+
+    for xi, yi, r, bi in zip(x_p, y_p, unsicherheit1, b):
+        if r > 0:  # keine Kreise bei Radius 0
+            kreis = Circle((xi, yi), r,
+                        edgecolor='blue',
+                        facecolor='none',
+                        alpha=alphaOrig,
+                        linewidth=1)
+            ax.add_patch(kreis)
+        ax.annotate(f"b={bi}",
+                    (xi, yi),
+                    backgroundcolor='white',
+                    bbox=dict(
+                        facecolor='white',
+                        alpha=0.7,
+                        edgecolor='none',
+                        boxstyle='square,pad=0.05',
+                    ),
+                    zorder=5,
+                    textcoords="offset points",
+                    xytext=(3, -10),
+                    fontsize=6,
+                    color='blue',
+                    ha = 'center')
+    for xi, yi, r, bi in zip(x_t, y_t, unsicherheit2, b):
+        kreis = Circle((xi, yi), r,
+                    edgecolor='red',
+                    facecolor='none',
+                    alpha=alphaOrig,
+                    linewidth=1)
+        ax.add_patch(kreis)
+        ax.annotate(f"b={bi}",
+                    (xi, yi),
+                    backgroundcolor='white',
+                    bbox=dict(
+                        facecolor='white',
+                        alpha=0.7,
+                        edgecolor='none',
+                        boxstyle='square,pad=0.05',
+                    ),
+                    zorder=5,
+                    textcoords="offset points",
+                    xytext=(3, -10),
+                    fontsize=6,
+                    color='red',
+                    ha = 'center')
+
+
+    y1 = 23.2
+    y2 = 25.7
+    x_dim = 4
+
+    ax.annotate(
+        "",
+        xy=(x_dim, y1),
+        xytext=(x_dim, y2),
+        arrowprops=dict(arrowstyle="<->")
+    )
+
+    ax.plot([0, x_dim], [y1, y1], color='black', linewidth=0.8, linestyle='dashed')
+    ax.plot([0, x_dim], [y2, y2], color='black', linewidth=0.8, linestyle='dashed')
+
+    ax.text(
+        x_dim + 1.3,
+        (y1 + y2) / 2,
+        f"{y2 - y1:.1f} cm",
+        rotation=-90,
+        va="center",
+        ha="right"
+    )
+
+    ax.set_xlabel("X-Position (cm)")
+    ax.set_ylabel("Y-Position (cm)")
+    ax.set_title("Landepunkte der Kugeln")
+
+    ax.set_aspect('equal', 'box')
+
+    ax.grid(True)
+
+    red_patch = Patch(color='red', label='Targetkugel')
+    blue_patch = Patch(color='blue', label='Projektilkugel')
+    plt.legend(handles=[red_patch, blue_patch, Patch(color='black', label='Theorie')], loc='upper right', fontsize=6)
+
+    plt.savefig(f"./01_STO/Images/{filename}", dpi=1000, bbox_inches='tight')
+    
+\end{lstlisting}
+\end{scriptsize}
+\newpage
+\subsubsection*{Abweichung der Landepositionen}
+
+\begin{scriptsize}
+\lstset{style=python}
+\begin{lstlisting}[language=python]
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from math import sqrt
+
+    x_p = [0, 4, 4.9, 7, 9.8, 11.8, 11.9, 10.5, 9.3, 7, 5]
+    y_p = [-2, 0.9, -0.7, 0.6, 3.4, 7.4, 12.5, 15.7, 17.7, 19.9, 21.3]
+    unsicherheit1 = [0, 0.4, 0.3, 0.3, 0.3, 0.4, 0.4, 0.3, 0.4, 0.3, 0.3]
+
+    x_t = [0, -4, -5.4, -7.8, -11.0, -13.3, -13.9, -13.2, -12, -9.7, -7.6]
+    y_t = [26.7, 26.3, 25.9, 24.8, 21.7, 17.7, 12.3, 8.5, 6.1, 3.7, 0.5]
+    unsicherheit2 = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.4]
+
+    b = [0, 0.3, 0.4, 0.6, 0.9, 1.2, 1.5, 1.7, 1.8, 1.9, 1.95]
+    a = [sqrt(4 - i**2) for i in b]
+
+    y_p_corr = [y_p[i] + a[i] for i in range(len(y_p))]
+    x_t_corr = [x_t[i] + b[i] for i in range(len(x_t))]
+
+    xc, yc = 0, 25.7/2
+    R = 25.7/2
+
+    x_proj = np.array(x_p)
+    y_proj = np.array(y_p_corr)
+    b_proj = np.array(b)
+    uns_proj = np.array(unsicherheit1)
+
+    x_targ = np.array(x_t_corr)
+    y_targ = np.array(y_t)
+    b_targ = np.array(b)
+    uns_targ = np.array(unsicherheit2)
+
+    dev_proj = np.abs(np.sqrt((x_proj - xc)**2 + (y_proj - yc)**2) - R)
+    dev_targ = np.abs(np.sqrt((x_targ - xc)**2 + (y_targ - yc)**2) - R)
+
+    fig2, ax2 = plt.subplots(figsize=(6,4))
+
+    ax2.errorbar(b_proj, dev_proj, yerr=uns_proj, fmt='o', color='blue',
+                ecolor='lightblue', elinewidth=1, capsize=3, label='Projektilkugel')
+
+    ax2.errorbar(b_targ, dev_targ, yerr=uns_targ, fmt='o', color='red',
+                ecolor='lightcoral', elinewidth=1, capsize=3, label='Targetkugel')
+
+    ax2.plot(b_proj, dev_proj, color='blue', linestyle='--', alpha=0.5)
+    ax2.plot(b_targ, dev_targ, color='red', linestyle='--', alpha=0.5)
+
+    ax2.set_xlabel("b (cm)")
+    ax2.set_ylabel("Abweichung vom Kreis (cm)")
+    ax2.set_title("Abweichung vom Kreis in Abhaengigkeit von b")
+    ax2.grid(True)
+    ax2.legend()
+
+    plt.tight_layout()
+    plt.savefig("./01_STO/Images/AbweichungenKorrigierteLandepunkte.png", dpi=1000, bbox_inches='tight')
+    plt.show()
+\end{lstlisting}
+\end{scriptsize}
+\subsubsection*{Ortskurve verschiedene Massen}
+\begin{scriptsize}
+\lstset{style=python}
+\begin{lstlisting}[language=python]
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Arc
+
+
+    def plot_collision_diagram(mp, mt, v0=1.0):
+        vs = v0 * (mp / (mp + mt))
+        
+
+        up = v0 * (mt / (mp + mt))
+        ut = vs
+        
+        Rp = up
+        Rt = ut
+
+        fig, ax = plt.subplots(figsize=(8, 8))
+        
+        circle_p = plt.Circle((vs, 0), Rp, color='blue', fill=False, label='$v_p$ Ortskurve (Projektil)', linewidth=1.5)
+        circle_t = plt.Circle((vs, 0), Rt, color='green', fill=False, label='$v_t$ Ortskurve (Target)', linewidth=1.5)
+        ax.add_artist(circle_p)
+        ax.add_artist(circle_t)
+
+        angles = np.linspace(0, np.pi, 8, endpoint=False)
+        
+        for theta in angles:
+            vpx = vs + Rp * np.cos(theta)
+            vpy = Rp * np.sin(theta)
+            ax.quiver(0, 0, vpx, vpy, angles='xy', scale_units='xy', scale=1, 
+                    alpha=0.6, width=0.005, color='darkblue')
+            
+            vtx = vs + Rt * np.cos(theta + np.pi)
+            vty = Rt * np.sin(theta + np.pi)
+            ax.quiver(0, 0, vtx, vty, angles='xy', scale_units='xy', scale=1, 
+                    alpha=0.6, width=0.005, color='darkgreen')
+
+            arc_radius = 0.2 + (theta * 0.1) 
+
+            angle_p = np.degrees(np.arctan2(vpy, vpx))
+            angle_t = np.degrees(np.arctan2(vty, vtx))
+            
+            arc = Arc((0, 0), arc_radius, arc_radius, angle=0, 
+                    theta1=angle_t, theta2=angle_p, color='red', lw=1.5, alpha=0.7)
+            if theta > 0:
+                ax.add_patch(arc)
+
+        limit = max(vs + Rp, vs + Rt) * 1.2
+        ax.set_xlim(-limit * 0.2, limit)
+        ax.set_ylim(-limit/2, limit/2)
+        ax.axhline(0, color='black', lw=1)
+        ax.set_aspect('equal')
+        ax.set_title(f'Elastischer Stoss: $m_p={mp}, m_t={mt}$')
+        ax.legend(loc='upper right')
+        
+        plt.grid(True, linestyle='--', alpha=0.5)
+
+        if mp < mt:
+            relation = '<'
+        elif mp > mt:
+            relation = '>'
+        else:
+            relation = '='
+
+        plt.savefig(f'Ortskurve_m_p_{relation}_m_t.png', dpi=1000, bbox_inches='tight')
+
+
+    plot_collision_diagram(mp=0.8, mt=1)
+    plot_collision_diagram(mp=1, mt=1)
+    plot_collision_diagram(mp=1, mt=0.8)
+\end{lstlisting}
+\end{scriptsize}
+
+
+\subsection{TV III:}
+\subsection{TV IV:}
+
 
 \section{Verwendete Daten}
 \subsection{TV I:}

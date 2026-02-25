@@ -10,8 +10,8 @@
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="StoßNochWeiterUnten.svg"
    inkscape:export-filename="StoßNochWeiterUnten.png"
-   inkscape:export-xdpi="500"
-   inkscape:export-ydpi="500"
+   inkscape:export-xdpi="800"
+   inkscape:export-ydpi="800"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -198,9 +198,9 @@
        r="20" />
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,38.269138,28.375472)"
+       transform="matrix(0.26458333,0,0,0.26458333,37.044081,28.528604)"
        id="text21"
-       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect21);fill:#313131;fill-opacity:0.560828"><tspan
+       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect21);display:inline;fill:#313131;fill-opacity:0.560828"><tspan
          x="128.48633"
          y="163.52392"
          id="tspan3"><tspan
@@ -208,7 +208,7 @@
            id="tspan1">Projektil</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,70.715712,10.547169)"
+       transform="matrix(0.26458333,0,0,0.26458333,69.948215,9.7988323)"
        id="text21-7"
        style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect21-5);display:inline;fill:#313131;fill-opacity:0.560828"><tspan
          x="128.48633"
