@@ -1,0 +1,175 @@
+\documentclass{report}
+\usepackage{pdfpages}
+\usepackage{graphicx} 
+\usepackage{dirtytalk}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{arydshln}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\begin{document}
+\includepdf[pages=-]{./PDFs/Deckblatt_P1.pdf}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Auswertung und Protokoll}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Zum Versuch STV
+        
+        \vspace{1.8cm}
+
+        \textbf{Jonas Müther \& Alejandro Schultheiss}
+        \vfill
+            
+        P1 Praktikum\\
+       
+            
+        \vspace{0.8cm}
+  
+
+        \vspace{1.8cm}
+        \Large
+        LMU München \\
+        Physik B.Sc.\\
+        Deutschland\\
+        2026
+            
+    \end{center}
+\end{titlepage}
+\tableofcontents
+
+\newpage
+\chapter{Vorbereitung}
+
+\section{Versuchsvorbereitung und Grundlagen des Versuchs}
+\includepdf[pages=-]{./PDFs/VorbereitungSTV.pdf}
+
+\section{Versuchsprotokoll}
+\includepdf[pages=-]{./PDFs/VersuchsdurchfuehrungSTV.pdf}
+
+\newpage
+\chapter{Auswertung}
+\section{Teilversuch I:}
+
+\newpage
+\section{Teilversuch II und III: Aufnahme einer Poissonverteilung mit natürlicher Radioaktivität}
+\subsection{Theoretischer Hintergrund}
+In den Teilversuchen II und III wurde die Anzahl an eintreffenden $\gamma$-Quanten über ein Zeitintervall von je 2 Sekunden mehrmals gemessen (50 bzw. 100 mal). 
+Die dabei entstandene Verteilung der Anzahl eingetroffener $\gamma$-Quanten je Zeitintervall entspricht einer Poisson-Verteilung.
+Eine solche Verteilung lässt sich mathematisch folgendermaßen beschreiben:
+\begin{equation}
+    w_P(n) = \frac{\lambda^n}{n!} e^{-\lambda}
+\end{equation}
+
+\subsection{Auswertung der Messwerte}
+In Teilversuch II wurden nur $\gamma$-Quanten gezählt, die innerhalb eines kleinen Energieintervalls liegen, so dass durchschnittlich etwa 2-3 $\gamma$-Quanten pro
+Zeitintervall registriert wurden. Hierzu wurde ein Szintillationsdetektor verwendet.
+Dieser Versuch wurde einmal für 50 und einmal für 100 Messungen durchgeführt. Die zugehörige Häufigkeitsverteilung ist im Histogramm Abb. \ref{fig:Poisson} dargestellt. \\
+Man erkennt, dass es sich bei der Verteilung annähernd um eine Poissonverteilung handelt. Insbesondere bei der Messung mit 100 Messwerten sind die charakteristische
+Asymmetrie sowie der rechts vom Maximum liegende Erwartungswert $\lambda$ (genähert durch den Mittelwert der Verteilung) gut erkennbar.
+Außerdem gilt näherungsweise mit den errechneten Werte für $E = \lambda = 2.72$ und $\sigma = 1.69$:
+
+\begin{equation*}
+    E = 2.72 \approx 2.86 = \sigma^2
+\end{equation*}
+und damit:
+\begin{equation*}
+    E \approx V
+\end{equation*}
+\noindent
+Der gut erkennbare Unterschied zwischen den Verteilungen für 50 bzw. 100 Messungen hat abgesehen davon, dass sich die Verteilung im $\lim_{t \to \infty}$ den tatsächlichen
+Wahrscheinlichkeiten immer besser annähert keinen tieferen theoretischen Hintergrund und ist vermutlich durch zufällig unterschiedliche Eintreffraten von $\gamma$-Quanten zu erklären.
+
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=\textwidth]{./Images/Poisson.png}
+    \caption{Häufigkeitsverteilung der Anzahl an gemessenen $\gamma$-Quanten pro 2s Intervall}
+    \label{fig:Poisson}
+\end{sidewaysfigure}
+
+Führt man den Versuch wie in Teilversuch III über ein deutlich größeres Energieintervall bei ansonsten gleichbleibenden Parametern (100 Messungen von je 2s Messdauer) durch, werden
+logischerweise pro Zeitintervall mehr $\gamma$-Quanten registriert.
+Bei dieser Messung ergibt sich dann das in Abbildung \ref{fig:NormalverteilungGrossesEnergieintervall} dargestellte Diagramm.
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=\textwidth]{./Images/NormalverteilungGroessereMessung.png}
+    \caption{Häufigkeitsverteilung bei größerem Energieintervall}
+    \label{fig:NormalverteilungGrossesEnergieintervall}
+\end{sidewaysfigure}
+Diese Verteilung verhält sich näherungsweise wie die eingezeichnete Normalverteilung.
+
+\subsubsection{Vergleich TV II und TV III}
+\begin{table}[H]
+    \centering
+    \caption{Vergleich TV II und TV III}
+    \label{tab:vglTV2TV3}
+    \begin{tabular}{| c || c c |}
+        \hline
+        Merkmal & TV II & TV III \\
+        \hline
+        Anzahl der Messungen & 100 & 100 \\
+        Zeitinterval je Messung & 2s & 2s \\
+        Anzahl Kanäle ROI & 80 & 858 \\
+        Mittelwert & 2.72 & 84.22 \\
+        Standardabweichung & 1.63 & 10.08 \\
+        Ungefähre Form der Häufigkeitsverteilung & Poissonverteilung & Normalverteilung \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Interessanterweise fällt auf, dass sich alleine durch die Vergrößerung des Energieintervalls, welche ausschließlich bewirkt, dass pro Messdurchgang insgesamt mehr 
+$\gamma$-Quanten registriert werden aus der Poissonverteilung für ein kleines Energieintervall (Detektion seltener) näherungsweise eine Normalverteilung geworden ist. 
+Dies ist aufgrund des zentralen Grenzwertsatzes nicht weiter verwunderlich. Dieser besagt, dass die Wahrscheinlichkeitsdichte einer Summe $w = \sum_{i=1}^{n} x_i$
+aus $n$ unabhängigen Zufallsvariablen $x_i$ mit beliebiger Wahrscheinlichkeite (aber endlicher Varianz) gegen eine Normalverteilung geht. In diesem Beispiel sind die Zufallsvariablen $x_i$, über welche 
+summiert wird jeweils die Anzahlen der detektierten $\gamma$-Quanten in jedem der Messkanäle innerhalb des gesamten Energieintervalls. Jeder dieser Kanäle hat eine individuelle Zufallsverteilung.
+$n$ ist hierbei in dem Versuchsaufbau die Anzahl der Messkanäle innerhalb des Energieintervalls der Messung. Eine Vergrößerung des Energieintervalls erhöht 
+also $n$, wodurch sich die Wahrscheinlichkeitsdichte mehr an eine Normalverteilung annähert \textit{(ZGS)}.
+Der Mittelwert der entstehenden Normalverteilung ist für $n \rightarrow \infty$ gegeben durch $\langle w \rangle = n \langle x \rangle$, wobei $\langle x \rangle$ 
+der Mittelwert der pro Kanal gemessenen Anzahl an $\gamma$-Quanten ist.
+
+
+
+
+\newpage
+\chapter{Anhang}
+\section{Python Scripts}
+Die Python Scripts, die zum Plotten der Grafiken verwendet wurden, wurden mit Unterstützung von ChatGPT erstellt und dann nach den eigenen Bedürfnissen weiter
+bearbeitet.
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\subsection{TV I:}
+\subsection{TV II:}
+\subsection{TV III:}
+
+\end{document}

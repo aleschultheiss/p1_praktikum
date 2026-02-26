@@ -1,0 +1,56 @@
+# Using the following parameters ...
+# ROI_filename: D11_AJ_TV3.Roi
+# data_filename: D11_AJ_TV3_100Messungen.Lis
+# number_of_measurements: 100
+# timestep: 2
+# ROI_min: 52
+# ROI_max: 910
+#
+#
+# stats file:
+# channels     1024
+# region begin 52
+# region end   910
+# passes       100
+# imp occurence
+62 1
+63 1
+66 1
+67 1
+68 1
+69 2
+70 1
+71 2
+72 1
+73 2
+74 3
+75 2
+76 2
+77 3
+78 3
+79 8
+80 6
+81 3
+82 5
+83 5
+84 1
+85 6
+86 1
+87 5
+88 3
+89 1
+90 2
+91 5
+92 4
+93 2
+94 2
+95 2
+96 1
+97 1
+98 3
+99 1
+101 1
+103 1
+105 2
+106 1
+109 2
