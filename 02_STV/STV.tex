@@ -141,15 +141,14 @@ der Mittelwert der pro Kanal gemessenen Anzahl an $\gamma$-Quanten ist.
 
 \newpage
 \chapter{Anhang}
-\section{Python Scripts}
-Die Python Scripts, die zum Plotten der Grafiken verwendet wurden, wurden mit Unterstützung von ChatGPT erstellt und dann nach den eigenen Bedürfnissen weiter
-bearbeitet.
+\section{Matlab Scripts}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\lstdefinestyle{python}{
+\lstdefinestyle{matlab}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
@@ -168,8 +167,86 @@ bearbeitet.
     tabsize=2
 }
 
-\subsection{TV I:}
-\subsection{TV II:}
-\subsection{TV III:}
+\subsection{TV I: Gemessene Normalverteilung des Galtonbretts}
+\begin{scriptsize}
+\lstset{style=matlab}
+\begin{lstlisting}[language=matlab]
+    k = 0:10;
+    nk = [0, 0, 10, 32, 49, 71, 51, 34, 7, 1, 1];
+    ng = [2, 27, 126, 309, 543, 602, 491, 308, 133, 24, 8];
+    muk = 1/sum(nk) * dot(k, nk)
+    ok = sqrt(1/(sum(nk)-1) * dot(nk, (k-mu).*(k-mu)))
+    mug = 1/sum(ng) * dot(k, ng)
+    og = sqrt(1/(sum(ng)-1) * dot(ng, (k-mu).*(k-mu)))
 
+    [ax, h1, h2] = plotyy(k, nk, k, ng, 'bar', 'bar');
+
+    title('Verteilung des Galton Bretts');
+    xlabel('Kanal');
+    ylabel('Anzahl Kugeln');
+
+    hold on
+    s1 = stem(muk, 71);
+    s2 = stem(mug, 71);
+
+    legend([h1, h2, s1, s2], {'Mittlere Statistik: 256 Kugeln', 'Grosse Statistik: 2560 Kugeln', 'Mittelwert der mittleren Statistik', 'Mittelwert der grossen Statistik'})
+\end{lstlisting}
+\end{scriptsize}
+
+
+\subsection{TV II: Gemessene Poissonverteilung der Anzahl detektierter $\gamma$-Quanten}
+\begin{scriptsize}
+\lstset{style=matlab}
+\begin{lstlisting}[language=matlab]
+    M1 = dlmread('TV2_50Messungen.stat', ' ', 15, 0);
+    M2 = dlmread('TV2_100Messungen.stat', ' ', 15, 0);
+
+    cnt1 = M1(:, 1);
+    haeuf1 = M1(:, 2);
+    cnt2 = M2(:, 1);
+    haeuf2 = M2(:, 2);
+    mu1 = (1/sum(haeuf1)) * dot(haeuf1, cnt1)
+    mu2 = (1/sum(haeuf2)) * dot(haeuf2, cnt2)
+    o1 = sqrt(1/(sum(haeuf1)-1) * dot(haeuf1, (cnt1-mu1).^2))
+    o2 = sqrt(1/(sum(haeuf2)-1) * dot(haeuf2, (cnt2-mu2).^2))
+
+    [ax, h1, h2] = plotyy(cnt1, haeuf1, cnt2, haeuf2, 'bar', 'bar');
+
+    title('Verteilung Haeufigkeit der Counts im Energieintervall');
+    xlabel('Counts');
+    ylabel('Haeufigkeit');
+
+    hold on
+
+    s1 = stem(mu1, 16);
+    s2 = stem(mu2, 16);
+    legend([h1, h2, s1, s2], {'50 Messungen', '100 Messungen', 'Mittelwert 50 Messungen', 'Mittelwert 100 Messungen'})
+\end{lstlisting}
+\end{scriptsize}
+
+
+\subsection{TV III: Gemessene Normalverteilung der Anzahl detektierter $\gamma$-Quanten}
+\begin{scriptsize}
+\lstset{style=matlab}
+\begin{lstlisting}[language=matlab]
+    M1 = dlmread('TV3_100Messungen.stat', ' ', 15, 0)
+
+    cnt1 = M1(:, 1);
+    haeuf1 = M1(:, 2);
+    mu1 = (1/sum(haeuf1)) * dot(haeuf1, cnt1)
+    o1 = sqrt(1/(sum(haeuf1)-1) * dot(haeuf1, (cnt1-mu1).^2))
+
+    h1 = bar(cnt1, haeuf1/sum(haeuf1))
+
+    title('Verteilung Haeufigkeit der Counts im grossen Energieintervall');
+    xlabel('Counts');
+    ylabel('Relative Haeufigkeit');
+
+    hold on
+
+    h2 = plot(cnt1, normpdf(cnt1, mu1, o1))
+
+    legend([h1, h2], {'Gemessene Verteilung','Normalverteilung'})
+\end{lstlisting}
+\end{scriptsize}
 \end{document}
