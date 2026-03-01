@@ -60,6 +60,102 @@
 \chapter{Auswertung}
 \section{Teilversuch I:}
 
+\subsection{Theoretischer Hintergrund}
+Um die folgende Auswertung zu verstehen, wollen wir zunächst die Grundlagen der Binomialverteilung
+und den Aufbau des Galton-Bretts verstehen. 
+\par\bigskip\noindent
+Eine Zufallsvariable $X$ ist genau dann binomialverteilt, wenn es $n$ feste Versuche gibt
+und dabei jeder Versuch genau 2 mögliche Ausgänge hat. Betrachten wir nun beispielsweise den Fall einer Kugel im Galton-Brett:
+Wenn die Kugel fällt, gibt es genau 2 mögliche Wege; Links oder Rechts. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Images/galton.png}
+    \caption{Galton-Brett mit 11 Kanälen}
+    \label{fig:Galton}
+\end{figure}
+
+\noindent
+Des Weiteren müssen für eine Binomialverteilung noch folgende definierenden Eigenschaften gelten:
+
+\begin{itemize}
+    \item Die Erfolgswahrscheinlichkeit ist in jedem Versuch gleich groß und beträgt \(p\).
+    \item Die Versuche sind unabhängig.
+\end{itemize}
+
+\noindent
+Dann zählt \(X\), wie viele Erfolge in den \(n\) Versuchen auftreten.
+\noindent
+Man schreibt:
+\[
+X \sim \mathrm{Bin}(n,p)
+\]
+\noindent
+Die Wahrscheinlichkeitsfunktion lautet:
+\[
+P(X = k) = \binom{n}{k} \, p^k (1-p)^{n-k}
+\qquad \text{für } k = 0,1,2,\dots,n
+\]
+
+\noindent
+Das Galton-Brett mit Kugeln ist somit eine Form der Visualisierung für die Binomialverteilung.
+
+\subsection{Auswertung der Messwerte}
+Im Teilversuch I wurden Kugeln, in unterschiedlichen Stichproben, im Galton-Brett fallen gelassen. Wir wollen nun die Frage beantworten mit welcher Wahrscheinlichkeit eine Kugel in Kachel 1 bzw. in Kachel 5 landet.
+Wir nehmen zunächst an, dass die Verteilung der Kugeln bekannt ist. Im Versuch sind die Kugeln 
+binomialverteilt. Mit Kenntnis darüber, können wir nun die Wahrscheinlichkeit für beide Fälle, wie folgt berechnen: 
+
+\noindent
+Bei einem Galton-Brett mit 11 Kanälen durchläuft eine Kugel 10 Ablenkungen nach links oder rechts. Unter der Annahme, dass beide Richtungen gleich wahrscheinlich sind, gilt für die Anzahl der Rechts- oder Linksschritte:
+\[
+X \sim \mathrm{Bin}(10,\tfrac12).
+\]
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.15\textwidth]{./Images/galton2.png}
+    \caption{Galton-Brett Ablenkungen Reihe 1 und Reihe 2}
+    \label{fig:Galton2}
+\end{figure}
+
+\noindent
+Die Wahrscheinlichkeit dafür, dass die Kugel im Kanal \(k\) landet, ist damit
+\[
+P(X=k)=\binom{10}{k}\left(\frac12\right)^{10}.
+\]
+
+\noindent
+\textbf{Fall 1: Wahrscheinlichkeit für Kanal 0}
+\noindent \\
+Damit die Kugel im Kanal 0 landet, darf sie kein einziges Mal nach rechts abgelenkt werden. Sie muss also bei allen 10 Ablenkungen nach links gehen. Dafür gibt es genau einen möglichen Weg. Somit ergibt sich:
+\[
+P(X=0)=\binom{10}{0}\left(\frac12\right)^{10}
+=\frac{1}{1024}
+\approx 0{,}00098.
+\]
+
+\noindent
+\textbf{Fall 2: Wahrscheinlichkeit für Kanal 5}
+
+\noindent
+Damit die Kugel im Kanal 5 landet, muss sie bei den 10 Ablenkungen genau 5-mal nach rechts und 5-mal nach links fallen. Die Anzahl der möglichen Wege dafür ist
+\[
+\binom{10}{5}=252.
+\]
+Jeder dieser Wege hat die Wahrscheinlichkeit
+\[
+\left(\frac12\right)^{10}.
+\]
+Daraus folgt:
+\[
+P(X=5)=\binom{10}{5}\left(\frac12\right)^{10}
+=\frac{252}{1024}
+\approx 0{,}2461.
+\]
+
+\noindent
+Die Wahrscheinlichkeit für Kanal 0 ist sehr klein, weil nur ein einziger Weg dorthin führt, nämlich immer links. In den Kanal 5 führen dagegen sehr viele verschiedene Wege, da die Kugel nur insgesamt 5-mal nach rechts und 5-mal nach links gehen muss, die Reihenfolge aber beliebig sein kann. Deshalb ist die Wahrscheinlichkeit für Kanal 5 deutlich größer als für Kanal 0.
+
 \newpage
 \section{Teilversuch II und III: Aufnahme einer Poissonverteilung mit natürlicher Radioaktivität}
 \subsection{Theoretischer Hintergrund}

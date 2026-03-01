@@ -9,4 +9,10 @@
 02_STV/STV.synctex.gz
 02_STV/STV.fls
 02_STV/STV.log
+*.ai
 *.toc
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.synctex.gz
