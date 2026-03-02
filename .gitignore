@@ -11,6 +11,7 @@
 02_STV/STV.log
 *.ai
 *.toc
+*.tmp
 main.aux
 main.fdb_latexmk
 main.fls

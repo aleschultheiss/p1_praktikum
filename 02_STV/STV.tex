@@ -157,6 +157,160 @@ P(X=5)=\binom{10}{5}\left(\frac12\right)^{10}
 \noindent
 Die Wahrscheinlichkeit für Kanal 0 ist sehr klein, weil nur ein einziger Weg dorthin führt, nämlich immer links. In den Kanal 5 führen dagegen sehr viele verschiedene Wege, da die Kugel nur insgesamt 5-mal nach rechts und 5-mal nach links gehen muss, die Reihenfolge aber beliebig sein kann. Deshalb ist die Wahrscheinlichkeit für Kanal 5 deutlich größer als für Kanal 0.
 
+\bigskip
+\noindent
+\textbf{Stichprobe: 24 Kugeln}
+\\
+Im Folgenden treffen wir die Annahme, dass die zugrundeliegende Verteilung unbekannt ist. Es wurden zunächst 24 Kugeln im Galton-Brett fallengelassen. Daraus ergab sich für einen Versuch folgendes Histogramm:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Images/IMG_4594 2.jpg}
+    \caption{Histogramm für eine Stichprobe von 24 Kugeln in einem Galton-Brett mit 11 Kanälen}
+    \label{fig:Galton2}
+\end{figure}
+
+\noindent
+\textbf{Auswertung der kleinen Statistik}
+\noindent
+Gegeben sind die Häufigkeiten der Kanäle:
+\[
+\begin{array}{c|ccccccccccc}
+k      & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+n_k    & 0 & 0 & 1 & 1 & 5 & 7 & 8 & 2 & 0 & 0 & 0
+\end{array}
+\]
+Die Gesamtzahl der Kugeln beträgt
+\[
+N=\sum_{k=0}^{10} n_k = 24.
+\]
+\noindent
+\textbf{Mittelwert}
+\noindent
+Der Mittelwert ergibt sich aus
+\[
+\bar{x}=\frac{1}{N}\sum_{k=0}^{10} k\,n_k.
+\]
+Also:
+\[
+\bar{x}
+=\frac{0\cdot 0+1\cdot 0+2\cdot 1+3\cdot 1+4\cdot 5+5\cdot 7+6\cdot 8+7\cdot 2+8\cdot 0+9\cdot 0+10\cdot 0}{24}
+=\frac{122}{24}
+\approx 5{,}08.
+\]
+\noindent
+\textbf{Standardabweichung}
+\noindent
+Die Standardabweichung berechnet sich über
+\[
+\sigma=\sqrt{\frac{1}{N}\sum_{k=0}^{10} n_k\,(k-\bar{x})^2}.
+\]
+Einsetzen liefert:
+\[
+\sigma
+=\sqrt{\frac{1}{24}\sum_{k=0}^{10} n_k\,(k-5{,}08)^2}
+\approx 1{,}19.
+\]
+\noindent
+\textbf{Ergebnis}
+\noindent
+Damit ergeben sich für die kleine Statistik:
+\[
+\bar{x}\approx 5{,}08,
+\qquad
+\sigma\approx 1{,}19.
+\]
+
+\noindent
+\textbf{Kann dadurch schon auf eine Binomialverteilung geschlossen werden?}
+\\
+\noindent
+Aus der kleinen Statistik allein kann noch nicht sicher auf eine Binomialverteilung geschlossen werden. 
+Das Histogramm zeigt zwar bereits eine Häufung in den mittleren Kanälen, was grundsätzlich zu einer Binomialverteilung passt. 
+Allerdings ist die Stichprobe mit nur 24 Kugeln noch zu klein, sodass zufällige Schwankungen das Bild deutlich beeinflussen können.
+Man kann daher höchstens sagen, dass die Beobachtung mit 
+einer Binomialverteilung vereinbar ist, aber noch keinen eindeutigen 
+Nachweis dafür liefert.
+
+
+\bigskip
+\noindent
+\textbf{Diskussion der Histogramme der mittleren (256 Kugeln) und großen Statistik (2560 Kugeln)}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{./Images/VerteilungGalton.png}
+    \caption{Histogramm für eine Stichprobe von 256 und 2560 Kugeln in einem Galton-Brett mit 11 Kanälen}
+    \label{fig:Galton2}
+\end{figure}
+
+\noindent
+Beim Vergleich der Histogramme der mittleren Statistik (\(N=256\)) und der großen Statistik (\(N=2560\)) im selben Figure-Window zeigt sich, dass beide Verteilungen ihr Maximum im mittleren Kanalbereich besitzen und zu den Randkanälen hin deutlich abfallen. Damit weisen beide Histogramme grundsätzlich die für ein Galton-Brett erwartete binomialartige Form auf.
+\noindent
+Für die mittlere Statistik mit \(256\) Kugeln ergeben sich die Häufigkeiten
+\[
+(0,\,0,\,10,\,32,\,49,\,71,\,51,\,34,\,7,\,1,\,1),
+\]
+wobei das Maximum bei Kanal \(5\) liegt. Die Verteilung ist bereits deutlich glockenförmig, zeigt aber noch erkennbare statistische Schwankungen.
+\noindent
+Im Histogramm der großen Statistik mit \(2560\) Kugeln erscheint die Verteilung insgesamt glatter und gleichmäßiger. Dass in Kanal \(5\) relativ gesehen etwas weniger Kugeln liegen als bei der mittleren Statistik, ist dabei nicht überraschend. Mit wachsender Stichprobengröße gleichen sich zufällige Überhöhungen einzelner Kanäle aus, sodass sich die beobachtete Verteilung stärker an die theoretisch zu erwartende Binomialverteilung annähert. Das Histogramm wirkt daher weniger ``spitz'' und insgesamt regelmäßiger.
+\noindent
+Die größere Statistik liefert somit eine verlässlichere Darstellung der zugrunde liegenden Verteilung als die mittlere Statistik. Während bei \(256\) Kugeln einzelne Kanäle durch Zufall noch etwas über- oder unterbesetzt sein können, werden diese Schwankungen bei \(2560\) Kugeln relativ kleiner. Dies entspricht dem Gesetz der großen Zahlen: Mit zunehmender Anzahl von Versuchen nähern sich die beobachteten relativen Häufigkeiten den theoretischen Wahrscheinlichkeiten an.
+\noindent
+Insgesamt zeigt der Vergleich beider Histogramme, dass die Form der Verteilung mit steigender Stichprobengröße stabiler, glatter und besser mit einer Binomialverteilung vereinbar wird.
+
+\bigskip
+\noindent
+\textbf{Tabelle der Kennwerte für die drei Statistiken}
+\\
+\noindent
+Aus den Kanalbesetzungen wurden jeweils Mittelwert \(\bar{x}\), Standardabweichung \(\sigma\) und der Fehler des Mittelwerts
+\[
+\Delta \bar{x}=\frac{\sigma}{\sqrt{N}}
+\]
+berechnet.
+
+\[
+\begin{array}{l|c|c|c|c}
+\text{Statistik} & N & \bar{x} & \sigma & \Delta \bar{x}=\frac{\sigma}{\sqrt{N}} \\
+\hline
+\text{klein}  & 24   & 5{,}08 & 1{,}19 & 0{,}24 \\
+\text{mittel} & 256  & 5{,}02 & 1{,}48 & 0{,}09 \\
+\text{groß}   & 2573 & 4{,}99 & 1{,}64 & 0{,}03
+\end{array}
+\]
+
+\textbf{Bemerkung:} Aus den angegebenen Kanalhäufigkeiten der großen Statistik ergibt sich
+\[
+N = 2+27+126+309+543+602+491+308+133+24+8 = 2573.
+\]
+Eigentlich sollte sich die Stichprobe auf N = 2560 belaufen. Beim Eintragen an der Tafel oder beim ablesen muss ein Fehler passiert sein. Alle Werte der Tabelle wurden mit N = 2573 berechnet.
+\\
+\noindent
+\textbf{Diskussion:}
+\\
+\noindent
+Der Mittelwert liegt bei allen drei Stichproben nahe bei \(5\). Das ist plausibel, da bei einem Galton-Brett mit 11 Kanälen die Verteilung ungefähr um den mittleren Kanal zentriert ist.
+\noindent
+Die Standardabweichung nimmt von der kleinen zur großen Statistik zu:
+\[
+1{,}19 \;\rightarrow\; 1{,}48 \;\rightarrow\; 1{,}64.
+\]
+Das bedeutet, dass die gemessene Verteilung mit wachsender Stichprobengröße breiter und realistischer erfasst wird. Bei kleinen Stichproben wird die tatsächliche Streuung oft unterschätzt, da die Randkanäle nur selten besetzt sind.
+\noindent
+Der Fehler des Mittelwerts nimmt dagegen mit wachsender Stichprobengröße deutlich ab:
+\[
+0{,}24 \;\rightarrow\; 0{,}09 \;\rightarrow\; 0{,}03.
+\]
+Das liegt daran, dass der Fehler des Mittelwerts proportional zu \(1/\sqrt{N}\) ist. Je größer die Stichprobe ist, desto genauer kann also der Mittelwert bestimmt werden.
+\\
+\noindent
+\textbf{Fazit:}
+\noindent
+Mit zunehmender Stichprobengröße wird die Schätzung des Mittelwerts genauer, da der Fehler des Mittelwerts kleiner wird. Die Standardabweichung stabilisiert sich dagegen erst bei größeren Stichproben auf einen realistischen Wert, da dann auch die Randbereiche der Verteilung besser erfasst werden.
+
+
 \newpage
 \section{Teilversuch II und III: Aufnahme einer Poissonverteilung mit natürlicher Radioaktivität}
 \subsection{Theoretischer Hintergrund}
