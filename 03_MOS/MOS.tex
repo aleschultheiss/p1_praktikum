@@ -60,7 +60,8 @@
 \chapter{Auswertung}
 \section{Teilversuch I: Bestimmung der Erdbeschleunigung mithilfe eines Fadenpendels}
 \subsection{Theoretischer Hintergrund}
-In Teilversuch I wurde ein Fadenpendels frei schwingen gelassen. Aus der gemessenen Schwingungsdauer sollte dann die Erdbeschleunigung ermittelt werden.
+\subsubsection{Fadenpendel}
+In Teilversuch I wurde ein Fadenpendel frei schwingen gelassen. Aus der gemessenen Schwingungsdauer sollte dann die Erdbeschleunigung ermittelt werden.
 Dies ist aufgrund folgender Herleitung für die Zusammenhang zwischen Erdbeschleunigung $g$ und der Schwingungsdauer $T$ möglich.
 Hierzu betrachten wir Abbildung \ref{fig:KraefteFadenpendel}:
 \begin{figure}[H]
@@ -132,7 +133,25 @@ Für den Zusammenhang zwischen Periodendauer $T$ und der Erdbeschleunigung $g$ d
     \label{eq:gAusT}
 \end{equation}
 
+\subsubsection{Variables g-Pendel}
+Aufgrund der geringen Masse des Stabs kann das variable g-Pendel näherungsweise als mathematisches Pendel betrachtet werden.
+Hierbei spielt nur die Komponente von g, welche parallel zur Schwingungsebene ist eine Rolle für die Schwingung, da der Aufbau keinen Freiheitsgrad in Richtung der
+senkrechten Komponente hat (diese bewirkt ein Drehmoment auf den Stab, welches keine Beschleunigung, sondern eine Biegespannung bewirkt).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{./Images/Schwingungsebene.png}
+    \caption{Darstellung der Schwingungsebene}
+    \label{fig:Schwingungsebene}
+\end{figure}
+\noindent
+Mithilfe der Abbildung \ref{fig:Schwingungsebene} lässt sich ein Ausdruck für die parallele Komponente der Beschleunigung ($g_{\parallel}$) bestimmen.
+\begin{equation}
+    g_\parallel = g \cdot cos(\alpha)
+\end{equation}
+Abgesehen von der Veränderung von $g$ verhält sich das Pendel näherungsweise analog zum Fadenpendel.
+
 \subsection{Auswertung der Messwerte}
+\subsubsection{Fadenpendel}
 Aus den bestimmten Dauern für 20 Schwingungen ergeben sich mit $T_i = \frac{t_i}{20}$ die in Tabelle \ref{tab:PeriodeMessdurchlaeufe}
 \begin{table}[H]
     \centering
@@ -214,7 +233,71 @@ Es gilt:
        > \bar{g}_{exp} + \Delta g &= 9.72m/s^2
     \end{split}
 \end{equation}
-Somit stimmt der experimentell bestimmte Wert von $g$ im Rahmen der Unsicherheit mit dem Liteaturwert überein.
+Somit stimmt der experimentell bestimmte Wert von $g$ im Rahmen der Unsicherheit mit dem Liteaturwert für München überein.
+
+\subsubsection{Variables g-Pendel}
+Für das variable g-Pendel ergeben sich folgende Periodendauern ($T = \frac{t_{ges}}{n}$)für unterschiedliche Wahlen von $\alpha$ und $l$:
+\textit{(Die Längen setzen sich aus der Länge des Pendels und der halben Dicke der Massescheibe zusammen)}
+\begin{table}[H]
+    \centering
+    \caption{Periodendauern variables g-Pendel}
+    \label{tab:TgPendel}
+    \begin{tabular}{c | c c}
+        Länge (cm) & $T_1$ für $\alpha = 67.7^\circ (s)$ & $ T_2$ für $\alpha = 80.2^\circ (s)$ \\
+        \hline
+        14.15 & 1.314 & 1.864 \\
+        33.40 & 1.820 & 2.584 \\
+    \end{tabular}
+\end{table}
+\noindent
+Nun können analog zum Fadenpendel die Werte für $g$ bestimmt werden.
+Zunächst für $\alpha_1 = 67.7^\circ$:
+\begin{equation}
+    \begin{split}
+        g_{\alpha_1,l_1} &= 4\pi^2 \cdot \frac{0.1415m}{(1.314s)^2} \\
+                         &= 3.24m/s^2
+    \end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        g_{\alpha_1,l_2} &= 4\pi^2 \cdot \frac{0.3340m}{(1.820s)^2} \\
+                         &= 3.98m/s^2
+    \end{split}
+\end{equation}
+Nun für $\alpha_2 = 80.2^\circ$:
+\begin{equation}
+    \begin{split}
+        g_{\alpha_2,l_1} &= 4\pi^2 \cdot \frac{0.1415m}{(1.864s)^2} \\
+                       &= 1.61m/s^2
+    \end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        g_{\alpha_2,l_2} &= 4\pi^2 \cdot \frac{0.3340m}{(2.584s)^2} \\
+                         &= 1.975 m/s^2
+    \end{split}
+\end{equation}
+Aus den Messwerten geht hervor, dass die Beschleunigung für einen größeren Winkel ($\alpha$) abnimmt. ($g_{\alpha_1, l_1} > g_{\alpha_2, l_1}$ und $g_{\alpha_1, l_2} > g_{\alpha_2, l_2}$)
+Da laut Theorie $g_{eff} = g \cdot cos(\alpha)$ und da der Kosinus im Interval [0, 90°] monoton fallend ist, ist dieses Ergebnis konsistent mit der Theorie. \\
+Außerdem geht aus den Messwerten hervor, dass $g$ für größere Stablängen zunimmt. Dies ist nicht mit der Theorie vereinbar.
+Die Abweichung von der Theorie könnte eventuell dadurch erklärt werden, dass es sich bei dem Pendel aufgrund der endlichen Masse des Stabs nicht um ein perfektes mathematisches Pendel handelt,
+weshalb die zur berechnung verwendete Formel keine optimale Näherung mehr bietet.
+Ein weiterer Grund für die Abweichung könnte gewesen sein, dass eventuell der Stab während der Versuchsdurchführung aufgrund des Starken Drehmoments zu einem geringeren
+Winkel gerutscht sein könnte. Dies würde, wie in den Messwerten erkennbar zu einer Erhöhung der effektiven Erdbeschleunigung führen. (Selbst eine kleine veränderung des
+Winkels hat bereits einen großen Einfluss auf den Wert von $g_{eff}$)
+Aufgrund des hohen Drehmoments, das auf die Aufhängung wirkt, kommt es zudem zu einer erhöhten Reibung für die großen gemessenen Winkel. Auch diese Reibung 
+könnte zu einem Fehler in den Messwerten führen.
+
+Auf dem Mond würde ein Pendel aufgrund der geringeren Beschleunigung ($g_{mond} < g_{erde}$) und der Formel
+\begin{equation}
+    \begin{split}
+        f &= \frac{1}{T} \\
+          &= \frac{1}{2\pi \sqrt{\frac{l}{g}}} \\
+          &= \frac{1}{2\pi} \sqrt{\frac{g}{l}}
+    \end{split}
+\end{equation}
+mit einer geringeren Frequenz schwingen als auf der Erde, da $f \propto \sqrt{g}$.
+Diese geringere Beschleunigung ist äquivalent zu einem größeren Winkel im Variablen g-Pendel.
 
 \newpage
 \section{Teilversuch II: }
