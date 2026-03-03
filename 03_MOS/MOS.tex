@@ -70,7 +70,7 @@ Hierzu betrachten wir Abbildung \ref{fig:KraefteFadenpendel}:
     \caption{Kräfte Fadenpendel}
     \label{fig:KraefteFadenpendel}
 \end{figure}
-Nach der Abbildung gilt für die Rücktreibende Kraft bei einem Auslenkungswinkel $\alpha$:
+Nach dieser Abbildung gilt für die Rücktreibende Kraft bei einem Auslenkungswinkel $\alpha$:
 \begin{equation}
     \begin{split}
     F_{rueck}   &= F_g \cdot sin(\alpha) \\
@@ -151,7 +151,7 @@ Abgesehen von der Veränderung von $g$ verhält sich das Pendel näherungsweise 
 
 \subsection{Auswertung der Messwerte}
 \subsubsection{Fadenpendel}
-Aus den bestimmten Dauern für 20 Schwingungen ergeben sich mit $T_i = \frac{t_i}{20}$ die in Tabelle \ref{tab:PeriodeMessdurchlaeufe}
+Aus den bestimmten Dauern für 20 Schwingungen ergeben sich mit $T_i = \frac{t_i}{20}$ die in Tabelle \ref{tab:PeriodeMessdurchlaeufe} dokumentierten Periodendauern.
 \begin{table}[H]
     \centering
     \caption{Experimentelle Periodendauern der verschiedenen Messdurchläufe}
@@ -195,7 +195,7 @@ Somit gilt:
 \begin{equation*}
     \boxed{T = (1.4461 \pm 0.0017)s}
 \end{equation*}
-Als Länge bis zum Schwerpunkt der Kugel wurde ein Wert von
+Die gemessene Länge $l$ vom Aufhängepunkt bis zum Schwerpunkt der Kugel beträgt:
 \begin{equation*}
     l = (516.8 \pm 2.1)mm
 \end{equation*}
@@ -231,7 +231,7 @@ Es gilt:
 Somit stimmt der experimentell bestimmte Wert von $g$ im Rahmen der Unsicherheit mit dem Liteaturwert für München überein.
 
 \subsubsection{Variables g-Pendel}
-Für das variable g-Pendel ergeben sich folgende Periodendauern ($T = \frac{t_{ges}}{n}$)für unterschiedliche Wahlen von $\alpha$ und $l$:
+Für das variable g-Pendel ergeben sich folgende Periodendauern ($T = \frac{t_{ges}}{n}$) für unterschiedliche Wahlen von $\alpha$ und $l$:
 \textit{(Die Längen setzen sich aus der Länge des Pendels und der halben Dicke der Massescheibe zusammen)}
 \begin{table}[H]
     \centering
@@ -278,11 +278,10 @@ Außerdem geht aus den Messwerten hervor, dass $g$ für größere Stablängen zu
 Die Abweichung von der Theorie könnte eventuell dadurch erklärt werden, dass es sich bei dem Pendel aufgrund der endlichen Masse des Stabs nicht um ein perfektes mathematisches Pendel handelt,
 weshalb die zur berechnung verwendete Formel keine optimale Näherung mehr bietet.
 Ein weiterer Grund für die Abweichung könnte gewesen sein, dass eventuell der Stab während der Versuchsdurchführung aufgrund des Starken Drehmoments zu einem geringeren
-Winkel gerutscht sein könnte. Dies würde, wie in den Messwerten erkennbar zu einer Erhöhung der effektiven Erdbeschleunigung führen. (Selbst eine kleine veränderung des
-Winkels hat bereits einen großen Einfluss auf den Wert von $g_{eff}$)
+Winkel gerutscht sein könnte. Dies würde, wie in den Messwerten erkennbar zu einer Erhöhung der effektiven Erdbeschleunigung führen. (Selbst eine kleine Veränderung des
+Winkels hat bereits einen großen Einfluss auf den Wert von $g_{eff}$) \\
 Aufgrund des hohen Drehmoments, das auf die Aufhängung wirkt, kommt es zudem zu einer erhöhten Reibung für die großen gemessenen Winkel. Auch diese Reibung 
-könnte zu einem Fehler in den Messwerten führen.
-
+könnte zu einem Fehler in den Messwerten führen.\\
 Auf dem Mond würde ein Pendel aufgrund der geringeren Beschleunigung ($g_{Mond} < g_{Erde}$) und der Formel \ref{eq:fgRelation} mit einer geringeren Frequenz schwingen als auf der Erde, da $f \propto \sqrt{g}$.
 \begin{equation}
     \begin{split}
@@ -302,13 +301,14 @@ Diese geringere Frequenz kann mit einem Winkel von $\alpha = arccos(\frac{1}{6})
 \section{Teilversuch II: Ungedämpfte freie Schwingung}
 \subsection{Theoretischer Hintergrund}
 In Teilversuch II wurde die Schwingungsdauer eines Federpendels für verschiedene Massen $m_k$ gemessen. Wie in Abbildung \ref{fig:Federpendel} erkennbar, ist dieses
-über eine Umlenkrolle mit Radius $r$ und Masse $m_r$ mit der Feder verbunden. Diese hat eine Masse von $m_f$ und eine Federkonstante $D$.
+über eine Umlenkrolle mit Radius $r$ und Masse $m_r$ mit der Feder verbunden. Die Feder hat eine Masse von $m_f$ und eine Federkonstante $D$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./Images/FederpendelUngedaempft.png}
     \caption{Versuchsaufbau Federpendel}
     \label{fig:Federpendel}
 \end{figure}
+\noindent
 Die effektiven Kräfte für eine Auslenkung aus der Ruhelage sind folgende:
 \begin{equation}
     \begin{split}
@@ -331,7 +331,7 @@ Diese hat die allgemeine Lösung:
                  &= \hat{s} \cdot cos(\omega_0t + \phi_0)
     \end{split}
 \end{equation}
-$c_1$ und $c_2$ bzw. $\phi_0$ sind hierbei durch die Anfangsbedingungen bestimmt. \\
+$c_1$ und $c_2$ (bzw. $\phi_0$ und $\hat s$) sind hierbei durch die Anfangsbedingungen bestimmt. \\
 Die Eigenfrequenz der Schwingung $\omega_0$ ist gegeben durch:
 \begin{equation}
     \omega_0 = \sqrt{\frac{D}{m_k + \frac{1}{2}m_r}}
@@ -358,6 +358,7 @@ Tabelle \ref{tab:T_m} dargestellt. Zusätzlich wurden noch die Unsicherheiten de
         \hline
     \end{tabular}
 \end{table}
+\noindent
 Aus diesen Werten können dann die Schwingungsfrequenzen berechnet werden:
 \begin{equation}
     \bar{f} = \frac{1}{\bar{T}}
@@ -444,7 +445,7 @@ Damit ergibt sich aus \ref{eq:LineareFormT_0^2-m_k}:
           &= 9.87 \frac{\si{\N}}{\si{\m}}
     \end{split}
 \end{equation}
-Die Funktion hat eine Nullstelle bei $m_k* = $
+Durch Gleichsetzen der Formel für ${T_0}^2$ mit 0 bestimmen wir die Nullstelle der Funktion.
 \begin{equation}
     \begin{split}
         {T_0}^2(m_k^*) &= 4.00\frac{{\si{s}}^2}{\si{\kg}}m_k^* + 0.373{\si{s}}^2 \overset{!}{=} 0 \\
@@ -456,9 +457,10 @@ Die Nullstelle liegt somit bei einer Masse von $m_k^* = -0.093$.
 An der Nullstelle gilt:
 \begin{equation}
     \begin{split}
-        {T_0}^2(m_k^*) &= \frac{4 \pi^2}{D} m_k^* + \frac{4 \pi^2}{D} \left(\frac{1}{2} m_r + \rho m_f\right) = 0 \\
+        {T_0}^2(m_k^*) &= 0 \\
+        \Leftrightarrow \frac{4 \pi^2}{D} m_k^* + \frac{4 \pi^2}{D} \left(\frac{1}{2} m_r + \rho m_f\right) &= 0 \\
         \Rightarrow  \frac{1}{2}m_r + \rho m_f &= -m_k^* \\
-        &= \boxed{0.093\si{\kg}}
+        \Rightarrow  \frac{1}{2}m_r + \rho m_f &= \boxed{0.093\si{\kg}}
     \end{split}
 \end{equation}
 Also liegt die Nullstelle bei $-(\frac{1}{2}m_r + \rho m_f)$. Damit hat die Nullstelle die physikalische Bedeutung, dass sie $\mathit{-(Effektive Masse von Rolle und Feder)}$ angibt.
@@ -472,7 +474,7 @@ Diese insgesamte Effektive Masse liegt somit also bei $\frac{1}{2}m_r + \rho m_f
 
 \newpage
 \chapter{Anhang}
-\section{SCRIPTS}
+% \section{SCRIPTS}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
