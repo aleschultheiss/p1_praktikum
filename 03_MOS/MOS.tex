@@ -143,7 +143,6 @@ senkrechten Komponente hat (diese bewirkt ein Drehmoment auf den Stab, welches k
     \caption{Darstellung der Schwingungsebene}
     \label{fig:Schwingungsebene}
 \end{figure}
-\noindent
 Mithilfe der Abbildung \ref{fig:Schwingungsebene} lässt sich ein Ausdruck für die parallele Komponente der Beschleunigung ($g_{\parallel}$) bestimmen.
 \begin{equation}
     g_\parallel = g \cdot cos(\alpha)
@@ -168,6 +167,7 @@ Aus den bestimmten Dauern für 20 Schwingungen ergeben sich mit $T_i = \frac{t_i
         5 & 1.4440\\
     \end{tabular}
 \end{table}
+\noindent
 Der Mittelwert dieser Messwerte ist gegeben durch das Arithmetische Mittel:
 \begin{equation}
     \begin{split}
@@ -195,12 +195,10 @@ Somit gilt:
 \begin{equation*}
     \boxed{T = (1.4461 \pm 0.0017)s}
 \end{equation*}
-
 Als Länge bis zum Schwerpunkt der Kugel wurde ein Wert von
 \begin{equation*}
     l = (516.8 \pm 2.1)mm
 \end{equation*}
-
 Daraus ergibt sich mithilfe von Formel \ref{eq:gAusT} ein experimenteller Mittelwert für g.
 \begin{equation}
     \begin{split}
@@ -208,7 +206,6 @@ Daraus ergibt sich mithilfe von Formel \ref{eq:gAusT} ein experimenteller Mittel
                 &= 9.770m/s^2
     \end{split}
 \end{equation}
-
 Die Unsicherheit dieses Wertes errechnet sich mit folgender Formel:
 \begin{equation}
     \begin{split}
@@ -219,12 +216,10 @@ Die Unsicherheit dieses Wertes errechnet sich mit folgender Formel:
                  &\approx 0.05 m/s^2
     \end{split}
 \end{equation}
-
 Als experimentell bestimmter Wert für die Erdbeschleunigung $g_{exp}$ ergibt sich also:
 \begin{equation*}
     \boxed{g_{exp} = (9.77 \pm 0.05)m/s^2}
 \end{equation*}
-
 Es gilt:
 \begin{equation}
     \begin{split}
@@ -255,26 +250,26 @@ Zunächst für $\alpha_1 = 67.7^\circ$:
 \begin{equation}
     \begin{split}
         g_{\alpha_1,l_1} &= 4\pi^2 \cdot \frac{0.1415m}{(1.314s)^2} \\
-                         &= 3.24m/s^2
+                         &= \boxed{3.24m/s^2}
     \end{split}
 \end{equation}
 \begin{equation}
     \begin{split}
         g_{\alpha_1,l_2} &= 4\pi^2 \cdot \frac{0.3340m}{(1.820s)^2} \\
-                         &= 3.98m/s^2
+                         &= \boxed{3.98m/s^2}
     \end{split}
 \end{equation}
 Nun für $\alpha_2 = 80.2^\circ$:
 \begin{equation}
     \begin{split}
         g_{\alpha_2,l_1} &= 4\pi^2 \cdot \frac{0.1415m}{(1.864s)^2} \\
-                       &= 1.61m/s^2
+                       &= \boxed{1.61m/s^2}
     \end{split}
 \end{equation}
 \begin{equation}
     \begin{split}
         g_{\alpha_2,l_2} &= 4\pi^2 \cdot \frac{0.3340m}{(2.584s)^2} \\
-                         &= 1.975 m/s^2
+                        &= \boxed{1.975 m/s^2}
     \end{split}
 \end{equation}
 Aus den Messwerten geht hervor, dass die Beschleunigung für einen größeren Winkel ($\alpha$) abnimmt. ($g_{\alpha_1, l_1} > g_{\alpha_2, l_1}$ und $g_{\alpha_1, l_2} > g_{\alpha_2, l_2}$)
@@ -288,22 +283,186 @@ Winkels hat bereits einen großen Einfluss auf den Wert von $g_{eff}$)
 Aufgrund des hohen Drehmoments, das auf die Aufhängung wirkt, kommt es zudem zu einer erhöhten Reibung für die großen gemessenen Winkel. Auch diese Reibung 
 könnte zu einem Fehler in den Messwerten führen.
 
-Auf dem Mond würde ein Pendel aufgrund der geringeren Beschleunigung ($g_{mond} < g_{erde}$) und der Formel
+Auf dem Mond würde ein Pendel aufgrund der geringeren Beschleunigung ($g_{Mond} < g_{Erde}$) und der Formel \ref{eq:fgRelation} mit einer geringeren Frequenz schwingen als auf der Erde, da $f \propto \sqrt{g}$.
 \begin{equation}
     \begin{split}
         f &= \frac{1}{T} \\
           &= \frac{1}{2\pi \sqrt{\frac{l}{g}}} \\
           &= \frac{1}{2\pi} \sqrt{\frac{g}{l}}
     \end{split}
+    \label{eq:fgRelation}
 \end{equation}
-mit einer geringeren Frequenz schwingen als auf der Erde, da $f \propto \sqrt{g}$.
-Diese geringere Beschleunigung ist äquivalent zu einem größeren Winkel im Variablen g-Pendel.
+Explizit folgt mit $g_{Mond} \approx \frac{1}{6} \cdot g_{Erde}$ für die Frequenz auf dem Mond
+\begin{equation}
+    f_{Mond} \approx \frac{1}{\sqrt{6}}f_{Erde}
+\end{equation}
+Diese geringere Frequenz kann mit einem Winkel von $\alpha = arccos(\frac{1}{6}) = 80.4^\circ$ im Variablen g-Pendel simuliert werden.
 
 \newpage
-\section{Teilversuch II: }
+\section{Teilversuch II: Ungedämpfte freie Schwingung}
+\subsection{Theoretischer Hintergrund}
+In Teilversuch II wurde die Schwingungsdauer eines Federpendels für verschiedene Massen $m_k$ gemessen. Wie in Abbildung \ref{fig:Federpendel} erkennbar, ist dieses
+über eine Umlenkrolle mit Radius $r$ und Masse $m_r$ mit der Feder verbunden. Diese hat eine Masse von $m_f$ und eine Federkonstante $D$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Images/FederpendelUngedaempft.png}
+    \caption{Versuchsaufbau Federpendel}
+    \label{fig:Federpendel}
+\end{figure}
+Die effektiven Kräfte für eine Auslenkung aus der Ruhelage sind folgende:
+\begin{equation}
+    \begin{split}
+        &F_{rueck} = -Ds, \\
+        &F_{res} = m_k\ddot{s} + \frac{I_r\ddot{\phi} }{r}\\
+    \end{split}
+\end{equation}
+Mit $\ddot{\phi} = \frac{\ddot{s}}{r}$ und $I_r = \frac{1}{2} m_r r^2$ ergibt sich daraus für $F_{res}$:
+\begin{equation}
+    F_{res} = m_k\ddot{s} + \frac{1}{2} m_r \ddot{s}
+\end{equation}
+Somit folgt die Bewegungsgleichung:
+\begin{equation}
+    (m_k + \frac{1}{2} m_r) \ddot{s} + Ds = 0
+\end{equation}
+Diese hat die allgemeine Lösung:
+\begin{equation}
+    \begin{split}
+            s(t) &= c_1 e^{i\omega_0} + c_2 e^{-i\omega_o} \\
+                 &= \hat{s} \cdot cos(\omega_0t + \phi_0)
+    \end{split}
+\end{equation}
+$c_1$ und $c_2$ bzw. $\phi_0$ sind hierbei durch die Anfangsbedingungen bestimmt. \\
+Die Eigenfrequenz der Schwingung $\omega_0$ ist gegeben durch:
+\begin{equation}
+    \omega_0 = \sqrt{\frac{D}{m_k + \frac{1}{2}m_r}}
+    \label{eq:omega0}
+\end{equation}
 
-\newpage
-\section{Teilversuch II: }
+\subsection{Auswertung der Messwerte}
+Im Experiment wurden für die verschiedenen Massen über jeweils 20 Schwingungen unterschiedliche durchschnittliche Periodendauern ($\bar{T}$) mit zugehörigen Standardabweichungen bestimmt. Diese sind in 
+Tabelle \ref{tab:T_m} dargestellt. Zusätzlich wurden noch die Unsicherheiten der Messwerte in die Tabelle eingetragen. Diese errechnen sich durch die Formel \ref{eq:UnsicherheitSigma}.
+\begin{equation}
+    \Delta T = \frac{\sigma}{\sqrt{n}} = \frac{\sigma}{\sqrt{20}}
+    \label{eq:UnsicherheitSigma}
+\end{equation}
+\begin{table}[H]
+    \centering
+    \caption{Periodendauern für verschiedene Massen}
+    \label{tab:T_m}
+    \begin{tabular}{| c | c c c c c |}
+        \hline
+        Masse(g) & 36.18 & 54.36 & 72.49 & 90.60 & 108.75 \\
+        $\bar{T}(s)$ & 0.718 & 0.768 & 0.816 & 0.859 & 0.896 \\
+        $\sigma (s)$ & 0.0011 & 0.0013 & 0.0007 & 0.0012 & 0.0021 \\
+        $\Delta T (10^{-4}s)$ & 2.5 & 3.0 & 1.6 & 2.7 & 4.7 \\
+        \hline
+    \end{tabular}
+\end{table}
+Aus diesen Werten können dann die Schwingungsfrequenzen berechnet werden:
+\begin{equation}
+    \bar{f} = \frac{1}{\bar{T}}
+\end{equation}
+Setzt man die Werte für $\bar T$ ein, erhält man:
+\begin{equation}
+    \begin{split}
+        \bar{f}_{m_1} = 1.39276 \si{\hertz} \\
+        \bar{f}_{m_2} = 1.30208 \si{\hertz} \\
+        \bar{f}_{m_3} = 1.22549 \si{\hertz} \\
+        \bar{f}_{m_4} = 1.16414 \si{\hertz} \\
+        \bar{f}_{m_5} = 1.11607 \si{\hertz} \\
+    \end{split}
+\end{equation}
+Die Unsicherheiten der Frequenz können mittels Linearisierung berechnet werden, da die Unsicherheiten der Periodendauer nur sehr klein sind:
+\begin{equation}
+    \begin{split}
+        \Delta f &= \left|\frac{\partial f}{\partial T}\right| \Delta T \\
+                 &= \frac{1}{T^2} \Delta T
+    \end{split}
+\end{equation}
+Einsetzen der Werte ergibt:
+\begin{equation}
+    \begin{split}
+        \Delta f_{m_1} = 4.9 \cdot 10^{-4} \si{\hertz} \\
+        \Delta f_{m_2} = 5.1 \cdot 10^{-4} \si{\hertz} \\
+        \Delta f_{m_3} = 2.5 \cdot 10^{-4} \si{\hertz} \\
+        \Delta f_{m_4} = 3.7 \cdot 10^{-4} \si{\hertz} \\
+        \Delta f_{m_5} = 5.9 \cdot 10^{-4} \si{\hertz} \\
+    \end{split}
+\end{equation}
+Somit sind die Endergebnisse für die Frequenzen:
+\begin{equation}
+    \begin{split}
+        f_{m_1} = (1.3928 \pm 0.0005) \si{\hertz} \\
+        f_{m_2} = (1.3021 \pm 0.0006) \si{\hertz} \\
+        f_{m_3} = (1.2255 \pm 0.0003) \si{\hertz} \\
+        f_{m_4} = (1.1641 \pm 0.0004) \si{\hertz} \\
+        f_{m_5} = (1.1161 \pm 0.0006) \si{\hertz} \\
+    \end{split}
+\end{equation}
+
+\subsubsection{Bestimmung der Federkonstanten}
+Aus Formel \ref{eq:omega0} folgt:
+\begin{equation}
+    \begin{split}
+        T_0 &= \frac{2\pi}{\sqrt{\frac{D}{m_{ges}}}} \\
+        \Leftrightarrow T_0 &= 2\pi \sqrt{\frac{m_{ges}}{D}} \\
+        \Leftrightarrow {T_0}^2 &= \frac{4 \pi^2}{D} m_{ges} \\
+    \end{split}
+\end{equation}
+In der Realität setzt sich die Masse $m_{ges}$ aus der Masse der Massestückchen, aus der effektiven Masse der Umlenkrolle und aus der Masse der Feder zusammen.
+Da nicht alle Masseelemente der Feder voll ausgelenkt werden, muss die Masse der Feder durch einen Faktor $\rho \in [0, 1]$ korrigiert werden.
+Somit ergibt sich insgesamt:
+\begin{equation}
+    \begin{split}
+        {T_0}^2 &= \frac{4 \pi^2}{D} (m_k + \frac{1}{2} m_r + \rho m_f) \\
+                &= \frac{4 \pi^2}{D} m_k + \frac{4 \pi^2}{D} \left(\frac{1}{2} m_r + \rho m_f\right) \\
+                &= am_k + b
+    \end{split}
+    \label{eq:LineareFormT_0^2-m_k}
+\end{equation}
+Trägt man also ${T_0}^2$ gegen $m_k$ auf, ergibt sich eine lineare Funktion mit der Steigung $a = \frac{4 \pi^2}{D}$. Der Graph in Abbildung \ref{fig: T0^2-m_k} zeigt 
+diesen Zusammenhang für die bestimmten Messwerte. Zur Auswertung wurde eine Ausgleichsgerade durch die Werte hindurch gelegt.
+\clearpage
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=1\textwidth]{./MOS_VorOrt/MOSEvaluation.png}
+    \caption{Graph von ${T_0}^2 (m_k)$}
+    \label{fig: T0^2-m_k}
+\end{sidewaysfigure}
+\clearpage
+\noindent
+Die Gleichung der Ausgleichsgerade wurde im Versuch bestimmt als:
+\begin{equation}
+    {T_0}^2(m_k) = 4.00\frac{{\si{s}}^2}{\si{\kg}}m_k + 0.373{\si{s}}^2
+\end{equation}
+Die Steigung der Ausgleichsgerade ist also $a = 4.00 \cdot \frac{\si{\s}^2}{\si{\kg}}$.
+Damit ergibt sich aus \ref{eq:LineareFormT_0^2-m_k}:
+\begin{equation}
+    \begin{split}
+        D &= \frac{4 \pi^2}{a} \\
+          &= \frac{4 \pi^2}{4.00} \frac{\si{\kg}}{\si{\s^2}} \\
+          &= 9.87 \frac{\si{\N}}{\si{\m}}
+    \end{split}
+\end{equation}
+Die Funktion hat eine Nullstelle bei $m_k* = $
+\begin{equation}
+    \begin{split}
+        {T_0}^2(m_k^*) &= 4.00\frac{{\si{s}}^2}{\si{\kg}}m_k^* + 0.373{\si{s}}^2 \overset{!}{=} 0 \\
+        \Rightarrow m_k^* &= -\frac{0.372 {\si{\s}}^2}{4.00 \frac{{\si{\s}}^2}{\si{\kg}}} \\
+        &= \boxed{-0.093kg}
+    \end{split}
+\end{equation}
+Die Nullstelle liegt somit bei einer Masse von $m_k^* = -0.093$.
+An der Nullstelle gilt:
+\begin{equation}
+    \begin{split}
+        {T_0}^2(m_k^*) &= \frac{4 \pi^2}{D} m_k^* + \frac{4 \pi^2}{D} \left(\frac{1}{2} m_r + \rho m_f\right) = 0 \\
+        \Rightarrow  \frac{1}{2}m_r + \rho m_f &= -m_k^* \\
+        &= \boxed{0.093\si{\kg}}
+    \end{split}
+\end{equation}
+Also liegt die Nullstelle bei $-(\frac{1}{2}m_r + \rho m_f)$. Damit hat die Nullstelle die physikalische Bedeutung, dass sie $\mathit{-(Effektive Masse von Rolle und Feder)}$ angibt.
+Diese insgesamte Effektive Masse liegt somit also bei $\frac{1}{2}m_r + \rho m_f = 0.093kg$.
 
 \newpage
 \section{Teilversuch III: }
