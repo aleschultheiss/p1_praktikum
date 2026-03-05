@@ -467,11 +467,698 @@ An der Nullstelle gilt:
 Also liegt die Nullstelle bei $-(\frac{1}{2}m_r + \rho m_f)$. Damit hat die Nullstelle die physikalische Bedeutung, dass sie $\mathit{-(Effektive Masse von Rolle und Feder)}$ angibt.
 Diese insgesamte Effektive Masse liegt somit also bei $\frac{1}{2}m_r + \rho m_f = 0.093kg$.
 
-\newpage
-\section{Teilversuch III: }
+
+
+
+
+
+
+
+
 
 \newpage
-\section{Teilversuch IV: }
+\section{Teilversuch III: Gedämpfte freie Schwingung}
+\subsection*{Frequenz der gedämpften freien Schwingung}
+
+Zunächst wird aus den gemessenen Schwingungsdauern $T_i$ die mittlere Schwingungsdauer $\bar{T}$ bestimmt. Anschließend wird daraus die Frequenz $f_\mathrm{d}$ der gedämpften Schwingung berechnet. Zusätzlich wird die Unsicherheit der mittleren Schwingungsdauer aus der Streuung der Messwerte bestimmt und auf die Frequenz fortgepflanzt.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c c}
+        \hline
+        $n$ & $A_{\mathrm{max}}$ / mm & $A_{\mathrm{min}}$ / mm & $T_n$ / s \\
+        \hline
+        1 & 19{,}0 & 12{,}8 & 0{,}901 \\
+        2 & 8{,}6  & 5{,}8  & 0{,}897 \\
+        3 & 3{,}8  & 2{,}4  & 0{,}880 \\
+        4 & 1{,}6  & 1{,}0  & 0{,}847 \\
+        5 & 0{,}6  & 0{,}6  & 0{,}847 \\
+        \hline
+    \end{tabular}
+    \caption{Gemessene Amplituden und Schwingungsdauern der gedämpften freien Schwingung.}
+\end{table}
+
+Die mittlere Schwingungsdauer ergibt sich aus dem arithmetischen Mittel der Einzelmessungen:
+
+\[
+\bar{T} = \frac{1}{5}\sum_{i=1}^{5} T_i
+\]
+
+mit
+
+\[
+\bar{T} = \frac{0{,}901 + 0{,}897 + 0{,}880 + 0{,}847 + 0{,}847}{5}\,\mathrm{s}.
+\]
+
+Zunächst wird die Summe der einzelnen Schwingungsdauern berechnet:
+
+\[
+0{,}901 + 0{,}897 + 0{,}880 + 0{,}847 + 0{,}847 = 4{,}372\,\mathrm{s}.
+\]
+
+Damit folgt für die mittlere Schwingungsdauer:
+
+\[
+\bar{T} = \frac{4{,}372}{5}\,\mathrm{s} = 0{,}8744\,\mathrm{s}.
+\]
+
+Zur Bestimmung der Unsicherheit wird zunächst die Standardabweichung der Einzelmesswerte berechnet:
+
+\[
+s_T = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(T_i-\bar{T})^2}.
+\]
+
+Mit $n=5$ und den gemessenen Werten ergibt sich:
+
+\[
+s_T \approx 0{,}0275\,\mathrm{s}.
+\]
+
+Die Unsicherheit des Mittelwerts ist dann gegeben durch:
+
+\[
+\Delta \bar{T} = \frac{s_T}{\sqrt{n}}
+\]
+
+und damit
+
+\[
+\Delta \bar{T} = \frac{0{,}0275}{\sqrt{5}}\,\mathrm{s} \approx 0{,}0123\,\mathrm{s}.
+\]
+
+Somit ergibt sich für die mittlere Schwingungsdauer:
+
+\[
+\boxed{\bar{T} = (0{,}874 \pm 0{,}012)\,\mathrm{s}}.
+\]
+
+Die Frequenz der gedämpften Schwingung berechnet sich über
+
+\[
+f_\mathrm{d} = \frac{1}{\bar{T}}.
+\]
+
+Einsetzen liefert
+
+\[
+f_\mathrm{d} = \frac{1}{0{,}8744\,\mathrm{s}} = 1{,}1436\,\mathrm{Hz}.
+\]
+
+Die Unsicherheit der Frequenz ergibt sich durch Gaußsche Fehlerfortpflanzung:
+
+\[
+\Delta f_\mathrm{d}
+=
+\left|\frac{\partial f}{\partial T}\right| \Delta \bar{T}
+=
+\frac{1}{\bar{T}^2}\Delta \bar{T}.
+\]
+
+Einsetzen ergibt:
+
+\[
+\Delta f_\mathrm{d}
+=
+\frac{0{,}0123}{(0{,}8744)^2}\,\mathrm{Hz}
+\approx 0{,}016\,\mathrm{Hz}.
+\]
+
+Gerundet erhält man damit:
+
+\[
+\boxed{f_\mathrm{d} = (1{,}14 \pm 0{,}02)\,\mathrm{Hz}}.
+\]
+
+\noindent
+Aus den Messwerten ergibt sich somit eine mittlere Schwingungsdauer 
+von $(0{,}874 \pm 0{,}012)\,\mathrm{s}$ sowie eine Frequenz der gedämpften 
+freien Schwingung von $(1{,}14 \pm 0{,}02)\,\mathrm{Hz}$. 
+
+
+\subsubsection*{Vergleich der Frequenz der gedämpften Schwingung mit $f_0$}
+
+Aus den Periodendauern der gedämpften Schwingung wurde zuvor bestimmt:
+\[
+f_\mathrm{d} = (1{,}144 \pm 0{,}016)\,\mathrm{Hz}.
+\]
+
+Für die ungedämpfte Schwingung ist gegeben: (siehe Auswetung Teilversuch II)
+\[
+f_0 = (1{,}1161 \pm 0{,}0006)\,\mathrm{Hz}.
+\]
+
+Die absolute Abweichung beträgt damit:
+\[
+\Delta f = f_\mathrm{d} - f_0
+= 1{,}144 - 1{,}1161
+= 0{,}0279\,\mathrm{Hz}.
+\]
+
+Die relative Abweichung ergibt sich zu:
+\[
+\frac{\Delta f}{f_0}
+= \frac{0{,}0279}{1{,}1161}
+\approx 2{,}5\%.
+\]
+
+Zur Beurteilung, ob die Werte innerhalb der Unsicherheiten übereinstimmen, wird die kombinierte Unsicherheit verwendet:
+\[
+u_{\Delta f} = \sqrt{u(f_\mathrm{d})^2 + u(f_0)^2}
+= \sqrt{(0{,}016)^2 + (0{,}0006)^2}
+\approx 0{,}0160\,\mathrm{Hz}.
+\]
+
+Damit folgt die normierte Abweichung:
+\[
+z = \frac{\lvert \Delta f \rvert}{u_{\Delta f}}
+= \frac{0{,}0279}{0{,}0160}
+\approx 1{,}7.
+\]
+
+\noindent
+Die Frequenz der gedämpften Schwingung liegt somit um etwa $2{,}5\%$ über der ungedämpften Frequenz.
+Unter Berücksichtigung der Unsicherheiten ergibt sich eine Abweichung von etwa $1{,}7\sigma$ und die Werte sind damit noch im Bereich einer (ca. $2\sigma$-)Kompatibilität.
+ 
+
+\subsubsection*{Bestimmung des logarithmischen Dekrements}
+
+Für die Amplitudenmaxima $\hat x_n$ gilt bei der gedämpften freien Schwingung
+\[
+\hat x_n = \hat x_0 \, e^{-\Lambda n}.
+\]
+Durch Logarithmieren folgt der lineare Zusammenhang
+\[
+\ln(\hat x_n)=\ln(\hat x_0)-\Lambda n.
+\]
+Damit ist im Diagramm $\ln(\hat x_n)$ gegen $n$ die Steigung der Ausgleichsgeraden gleich $-\Lambda$.
+Aus der im Versuch angepassten Geraden mit Steigung
+\[
+a = -0{,}862
+\]
+ergibt sich somit unmittelbar
+\[
+\boxed{\Lambda = -a = 0{,}862.}
+\]
+Die Steigung a hat die DAQ-Software bestimmt.
+Alternativ kann man die Steigung auch aus folgender Ausgleichsgerade ablesen: (Abb. 2.5)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./MOS_VorOrt/MOSEvaluationII.png}
+    \caption{DAQ Software plot}
+    \label{fig:MOSEvaluationII}
+\end{figure}
+
+\subsubsection*{Berechnung der Dämpfungskonstanten $\beta$}
+
+Nach Gleichung (32) gilt für das logarithmische Dekrement
+\[
+\Lambda = \beta T_\mathrm{d}.
+\]
+Daraus folgt für die Dämpfungskonstante
+\[
+\beta = \frac{\Lambda}{T_\mathrm{d}}.
+\]
+
+Mit dem zuvor bestimmten Wert
+\[
+\Lambda = 0{,}862
+\]
+und der mittleren Schwingungsdauer
+\[
+\bar{T} = 0{,}8744\,\mathrm{s}
+\]
+ergibt sich
+
+\[
+\beta = \frac{0{,}862}{0{,}8744\,\mathrm{s}} = 0{,}9858\,\mathrm{s^{-1}}.
+\]
+
+Gerundet erhält man damit
+
+\[
+\boxed{\beta = 0{,}986\,\mathrm{s^{-1}}.}
+\]
+
+\subsubsection*{Berechnung der gedämpften Schwingungsdauer mit Gleichung (34)}
+
+Nach Gleichung (34) ergibt sich die Schwingungsdauer des gedämpften Oszillators zu
+
+\[
+T_\mathrm{d} = T_0 \sqrt{1+\left(\frac{\Lambda}{2\pi}\right)^2}.
+\]
+
+Für die ungedämpfte Schwingung ist gegeben:
+
+\[
+f_0 = (1{,}1161 \pm 0{,}0006)\,\mathrm{Hz}.
+\]
+
+Daraus folgt für die Schwingungsdauer des ungedämpften Oszillators:
+
+\[
+T_0 = \frac{1}{f_0} = \frac{1}{1{,}1161\,\mathrm{Hz}} \approx 0{,}8960\,\mathrm{s}.
+\]
+
+Mit dem zuvor bestimmten logarithmischen Dekrement
+
+\[
+\Lambda = 0{,}862
+\]
+
+ergibt sich für die gedämpfte Schwingungsdauer:
+
+\[
+T_\mathrm{d} = 0{,}8960\,\mathrm{s}\cdot \sqrt{1+\left(\frac{0{,}862}{2\pi}\right)^2}.
+\]
+
+Zunächst wird der Klammerausdruck berechnet:
+
+\[
+\frac{0{,}862}{2\pi} \approx \frac{0{,}862}{6{,}2832} \approx 0{,}1372,
+\]
+
+\[
+\left(\frac{0{,}862}{2\pi}\right)^2 \approx 0{,}0188.
+\]
+
+Damit folgt:
+
+\[
+T_\mathrm{d} = 0{,}8960\,\mathrm{s}\cdot \sqrt{1{,}0188}
+\approx 0{,}8960\,\mathrm{s}\cdot 1{,}0094
+\approx 0{,}9044\,\mathrm{s}.
+\]
+
+Somit ergibt sich theoretisch:
+
+\[
+\boxed{T_\mathrm{d}^{(\mathrm{theo})} = 0{,}904\,\mathrm{s}}.
+\]
+
+Experimentell wurde zuvor die mittlere Schwingungsdauer
+
+\[
+\bar{T}_\mathrm{d}^{(\mathrm{exp})} = 0{,}8744\,\mathrm{s}
+\]
+
+bestimmt.
+
+Die absolute Abweichung beträgt damit:
+
+\[
+\Delta T = T_\mathrm{d}^{(\mathrm{theo})} - \bar{T}_\mathrm{d}^{(\mathrm{exp})}
+= 0{,}9044\,\mathrm{s} - 0{,}8744\,\mathrm{s}
+= 0{,}0300\,\mathrm{s}.
+\]
+
+Die relative Abweichung ergibt sich zu:
+
+\[
+\frac{\Delta T}{\bar{T}_\mathrm{d}^{(\mathrm{exp})}}
+=
+\frac{0{,}0300}{0{,}8744}
+\approx 0{,}0343
+\approx 3{,}4\%.
+\]
+
+Der mit Gleichung (34) berechnete Wert für die Schwingungsdauer des gedämpften Oszillators liegt somit um etwa $0{,}030\,\mathrm{s}$ bzw. $3{,}4\%$ über dem experimentell bestimmten Wert.
+
+
+
+\newpage
+\section{Teilversuch IV: Erzwungene Schwingung}
+\subsubsection*{Vergleich der Frequenzen der erzwungenen Schwingung mit den Erregerfrequenzen}
+
+Aus den gemessenen mittleren Schwingungsdauern $\bar T$ der erzwungenen Schwingung werden die zugehörigen Frequenzen mit
+
+\[
+f_\mathrm{erz}=\frac{1}{\bar T}
+\]
+
+berechnet. Anschließend werden diese mit den eingestellten Erregerfrequenzen $f$ verglichen.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c c c}
+        \hline
+        $f$ / Hz & $\bar T$ / s & $f_\mathrm{erz}$ / Hz & $\Delta f = f_\mathrm{erz}-f$ / Hz & rel. Abw. / \% \\
+        \hline
+        0{,}127 & 7{,}777 & 0{,}129 & +0{,}002 & +1{,}25 \\
+        0{,}317 & 3{,}217 & 0{,}311 & -0{,}006 & -1{,}94 \\
+        0{,}476 & 2{,}143 & 0{,}467 & -0{,}009 & -1{,}97 \\
+        0{,}649 & 1{,}577 & 0{,}634 & -0{,}015 & -2{,}29 \\
+        0{,}804 & 1{,}270 & 0{,}787 & -0{,}017 & -2{,}06 \\
+        0{,}951 & 1{,}077 & 0{,}929 & -0{,}022 & -2{,}37 \\
+        1{,}014 & 1{,}009 & 0{,}991 & -0{,}023 & -2{,}26 \\
+        1{,}185 & 0{,}864 & 1{,}157 & -0{,}028 & -2{,}33 \\
+        1{,}353 & 0{,}756 & 1{,}323 & -0{,}030 & -2{,}24 \\
+        1{,}515 & 0{,}675 & 1{,}481 & -0{,}034 & -2{,}21 \\
+        1{,}663 & 0{,}614 & 1{,}629 & -0{,}034 & -2{,}06 \\
+        1{,}811 & 0{,}564 & 1{,}773 & -0{,}038 & -2{,}10 \\
+        1{,}986 & 0{,}513 & 1{,}949 & -0{,}037 & -1{,}85 \\
+        2{,}346 & 0{,}434 & 2{,}304 & -0{,}042 & -1{,}78 \\
+        1{,}255 & 0{,}815 & 1{,}227 & -0{,}028 & -2{,}23 \\
+        1{,}113 & 0{,}921 & 1{,}086 & -0{,}027 & -2{,}45 \\
+        1{,}042 & 0{,}982 & 1{,}018 & -0{,}024 & -2{,}27 \\
+        \hline
+    \end{tabular}
+    \caption{Vergleich der berechneten Frequenzen der erzwungenen Schwingung mit den Erregerfrequenzen.}
+\end{table}
+
+Die aus den mittleren Schwingungsdauern berechneten Frequenzen der erzwungenen Schwingung 
+stimmen gut mit den jeweiligen Erregerfrequenzen überein. 
+Die relativen Abweichungen liegen überwiegend bei etwa $2\,\%$. 
+Damit bestätigt sich experimentell, 
+dass die erzwungene Schwingung mit der Frequenz des Erregers erfolgt.
+
+\subsubsection*{Vergleich der Resonanzfrequenz mit $f_0$ und der Frequenz der freien gedämpften Schwingung}
+
+Die Resonanzfrequenz $f_\mathrm{res}$ wird aus dem Maximum der Amplitude der erzwungenen Schwingung bestimmt. Aus der Messreihe ergibt sich das größte Amplitudenmaximum
+
+\[
+x_\mathrm{max}=44{,}0\,\mathrm{mm}
+\]
+
+bei der Frequenz
+
+\[
+\boxed{f_\mathrm{res}=1{,}113\,\mathrm{Hz}}.
+\]
+
+Zum Vergleich liegen die zuvor bestimmten Frequenzen bei
+
+\[
+f_0=(1{,}1161\pm0{,}0006)\,\mathrm{Hz}
+\]
+
+für die freie ungedämpfte Schwingung und
+
+\[
+f_\mathrm{d}=(1{,}14\pm0{,}02)\,\mathrm{Hz}
+\]
+
+für die freie gedämpfte Schwingung.
+
+Zunächst wird die Resonanzfrequenz mit der ungedämpften Eigenfrequenz verglichen:
+
+\[
+\Delta f_1 = f_\mathrm{res}-f_0
+=1{,}113-1{,}1161
+=-0{,}0031\,\mathrm{Hz}.
+\]
+
+Die relative Abweichung beträgt
+
+\[
+\frac{|\Delta f_1|}{f_0}\cdot 100\%
+=
+\frac{0{,}0031}{1{,}1161}\cdot 100\%
+\approx 0{,}28\%.
+\]
+
+Anschließend erfolgt der Vergleich mit der Frequenz der freien gedämpften Schwingung:
+
+\[
+\Delta f_2 = f_\mathrm{res}-f_\mathrm{d}
+=1{,}113-1{,}14
+=-0{,}027\,\mathrm{Hz}.
+\]
+
+Daraus ergibt sich eine relative Abweichung von
+
+\[
+\frac{|\Delta f_2|}{f_\mathrm{d}}\cdot 100\%
+=
+\frac{0{,}027}{1{,}14}\cdot 100\%
+\approx 2{,}37\%.
+\]
+
+Die experimentell bestimmte Resonanzfrequenz liegt damit sehr nahe bei der 
+Frequenz der freien ungedämpften Schwingung. Der Abstand zur Frequenz der freien 
+gedämpften Schwingung ist etwas größer. Insgesamt zeigt sich, dass die Resonanzfrequenz 
+im Experiment am besten mit der ungedämpften Eigenfrequenz übereinstimmt.
+
+\subsubsection*{Berechnung der Resonanzkreisfrequenz $\omega_\mathrm{res}$}
+
+Nach Gleichung (40) ergibt sich die Resonanzkreisfrequenz zu
+
+\[
+\omega_\mathrm{res}=\sqrt{\omega_0^2-2\beta^2}.
+\]
+
+Zunächst wird aus der Frequenz der freien ungedämpften 
+Schwingung $f_0$ die zugehörige Kreisfrequenz bestimmt:
+
+\[
+\omega_0 = 2\pi f_0.
+\]
+
+Mit
+
+\[
+f_0 = 1{,}1161\,\mathrm{Hz}
+\]
+
+folgt
+
+\[
+\omega_0 = 2\pi \cdot 1{,}1161\,\mathrm{Hz}
+= 7{,}0127\,\mathrm{rad/s}.
+\]
+
+Für die Dämpfungskonstante wurde zuvor bestimmt:
+
+\[
+\beta = 0{,}986\,\mathrm{s^{-1}}.
+\]
+
+Damit ergibt sich für die Resonanzkreisfrequenz:
+
+\[
+\omega_\mathrm{res}
+=
+\sqrt{(7{,}0127\,\mathrm{rad/s})^2-2\,(0{,}986\,\mathrm{s^{-1}})^2}.
+\]
+
+Ausrechnen liefert
+
+\[
+\omega_\mathrm{res}
+=
+6{,}8726\,\mathrm{rad/s}.
+\]
+
+Gerundet erhält man somit
+
+\[
+\boxed{\omega_\mathrm{res}=6{,}87\,\mathrm{rad/s}}.
+\]
+
+Optional kann nun auch die zugehörige Resonanzfrequenz in Hertz angegeben werden:
+
+\[
+f_\mathrm{res,theo}=\frac{\omega_\mathrm{res}}{2\pi}
+=\frac{6{,}8726}{2\pi}
+\approx 1{,}094\,\mathrm{Hz}.
+\]
+
+\subsubsection*{Vergleich der Werte für die Dämpfungskonstante $\beta$}
+
+Die aus den verschiedenen Auswertungsmethoden bestimmten Werte für die Dämpfungskonstante lauten:
+
+\[
+\beta_{\text{frei}} = 0{,}986\,\mathrm{s^{-1}},
+\qquad
+\beta_{\text{Amp}} = 0{,}814\,\mathrm{s^{-1}},
+\qquad
+\beta_{\text{Phase}} = 0{,}843\,\mathrm{s^{-1}}.
+\]
+
+Zunächst werden die absoluten Abweichungen der aus dem Amplitudenverlauf und aus dem Phasenverlauf bestimmten Werte relativ zum Wert der gedämpften freien Schwingung berechnet:
+
+\[
+\Delta \beta_{\text{Amp}}
+=
+\beta_{\text{Amp}}-\beta_{\text{frei}}
+=
+0{,}814-0{,}986
+=
+-0{,}172\,\mathrm{s^{-1}}
+\]
+
+\[
+\Delta \beta_{\text{Phase}}
+=
+\beta_{\text{Phase}}-\beta_{\text{frei}}
+=
+0{,}843-0{,}986
+=
+-0{,}143\,\mathrm{s^{-1}}.
+\]
+
+Die relativen Abweichungen ergeben sich zu
+
+\[
+\delta_{\text{Amp}}
+=
+\frac{|\beta_{\text{Amp}}-\beta_{\text{frei}}|}{\beta_{\text{frei}}}\cdot 100\%
+=
+\frac{0{,}172}{0{,}986}\cdot 100\%
+\approx 17{,}4\%
+\]
+
+und
+
+\[
+\delta_{\text{Phase}}
+=
+\frac{|\beta_{\text{Phase}}-\beta_{\text{frei}}|}{\beta_{\text{frei}}}\cdot 100\%
+=
+\frac{0{,}143}{0{,}986}\cdot 100\%
+\approx 14{,}5\%.
+\]
+
+Zusätzlich kann der Unterschied zwischen den beiden aus den Resonanzkurven bestimmten Werten betrachtet werden:
+
+\[
+\Delta \beta_{\text{Amp-Phase}}
+=
+\beta_{\text{Phase}}-\beta_{\text{Amp}}
+=
+0{,}843-0{,}814
+=
+0{,}029\,\mathrm{s^{-1}},
+\]
+
+was einer relativen Abweichung von
+
+\[
+\frac{0{,}029}{0{,}814}\cdot 100\%
+\approx 3{,}6\%
+\]
+
+entspricht.
+
+Damit stimmen die aus dem Amplitudenverlauf und aus dem Phasenverlauf
+bestimmten Werte für die Dämpfungskonstante gut miteinander überein. 
+Beide liegen jedoch unter dem aus der gedämpften freien Schwingung bestimmten Wert. 
+Die Abweichungen betragen etwa $17{,}4\,\%$ beziehungsweise $14{,}5\,\%$.
+
+\subsubsection*{Phasenverschiebung zwischen Oszillator und Erreger}
+
+Nach Gleichung (39) gilt für die Phasenverschiebung zwischen Oszillator und Erreger
+
+\[
+\tan\varphi=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\]
+
+Für die drei geforderten Grenzfälle ergibt sich:
+
+\paragraph{1. Fall: $\omega = 0$}
+Setzt man $\omega=0$ ein, so folgt
+
+\[
+\tan\varphi=\frac{2\beta\cdot 0}{\omega_0^2}=0.
+\]
+
+Daraus ergibt sich
+
+\[
+\boxed{\varphi(0)=0^\circ.}
+\]
+
+Der Oszillator schwingt in diesem Fall also in Phase mit dem Erreger.
+
+\paragraph{2. Fall: $\omega \to \omega_0$}
+Für $\omega \to \omega_0$ wird der Nenner $\omega_0^2-\omega^2$ gleich null, während der Zähler endlich bleibt. Daher gilt
+
+\[
+\tan\varphi \to \infty
+\]
+
+und somit
+
+\[
+\boxed{\varphi(\omega\to\omega_0)=90^\circ.}
+\]
+
+Bei der Eigenkreisfrequenz beträgt die Phasenverschiebung also stets $90^\circ$.
+
+\paragraph{3. Fall: $\omega \to \infty$}
+Für sehr große Frequenzen dominiert im Nenner der Term $-\omega^2$. Damit folgt näherungsweise
+
+\[
+\tan\varphi \approx \frac{2\beta\omega}{-\omega^2}
+= -\frac{2\beta}{\omega}\to 0^-.
+\]
+
+Daraus ergibt sich
+
+\[
+\boxed{\varphi(\omega\to\infty)=180^\circ.}
+\]
+
+Der Oszillator schwingt bei sehr großen Erregerfrequenzen somit nahezu gegenphasig zum Erreger.
+
+Insgesamt erhält man also für die theoretischen Werte:
+
+\[
+\boxed{\varphi(0)=0^\circ,\qquad \varphi(\omega\to\omega_0)=90^\circ,\qquad \varphi(\omega\to\infty)=180^\circ.}
+\]
+
+Diese Werte sind mit den experimentell bestimmten Phasenverschiebungen 
+bei kleiner Frequenz, bei Resonanz und bei großer Frequenz zu vergleichen. 
+Erwartet wird dabei eine gute Übereinstimmung:
+ bei kleinen Frequenzen eine Phasenverschiebung nahe $0^\circ$, 
+bei Resonanz nahe $90^\circ$ und bei großen Frequenzen eine Annäherung an $180^\circ$.
+
+\subsubsection*{Phasenverschiebung in den Grenzfällen und Vergleich mit dem Experiment}
+
+Nach Gleichung (39) gilt für die Phasenverschiebung zwischen Oszillator und Erreger:
+
+\[
+\tan\varphi=\frac{2\beta\omega}{\omega_0^2-\omega^2}.
+\]
+
+Daraus folgen für die drei Grenzfälle:
+
+\[
+\boxed{\varphi(\omega=0)=0^\circ, \qquad \varphi(\omega\to\omega_0)=90^\circ, \qquad \varphi(\omega\to\infty)=180^\circ.}
+\]
+
+Aus dem Phasenplot (Abb. 2.6) lassen sich nun die experimentellen Vergleichswerte näherungsweise abgelesen:
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./MOS_VorOrt/MOSEvaluationV.png}
+    \caption{Phasenplot}
+    \label{fig:MOSEvaluationII}
+\end{figure}
+
+
+\begin{itemize}
+    \item für sehr kleine Frequenzen ($\omega\approx 0$): $\varphi_\mathrm{exp}\approx 4^\circ$,
+    \item in der Nähe der Eigenfrequenz ($\omega\approx\omega_0$ bzw.\ $f\approx f_0$): $\varphi_\mathrm{exp}\approx 83^\circ$,
+    \item für große Frequenzen ($\omega\to\infty$): $\varphi_\mathrm{exp}\approx 178^\circ$.
+\end{itemize}
+
+Der Vergleich ergibt somit:
+\[
+\Delta\varphi(\omega\approx 0)\approx 4^\circ-0^\circ=4^\circ,
+\]
+\[
+\Delta\varphi(\omega\approx \omega_0)\approx 83^\circ-90^\circ=-7^\circ,
+\]
+\[
+\Delta\varphi(\omega\to\infty)\approx 178^\circ-180^\circ=-2^\circ.
+\]
+
+Damit stimmen die experimentellen Werte insgesamt gut mit den theoretisch erwarteten Grenzwerten überein: 
+bei kleinen Frequenzen ist die Phase nahe $0^\circ$, in der Umgebung der Eigenfrequenz liegt sie nahe $90^\circ$ und für 
+große Frequenzen nähert sie sich $180^\circ$ an.
+
 
 \newpage
 \chapter{Anhang}
