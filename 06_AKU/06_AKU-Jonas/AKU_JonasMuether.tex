@@ -1,0 +1,178 @@
+\documentclass{report}
+\usepackage{pdfpages}
+\usepackage{graphicx} 
+\usepackage{dirtytalk}
+% \usepackage{arydshln}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{arydshln}
+\usepackage[hidelinks]{hyperref}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\begin{document}
+\includepdf[pages=-]{./PDFs/Deckblatt_P1}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Auswertung und Protokoll}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Zum Versuch AKU - Akustik im Haushalt
+
+        \vspace{1.8cm}
+
+        \textbf{Jonas Müther}
+        \vfill
+            
+        P1 Praktikum\\
+       
+            
+        \vspace{0.8cm}
+  
+
+        \vspace{1.8cm}
+        \Large
+        LMU München \\
+        Physik B.Sc.\\
+        Deutschland\\
+        2026
+            
+    \end{center}
+\end{titlepage}
+\tableofcontents
+
+\newpage
+\chapter{Vorbereitung}
+
+\section{Versuchsvorbereitung und Grundlagen des Versuchs}
+\subsection{Theoretischer Hintergrund}
+\subsubsection{Wellen \& Wellenausbreitung}
+\begin{list}{$\bullet$}{}
+    \item Modell: Einzelne Masseelemente, die elastisch miteinander gekoppelt sind und harmonisch schwingen
+    \item Auslenkung eines Massenelemts wird durch Kopplung an das nächste weitergegeben, dieses schwingt aufgrund der Trägheit zeitlich verzögert
+    \item das angeregte Massenelemt gibt die Schwingung wiederrum weiter, usw.
+    \item Es entsteht eine Sinusförmige Kurve, auf der die Massen zu einem festen Zeitpunkt liegen
+\end{list}
+\subsubsection{Charakteristische Größen}
+\begin{list}{$\bullet$}{}
+    \item Wellenlänge $\lambda$: Abstand von einem Massenelement zum nächsten, das sich im selben Schwingungszustand befindet
+    \item Phasengeschwindigkeit $v$: Geschwindigkeit der Bewegung eines Schwingungszustands im Medium
+    \item   \begin{equation}
+                v = \frac{\lambda}{T} = f\lambda
+            \end{equation}
+    \item Je größer die Köpplung und je kleiner die Masse, desto größer wird die Phasengeschwindigkeit
+    \item   \begin{equation}
+                v = \sqrt{\frac{E}{\rho}}
+            \end{equation}
+    \item Die Schallgeschwindigkeit ist Temperaturabhängig:
+    \item   \begin{equation}
+                v = \sqrt{\gamma \frac{RT}{M}}
+            \end{equation}
+\end{list}
+\subsection{Stehende Wellen}
+\begin{list}{$\bullet$}{}
+    \item Entsteht durch Überlagerung von gegenläufigen Wellen mit gleicher Wellenlänge, Amplitude und Geschwindigkeit
+    \item Oszillatoren schwingen Permanent, aber Welle als ganzes bewegt sich nicht
+    \item Knoten (Punkte mit dauerhafre Amplitude von 0) und Bäuche (Punkte bei maximaler Schwingungsamplitude)
+    \item Abstand zwischen zwei Knoten: $d=\frac{\lambda}{2}$
+\end{list}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{./Images/Stehende Welle.png}
+    \caption{Stehende Welle}
+    \label{fig:StWelle}
+\end{figure}
+\subsection{Oberschwingungen}
+\begin{list}{$\bullet$}{}
+    \item Anregung einer Schwingung in einem Rohr nur mit bestimmte diskrete Frequenzen
+    \item Nur die stehenden Wellen, die die Randbedingungen erfüllen können (Knoten am geschlossenen Ende und Bauch am offenen Ende)
+    \item Einseitig offenes Rohr: 
+    \begin{equation}
+        \begin{split}
+            f_n = \frac{v}{4L} (2n+1)
+        \end{split}
+    \end{equation}
+\end{list}
+\subsection{Helmholtz Resonator}
+\begin{list}{$\bullet$}{}
+    \item Aus dem Haushalt bekanntes Beispiel: Flasche
+    \item Durch Pusten über das obere Ende der Flasche kommt es zur Schwingung des Luftvolumens im Flaschenhals (Luftkorken)
+    \item Das eingeschlossene Volumen im Flaschenbauch wirkt wie eine Feder
+    \item Die Federkonstante liegt bei 
+        \begin{equation}
+            \begin{split}
+                k = \frac{\rho_o A^2 v^2}{V_0}
+            \end{split}
+        \end{equation}
+    \item Effektiv schwingendes Volumen etwas größer als eingeschlossenes Volumen im Hals 
+        \begin{equation}
+            \begin{split}
+                L_{eff} = L + \frac{cD}{2}
+            \end{split}
+        \end{equation}
+        mit $c = 1.4621$ und $D$ Durchmesser des Flaschenhalses
+    \item Resonanzfrequenz:
+        \begin{equation}
+            f = \frac{v}{2\pi}\sqrt{\frac{A}{V_0 L_{eff}}}
+        \end{equation}
+\end{list}
+
+
+\subsection{Versuchsdurchführung}
+\subsubsection{TVI: Bestimmung der Schallgeschwindigkeit mithilfe eines Helmholtz Resonators}
+In TV I wird die Schallgeschwindigkeit mithilfe eines Helmholtz Resonators bestimmt. Dazu werden zwei Flaschen verwendet. Eine Flasche geht vom Hals schnell in den Bauch über, die andere kontinuierlich.
+Zunächst werden jeweils die geometrischen Eigenschaften der Flaschen bestimmt, dann werden die Resonanzfrequenzen für verschiedene Wasserfüllstände bestimmt $\Leftrightarrow$ unterschiedliche Volumina des Flaschenbauchs.
+Dies geschieht mithilfe der App PhyPhox.
+
+
+\subsection{TVII: Grund- und Oberschwingungen im Kundtschen Rohr}
+Ein beidseitig offenes Rohr (Kühenrolle) wird im Raum fixiert. Ein Smartphone generiert mit der Phyphox App auf der einen Seite des Rohrs weißes Rauschen. Das andere
+nimmt auf der anderen Seite ebenfalls mit der PhyPhox App das angeregte Frequenzspektrum auf.
+
+
+\newpage
+\section{Versuchsprotokoll}
+
+
+
+\newpage
+\chapter{Auswertung}
+\section{Teilversuch I:}
+
+
+
+\chapter{Anhang}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{matlab}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\end{document}
