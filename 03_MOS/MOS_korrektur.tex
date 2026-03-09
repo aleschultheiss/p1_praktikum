@@ -1,0 +1,361 @@
+\documentclass{report}
+\usepackage{pdfpages}
+\usepackage{graphicx} 
+\usepackage{dirtytalk}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{arydshln}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Auswertung und Protokoll - Korrektur vom 08.03.2026}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Zum Versuch: MOS - Mechanischer Oszillator
+        
+        \vspace{1.8cm}
+
+        \textbf{Jonas Müther \& Alejandro Schultheiss}
+        \vfill
+            
+        P1 Praktikum\\
+       
+            
+        \vspace{0.8cm}
+  
+
+        \vspace{1.8cm}
+        \Large
+        LMU München \\
+        Physik B.Sc.\\
+        Deutschland\\
+        2026
+            
+    \end{center}
+\end{titlepage}
+\tableofcontents
+
+
+\newpage
+\section{Korrektur zu Kommentar 25.1}
+Somit sind die Endergebnisse für die Frequenzen:
+\begin{equation}
+    \begin{split}
+        f_{m_1} = (1.3928 \pm 0.0005) \si{\hertz} \\
+        f_{m_2} = (1.3021 \pm 0.0006) \si{\hertz} \\
+        f_{m_3} = (1.22549 \pm 0.00025) \si{\hertz} \\
+        f_{m_4} = (1.1641 \pm 0.0004) \si{\hertz} \\
+        f_{m_5} = (1.1161 \pm 0.0006) \si{\hertz} \\
+    \end{split}
+\end{equation}
+
+
+
+
+\section{Korrektur zu Kommentar 29.1}
+\[
+\Delta f_d
+=
+\frac{1}{\bar T^2}\,\Delta \bar T
+=
+\frac{0{,}0123}{(0{,}8744)^2}\,\mathrm{Hz}
+\approx 0{,}016\,\mathrm{Hz}.
+\]
+
+\noindent
+Da die führende signifikante Ziffer eine 1 ist, wird die Unsicherheit mit zwei signifikanten Stellen angegeben.
+Damit folgt
+
+\[
+\boxed{f_d = (1{,}144 \pm 0{,}016)\,\mathrm{Hz}}.
+\]
+
+
+
+
+\section{Korrektur zu Kommentar 30.1}
+Theoretisch ist die Frequenz der freien gedämpften Schwingung kleiner als die der ungedämpften Schwingung, da
+\[
+\omega_\mathrm d=\sqrt{\omega_0^2-\beta^2}
+\quad\Rightarrow\quad
+f_\mathrm d=\frac{\omega_\mathrm d}{2\pi}<\frac{\omega_0}{2\pi}=f_0.
+\]
+Die Frequenzen müssen daher nicht identisch sein; vielmehr ist $f_\mathrm d<f_0$ zu erwarten.
+Im Experiment ergibt sich jedoch $f_\mathrm d>f_0$. Dies deutet auf einen dominierenden systematischen bzw. statistischen Einfluss in der Periodenbestimmung (z.\,B.\ geringe Anzahl an Perioden, abklingende Amplitude/Triggerung) hin.
+Unter Berücksichtigung der Unsicherheiten beträgt die Abweichung etwa $1{,}7\sigma$ und liegt damit zwar noch im Bereich einer $2\sigma$-Verträglichkeit, die Vorzeichenrichtung widerspricht jedoch der theoretischen Erwartung.
+
+\section{Korrektur zu Kommentar 31.1}
+
+Nach Gleichung (32) gilt
+\[
+\Lambda=\beta T_d,
+\qquad\Rightarrow\qquad
+\beta=\frac{\Lambda}{T_d}.
+\]
+\noindent
+Mit
+\[
+\Lambda=0{,}862,
+\qquad
+T_d=\bar T=(0{,}8744\pm 0{,}0123)\,\mathrm{s}
+\]
+ergibt sich für den Zentralwert
+\[
+\beta=\frac{0{,}862}{0{,}8744\,\mathrm{s}}=0{,}9858\,\mathrm{s^{-1}}.
+\]
+
+Die Unsicherheit wird mittels Gaußscher Fehlerfortpflanzung bestimmt:
+\[
+u(\beta)=\sqrt{\left(\frac{1}{T_d}u(\Lambda)\right)^2+
+\left(\frac{\Lambda}{T_d^2}u(T_d)\right)^2}.
+\]
+Da keine Unsicherheit für $\Lambda$ vorliegt, wird $u(\Lambda)\approx 0$ gesetzt, sodass
+\[
+u(\beta)\approx \frac{\Lambda}{T_d^2}\,u(T_d)
+=\frac{0{,}862}{(0{,}8744)^2}\cdot 0{,}0123\,\mathrm{s^{-1}}
+\approx 0{,}0139\,\mathrm{s^{-1}}.
+\]
+
+Gerundet folgt damit
+\[
+\boxed{\beta=(0{,}986\pm 0{,}014)\,\mathrm{s^{-1}}.}
+\]
+\section{Korrektur zu Kommentar 32.1}
+
+Nach Gleichung (34) gilt
+\[
+T_d = T_0\sqrt{1+\left(\frac{\Lambda}{2\pi}\right)^2},
+\qquad
+T_0=\frac{1}{f_0}.
+\]
+\noindent
+Mit
+\[
+f_0=(1{,}1161\pm 0{,}0006)\,\mathrm{Hz}
+\]
+\noindent
+ergibt sich
+\[
+T_0=\frac{1}{f_0}=0{,}89598\,\mathrm{s}.
+\]
+\noindent
+Die Unsicherheit von $T_0$ folgt aus Gaußscher Fehlerfortpflanzung:
+\[
+u(T_0)=\left|\frac{\partial}{\partial f_0}\frac{1}{f_0}\right|u(f_0)
+=\frac{1}{f_0^2}\,u(f_0)
+=\frac{0{,}0006}{(1{,}1161)^2}\,\mathrm{s}
+=0{,}000482\,\mathrm{s}.
+\]
+\noindent
+Setzt man
+\[
+F=\sqrt{1+\left(\frac{\Lambda}{2\pi}\right)^2},
+\]
+so ist $T_d=T_0F$. Mit $\Lambda=0{,}862$ folgt
+\[
+F=\sqrt{1+\left(\frac{0{,}862}{2\pi}\right)^2}=1{,}00937,
+\]
+\[
+T_d = 0{,}89598\cdot 1{,}00937 = 0{,}90437\,\mathrm{s}.
+\]
+\noindent
+Da keine Unsicherheit für $\Lambda$ vorliegt, wird $u(\Lambda)$ vernachlässigt. Damit ergibt sich
+\[
+u(T_d)\approx \left|\frac{\partial T_d}{\partial T_0}\right|u(T_0)=F\,u(T_0)
+=1{,}00937\cdot 0{,}000482\,\mathrm{s}
+=0{,}000486\,\mathrm{s}.
+\]
+\noindent
+Somit erhält man
+\[
+\boxed{T_d^{(\mathrm{theo})}=(0{,}9044\pm 0{,}0005)\,\mathrm{s}.}
+\]
+
+
+
+
+\section{Korrektur zu Kommentar 32.2}
+
+Es wurde bestimmt:
+\[
+T_d^{(\mathrm{theo})}=(0{,}9044\pm 0{,}0005)\,\mathrm{s},
+\qquad
+\bar T_d^{(\mathrm{exp})}=(0{,}8744\pm 0{,}0123)\,\mathrm{s}.
+\]
+
+Die absolute Abweichung beträgt:
+\[
+\Delta T = T_d^{(\mathrm{theo})}-\bar T_d^{(\mathrm{exp})}
+=0{,}9044-0{,}8744
+=0{,}0300\,\mathrm{s}.
+\]
+
+Die relative Abweichung ergibt sich zu:
+\[
+\frac{\Delta T}{\bar T_d^{(\mathrm{exp})}}
+=\frac{0{,}0300}{0{,}8744}
+\approx 0{,}0343 \approx 3{,}4\%.
+\]
+
+Zur Beurteilung der Übereinstimmung wird die kombinierte Unsicherheit der Differenz verwendet:
+\[
+u_{\Delta T}=\sqrt{u(T_d^{(\mathrm{theo})})^2+u(\bar T_d^{(\mathrm{exp})})^2}
+=\sqrt{(0{,}0005)^2+(0{,}0123)^2}
+\approx 0{,}0123\,\mathrm{s}.
+\]
+
+Damit folgt die normierte Abweichung:
+\[
+z=\frac{|\Delta T|}{u_{\Delta T}}
+=\frac{0{,}0300}{0{,}0123}
+\approx 2{,}4.
+\]
+
+Die Abweichung liegt damit bei etwa $2{,}4\sigma$, also geringfügig oberhalb eines $2\sigma$-Bereichs.
+Somit zeigen Theorie und Experiment eine insgesamt gute Größenordnung, jedoch keine vollständige Übereinstimmung innerhalb eines strengen $2\sigma$-Kriteriums.
+Da keine Unsicherheit für $\Lambda$ vorliegt, ist die theoretische Unsicherheit hierbei vermutlich unterschätzt.
+\section{Korrektur zu Kommentar 34.1}
+\subsubsection*{Einordnung: Soll $f_\mathrm{res}$ mit $f_0$ bzw. $f_\mathrm{d}$ übereinstimmen?}
+
+Die Resonanzfrequenz $f_\mathrm{res}$ (Maximum der Amplitude der erzwungenen Schwingung) muss theoretisch nicht mit der Eigenfrequenz der freien ungedämpften Schwingung $f_0$ übereinstimmen.
+Für den gedämpft erzwungenen Oszillator gilt nach Gleichung (40)
+
+\[
+\omega_\mathrm{res}=\sqrt{\omega_0^2-2\beta^2}.
+\]
+
+Da für $\beta>0$ der Term $2\beta^2$ positiv ist, folgt unmittelbar
+
+\[
+\omega_\mathrm{res}<\omega_0
+\qquad\Rightarrow\qquad
+f_\mathrm{res}<f_0.
+\]
+
+Zudem gilt für die freie gedämpfte Schwingung $\omega_\mathrm{d}=\sqrt{\omega_0^2-\beta^2}$, womit auch
+\[
+\omega_\mathrm{res}<\omega_\mathrm{d}
+\qquad\Rightarrow\qquad
+f_\mathrm{res}<f_\mathrm{d}
+\]
+zu erwarten ist.
+
+Im Experiment ergibt sich $f_\mathrm{res}=1{,}113\,\mathrm{Hz}$ und damit tatsächlich $f_\mathrm{res}<f_0$.
+Die Resonanzfrequenz liegt also in der erwarteten Richtung unterhalb der ungedämpften Eigenfrequenz.
+Eine vollständige numerische Übereinstimmung ist nicht zu erwarten, da Dämpfung die Resonanzfrequenz verschiebt.
+
+
+\section{Korrektur zu Kommentar: 35.1}
+\subsubsection*{Berechnung der Resonanzkreisfrequenz $\omega_\mathrm{res}$ (mit Unsicherheit)}
+
+Nach Gleichung (40) gilt
+\[
+\omega_\mathrm{res}=\sqrt{\omega_0^2-2\beta^2}.
+\]
+
+Zunächst wird aus $f_0$ die Kreisfrequenz $\omega_0$ bestimmt:
+\[
+\omega_0=2\pi f_0.
+\]
+Mit
+\[
+f_0=(1{,}1161\pm 0{,}0006)\,\mathrm{Hz}
+\]
+folgt
+\[
+\omega_0=2\pi\cdot 1{,}1161=7{,}0127\,\mathrm{rad/s}.
+\]
+Die Unsicherheit von $\omega_0$ ergibt sich zu
+\[
+u(\omega_0)=2\pi\,u(f_0)=2\pi\cdot 0{,}0006=0{,}00377\,\mathrm{rad/s}.
+\]
+
+Für die Dämpfungskonstante gilt
+\[
+\beta=(0{,}986\pm 0{,}014)\,\mathrm{s^{-1}}.
+\]
+
+Damit ergibt sich
+\[
+\omega_\mathrm{res}=\sqrt{(7{,}0127)^2-2\,(0{,}986)^2}=6{,}8726\,\mathrm{rad/s}.
+\]
+
+Die Unsicherheit wird durch Gaußsche Fehlerfortpflanzung bestimmt. Mit
+\[
+\frac{\partial \omega_\mathrm{res}}{\partial \omega_0}=\frac{\omega_0}{\omega_\mathrm{res}},
+\qquad
+\frac{\partial \omega_\mathrm{res}}{\partial \beta}=-\frac{2\beta}{\omega_\mathrm{res}}
+\]
+folgt
+\[
+u(\omega_\mathrm{res})=
+\sqrt{\left(\frac{\omega_0}{\omega_\mathrm{res}}u(\omega_0)\right)^2+
+\left(\frac{2\beta}{\omega_\mathrm{res}}u(\beta)\right)^2 }.
+\]
+Einsetzen liefert
+\[
+u(\omega_\mathrm{res})\approx
+\sqrt{\left(\frac{7{,}0127}{6{,}8726}\cdot 0{,}00377\right)^2+
+\left(\frac{2\cdot 0{,}986}{6{,}8726}\cdot 0{,}014\right)^2}
+\approx 0{,}0056\,\mathrm{rad/s}.
+\]
+
+Somit ergibt sich
+\[
+\boxed{\omega_\mathrm{res}=(6{,}873\pm 0{,}006)\,\mathrm{rad/s}}.
+\]
+
+Optional kann die zugehörige Resonanzfrequenz in Hertz angegeben werden:
+\[
+f_{\mathrm{res,theo}}=\frac{\omega_\mathrm{res}}{2\pi}
+=\frac{6{,}8726}{2\pi}
+=1{,}094\,\mathrm{Hz},
+\qquad
+u(f_{\mathrm{res,theo}})=\frac{u(\omega_\mathrm{res})}{2\pi}\approx 0{,}0009\,\mathrm{Hz}.
+\]
+Damit folgt
+\[
+\boxed{f_{\mathrm{res,theo}}=(1{,}094\pm 0{,}001)\,\mathrm{Hz}}.
+\]
+
+\section{Korrektur zu Kommentar 35.2}
+
+\subsubsection*{Diskussion der Abweichungen der Dämpfungskonstante}
+
+Die beiden aus den Resonanzkurven bestimmten Werte $\beta_{\text{Amp}}$ und $\beta_{\text{Phase}}$ stimmen mit einer Abweichung von nur etwa $3{,}6\%$ gut miteinander überein. Dies ist plausibel, da beide Größen auf derselben Messreihe der erzwungenen Schwingung beruhen und somit ähnliche systematische Einflüsse teilen. 
+
+Im Vergleich dazu liegt der aus der gedämpften freien Schwingung bestimmte Wert $\beta_{\text{frei}}$ um etwa $15$--$17\%$ höher. Mögliche Ursachen für diese Abweichung sind:
+
+\begin{itemize}
+    \item \textbf{Unterschiedliche Auswertungsmethoden und Gewichtung der Messwerte:}
+    Bei der freien Schwingung wird $\beta$ aus dem exponentiellen Abklingen der Amplitude bestimmt (über $\Lambda$). Einzelne frühe Messpunkte mit großer Amplitude beeinflussen das Ergebnis dabei stark. Die Resonanzkurven-Fits (Amplitude/Phase) nutzen hingegen viele Frequenzpunkte und liefern dadurch oft stabilere Fitparameter.
+    
+    \item \textbf{Nichtideale Dämpfung (nicht rein viskos):}
+    Die Theorie setzt eine lineare Dämpfung proportional zur Geschwindigkeit voraus. In der Praxis können zusätzlich Reibungseffekte (z.\,B.\ Lagerreibung bzw.\ Coulomb-Reibung) oder amplitudenabhängige Verluste auftreten. Solche Effekte beeinflussen besonders den freien Abklingvorgang und können zu einem scheinbar größeren $\beta_{\text{frei}}$ führen.
+    
+    \item \textbf{Amplitudenabhängige oder frequenzabhängige Verluste:}
+    Bei großer Auslenkung (zu Beginn der freien Schwingung) können zusätzliche Dissipationsmechanismen stärker wirken als bei kleinen Amplituden bzw.\ im stationären erzwungenen Betrieb. Dadurch kann $\beta_{\text{frei}}$ größer erscheinen als die im stationären Zustand bestimmten $\beta$-Werte.
+    
+    \item \textbf{Mess- und Ableseefekte bei der freien Schwingung:}
+    Die Bestimmung der Maxima (und damit $\Lambda$) ist empfindlich gegenüber Ablese- bzw.\ Triggerungenauigkeiten, insbesondere wenn die Amplitude schnell abklingt und das Signal nahe am Rauschen liegt. Dies kann die Steigung der linearen Ausgleichsgeraden und damit $\Lambda$ und $\beta_{\text{frei}}$ systematisch verschieben.
+    
+    \item \textbf{Leicht unterschiedliche Versuchsbedingungen:}
+    Kleine Änderungen in der Aufhängung, Justage oder Dämpfereinstellung zwischen Teilversuch 3 (frei) und Teilversuch 4 (erzwungen) können die effektive Dämpfung beeinflussen und somit zu unterschiedlichen $\beta$-Werten führen.
+\end{itemize}
+
+Insgesamt ist die gute Übereinstimmung von $\beta_{\text{Amp}}$ und $\beta_{\text{Phase}}$ ein Hinweis auf eine konsistente Auswertung der erzwungenen Schwingung. Die größere Abweichung zu $\beta_{\text{frei}}$ lässt sich plausibel durch nichtideale Dämpfungsmechanismen sowie durch die höhere Empfindlichkeit der freien Abklingauswertung gegenüber Mess- und Ableseeinflüssen erklären.
+
+
+\end{document}
