@@ -122,6 +122,7 @@
     \item Resonanzfrequenz:
         \begin{equation}
             f = \frac{v}{2\pi}\sqrt{\frac{A}{V_0 L_{eff}}}
+            \label{eq:HelmholtzResFreq}
         \end{equation}
 \end{list}
 
@@ -130,22 +131,104 @@
 \subsubsection{TVI: Bestimmung der Schallgeschwindigkeit mithilfe eines Helmholtz Resonators}
 In TV I wird die Schallgeschwindigkeit mithilfe eines Helmholtz Resonators bestimmt. Dazu werden zwei Flaschen verwendet. Eine Flasche geht vom Hals schnell in den Bauch über, die andere kontinuierlich.
 Zunächst werden jeweils die geometrischen Eigenschaften der Flaschen bestimmt, dann werden die Resonanzfrequenzen für verschiedene Wasserfüllstände bestimmt $\Leftrightarrow$ unterschiedliche Volumina des Flaschenbauchs.
-Dies geschieht mithilfe der App PhyPhox.
+Der Wasserfüllstand sowie das Gesamtvolumen der Flasche wird durch eine Messung der Masse des Wassers in der Flasche bestimmt. Die Frequenzmessung geschieht mithilfe der App PhyPhox. 
 
 
-\subsection{TVII: Grund- und Oberschwingungen im Kundtschen Rohr}
-Ein beidseitig offenes Rohr (Kühenrolle) wird im Raum fixiert. Ein Smartphone generiert mit der Phyphox App auf der einen Seite des Rohrs weißes Rauschen. Das andere
-nimmt auf der anderen Seite ebenfalls mit der PhyPhox App das angeregte Frequenzspektrum auf.
+\subsubsection{TVII: Grund- und Oberschwingungen im Kundtschen Rohr}
+Ein beidseitig offenes Rohr aus Pappe (Verpackung für Leuchtarmbänder) wird im Raum fixiert. Ein Smartphone generiert mit der Phyphox App auf der einen Seite des Rohrs weißes Rauschen. Das andere
+nimmt auf der anderen Seite ebenfalls mit der PhyPhox App das angeregte Frequenzspektrum auf. Zusätzlich wird eine Messung des Frequenzspektrums ohne Rohr zwischen den Smartphones durchgeführt.
+Mit dieser sollen dann später Peaks herausgefiltet werden, die eventuell bereits ohne Rohr im weißen Rauschen vorhanden sind.
 
 
 \newpage
 \section{Versuchsprotokoll}
+\subsection{Bilder der Versuchsaufbauten}
 
-
+\subsection{Aufschrieb}
+\includepdf[pages=-]{./PDFs/AKU_Durchfuehrung.pdf}
 
 \newpage
 \chapter{Auswertung}
-\section{Teilversuch I:}
+\section{Teilversuch I: Helmholtz Resonator}
+\subsection{Gemessene Daten}
+In TVI wurden die Resonanzfrequenzen einer Flasche als Helmholtz Resonator bestimmt. Um damit die Schallgeschwindigkeit zu bestimmen wurde diese Frequenz für verschiedene
+Füllstände bestimmt, was äquivalent zu einer Veränderung des effektiven Flaschenvolumens ist.
+\subsubsection{Messwerte für Flasche 1}
+Für eine Flasche mit raschem Übergang vom zylinderförmigen Flaschenhals in den Flaschenbauch wurden die Messwerte aus Tabelle \ref{tab:HelmholtzFreq} bestimmt.
+\begin{table}[H]
+    \centering
+    \caption{Resonanzfrequenz von Flasche I für verschiedene effektive Volumina}
+    \label{tab:HelmholtzFreq}
+    \begin{tabular}{c c c}
+        \hline
+        $m_w (kg)$ &  $V_{eff}(\si{\ml})$ & $f_0(\si{\ml})$ \\
+        \hline
+        $0.000 \pm 0.001$ & $0.771 \pm 0.001$ &  $112.0 \pm 1.5$\\
+        $0.073 \pm 0.001$ & $0.698 \pm 0.001$ &  $119.0 \pm 1.5$\\
+        $0.149 \pm 0.001$ & $0.622 \pm 0.001$ &  $125.0 \pm 1.5$\\
+        $0.228 \pm 0.001$ & $0.543 \pm 0.001$ &  $135.0 \pm 1.5$\\
+        $0.304 \pm 0.001$ & $0.467 \pm 0.001$ &  $145.0 \pm 1.5$\\
+        $0.377 \pm 0.001$ & $0.394 \pm 0.001$ &  $160.0 \pm 1.5$\\
+        $0.452 \pm 0.001$ & $0.319 \pm 0.001$ &  $178.5 \pm 1.5$\\
+        $0.522 \pm 0.001$ & $0.249 \pm 0.001$ &  $200.5 \pm 1.5$\\
+        $0.602 \pm 0.001$ & $0.169 \pm 0.001$ &  $248.0 \pm 1.5$\\
+        $0.677 \pm 0.001$ & $0.094 \pm 0.001$ &  $351.0 \pm 1.5$\\
+        $0.753 \pm 0.001$ & $0.018 \pm 0.001$ &  $1260.0 \pm 10$\\
+        \hline
+    \end{tabular}
+\end{table}
+Außerdem wurden die folgenden geometrischen Abmessungen für die Flasche bestimmt:
+\begin{equation}
+    \begin{split}
+        d &= 0.0178 \pm 0.00005 m \\
+        l &= 0.081 \pm 0.003 m
+    \end{split}
+\end{equation}
+\subsubsection{Messwerte für Flasche 2}
+Für die Flasche mit langsamem Übergang vom Flaschenhals in den Flaschenbauch ergaben sich die Messwerte, die in Tabelle \ref{tab:HelmholtzFreq2} dargestellts sind. 
+\begin{table}[H]
+    \centering
+    \caption{Resonanzfrequenz von Flasche II für verschiedene effektive Volumina}
+    \label{tab:HelmholtzFreq2}
+    \begin{tabular}{c c c}
+        \hline
+        $m_w (kg)$ &  $V_{eff}(\si{\ml})$ & $f_0(\si{\ml})$ \\
+        \hline
+        $0.000 \pm 0.001$ & $0.517 \pm 0.001$ &  $155.0 \pm 1.5$\\
+        $0.049 \pm 0.001$ & $0.468 \pm 0.001$ &  $161.5 \pm 1.5$\\
+        $0.101 \pm 0.001$ & $0.416 \pm 0.001$ &  $171.0 \pm 1.5$\\
+        $0.151 \pm 0.001$ & $0.366 \pm 0.001$ &  $183.0 \pm 1.5$\\
+        $0.198 \pm 0.001$ & $0.319 \pm 0.001$ &  $195.0 \pm 1.5$\\
+        $0.254 \pm 0.001$ & $0.263 \pm 0.001$ &  $217.0 \pm 1.5$\\
+        $0.299 \pm 0.001$ & $0.218 \pm 0.001$ &  $240.5 \pm 1.5$\\
+        $0.355 \pm 0.001$ & $0.162 \pm 0.001$ &  $276.5 \pm 1.5$\\
+        $0.403 \pm 0.001$ & $0.114 \pm 0.001$ &  $339.5 \pm 1.5$\\
+        $0.454 \pm 0.001$ & $0.063 \pm 0.001$ &  $463.0 \pm 3$\\
+        \hline
+    \end{tabular}
+\end{table}
+Hier wurden folgende geometrische Abmessungen bestimmt:
+\begin{equation}
+    \begin{split}
+        d &= 0.1703 \pm 0.0005 m \\
+        l &= 0.130 \pm 0.005 m
+    \end{split}
+\end{equation}
+\textit{Anmerkung: Die Länge des Flaschenhalses wurde bis zu dem Punkt der Flasche gemessen, an dem diese vollständig Zylinderförmig wird. Dieser Wert spielt allerdings
+für die Auswertung auch nur eine Untergeordnete Rolle}
+
+\subsection{Auswertung der gemessenen Daten}
+Der Zusammenhang zwischen der Resonanzfrequenz des Resonators und Volumen ist gegeben durch Formel \ref{eq:HelmholtzResFreq}.
+Diese Formel lässt sich in die Form von Formel \ref{eq:LinearHelmholtzFreqVol} bringen. Trägt man $f^2$ gegen $\frac{1}{V_0}$ auf, so erhält man eine Gerade, mit der Steigung
+$a = \frac{v^2 A}{4\pi^2 L_{eff}}$.
+\begin{equation}
+    f^2(V_0) = \frac{v^2 A}{4\pi^2 L_{eff}} \cdot \frac{1}{V_0}
+    \label{eq:LinearHelmholtzFreqVol}
+\end{equation}
+Für bekanntes $L_{eff}$ lässt sich somit aus dieser Steigung die Schallgeschwindigkeit $v$ bestimmen:
+\begin{equation}
+    v = 2 \pi \sqrt{\frac{a \cdot L_{eff}}{A}}
+\end{equation}
 
 
 

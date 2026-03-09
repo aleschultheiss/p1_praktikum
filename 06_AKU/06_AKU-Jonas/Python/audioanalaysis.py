@@ -23,7 +23,7 @@ merged = pd.merge(mean_fft, mean_fft2, on="frequency", suffixes=("_1", "_2"))
 merged["difference"] = merged["fft_mag_1"] - merged["fft_mag_2"]
 
 # Peaks im Differenzspektrum
-peaks, properties = find_peaks(merged["difference"], prominence=5)
+peaks, properties = find_peaks(merged["difference"], prominence=12)
 
 peak_freqs = merged["frequency"].iloc[peaks]
 peak_values = merged["difference"].iloc[peaks]
@@ -88,3 +88,4 @@ ax.legend()
 
 plt.tight_layout()
 plt.show()
+plt.savefig("AudioSpektrum.jpg", dpi=1000)
