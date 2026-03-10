@@ -175,6 +175,7 @@ Die Unsicherheit ist gegeben durch:
         \frac{\Delta I}{I} &= \frac{1}{I} \sqrt{\left(\frac{\partial I}{\partial T} \Delta T\right)^2 + \left(\frac{\partial I}{\partial K}\Delta K\right)^2} \\
                            &= \sqrt{\left(2\frac{\Delta T}{T}\right)^2 + \left(\frac{\Delta K}{K}\right)^2}
     \end{split}
+    \label{eq:TraegeitsmomentUnsicherheit}
 \end{equation}
 mit $\Delta I = \frac{\Delta I}{I} \cdot \bar{I}$ ergibt sich für die einzelnen Unsicherheiten:
 \begin{equation}
@@ -313,15 +314,16 @@ Gesammelt ergibt sich somit für die aus der Geometrie bestimmten Trägheitsmome
         \end{aligned}
     }
 \end{equation}
-Vergleicht man die experimentell bestimmten Werte \ref{eq:TraegeitsmomenteExp} mit diesen theoretischen Werten, erkennt man, dass die Werte im Rahmmen der Unsicherheiten
-gut miteinander übereinstimmen. Auch der Wert, der aus den experimentell bestimmten Messwerten für die Diagonale berechnet wurde \ref{eq:DiagTraegheitsmomentExpBer}, ist mit dem Theoriewert konsistent.
+Vergleicht man die experimentell bestimmten Werte \ref{eq:TraegeitsmomenteExp} mit diesen theoretischen Werten, erkennt man, dass die Werte im Rahmen der Unsicherheiten 
+miteinander übereinstimmen. Auch der Wert, der aus den experimentell bestimmten Messwerten für die Diagonale berechnet wurde (Siehe Gleichung \ref{eq:DiagTraegheitsmomentExpBer}), 
+ist im Rahmen der Unsicherheit mit dem Theoriewert konsistent.
 
 \begin{equation}
     \boxed{
         \begin{aligned}
-            I_{geom, 1} = (4.0225 \pm 0.0020) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,1} = (4.06 \pm 0.12) \times 10^{-3} \si{kg \cdot m^2}\\[6pt]
-            I_{geom, 2} = (2.0095 \pm 0.0014) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,2} = (2.03 \pm 0.09) \times 10^{-3} \si{kg \cdot m^2}\\[6pt]
-            I_{geom, 3} = (3.3497 \pm 0.0018) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,3} = (3.36 \pm 0.12) \times 10^{-3} \si{kg \cdot m^2}\\[6pt]
+            I_{geom, 1} = (4.0225 \pm 0.0020) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,1} = (4.06 \pm 0.12) \times 10^{-3} \si{kg \cdot m^2}\\[10pt]
+            I_{geom, 2} = (2.0095 \pm 0.0014) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,2} = (2.03 \pm 0.09) \times 10^{-3} \si{kg \cdot m^2}\\[10pt]
+            I_{geom, 3} = (3.3497 \pm 0.0018) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,3} = (3.36 \pm 0.12) \times 10^{-3} \si{kg \cdot m^2}\\[10pt]
             I_{geom, 4} = (2.6855 \pm 0.0011) \times 10^{-3} \si{kg \cdot m^2} &\simeq I_{exp,4} = (2.72 \pm 0.04) \times 10^{-3} \si{kg \cdot m^2}\\
                                                                                &\simeq I_d = (2.70 \pm 0.07) \times 10^{-3} \si{kg \cdot m^2}
         \end{aligned}
@@ -331,18 +333,117 @@ gut miteinander übereinstimmen. Auch der Wert, der aus den experimentell bestim
 
 
 \newpage
-\section{Teilversuch IV: }
+\section{Teilversuch V: Überprüfung des Steiner'schen Satzes}
+Der Steiner'sche Satz besagt, dass das Trägheitsmoment für Körper, die um eine Achse, welche nicht durch den Schwerpunkt verläuft, die Summe eines 'Eigenträgheitsmoments' und eines
+'Bahnträgheitsmoment' ist.
+Das 'Eigenträgheitsmoment' ($I_k$) ist das Trägheitsmoment des Körpers für eine Achse parallel zur Rotationsachse durch den Schwerpunkt. Das 'Bahnträgheitsmoment' ist dann das Trägheitsmoment, das ein Massenpunkt, der 
+sich auf der Kreisbahn des Körperschwerpunkts bewegen würde, hätte.
+Zusammenfassend gilt also:
+\begin{equation}
+    \begin{split}
+        I_{ges} = I_k + m_k R^2
+    \end{split}
+    \label{eq:Steiner}
+\end{equation}
+Der Steiner'sche Satz sollte im Versuch experimentell überprüft werden.
+Hierzu wurde eine Hantel am Torsionspendel schwingen gelassen. Der Abstand der Massenscheiben vom Rotationszentrum ($a$) wurde hierbei variert und dann die 
+jeweilige Dauer für 5 Perioden gemessen. (Siehe Abb. \ref{fig:HantelSkizze})
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./Images/Hantel.png}
+    \caption{Versuchsskizze Hantel}
+    \label{fig:HantelSkizze}
+\end{figure}
+Die gewählten Abstände der Hantel waren:
+\begin{equation}
+    \begin{split}
+        a_1 &= (100.45 \pm 0.05) \si{mm} \\
+        a_2 &= (74.35 \pm 0.05) \si{mm} \\
+        a_3 &= (49.45 \pm 0.05) \si{mm} \\
+        a_4 &= (26.45 \pm 0.05) \si{mm} 
+    \end{split}
+\end{equation}
+Äquivalent zu TV III (Sie \ref{eq:Periodendauern}) ergeben sich aus den Messwerten der Zeiten für 5 Schwingungen die Periodendauern:
+\begin{equation}
+    \begin{split}
+        T_1 = (14.060 \pm 0.010) \si{s}\\
+        T_2 = (10.909 \pm 0.023) \si{s}\\
+        T_3 = (7.953 \pm 0.021) \si{s}\\
+        T_4 = (5.601 \pm 0.013) \si{s}
+    \end{split}
+\end{equation}
+Mithilfe von \ref{eq:Traegeitsmoment} ergeben sich folgende Trägheitsmomente:
+\begin{equation}
+    \begin{split}
+        \bar{I}_1 = \qty{8.609e-3}{kg \cdot m^2} \\
+        \bar{I}_2 = \qty{5.183e-3}{kg \cdot m^2} \\
+        \bar{I}_3 = \qty{2.755e-3}{kg \cdot m^2} \\
+        \bar{I}_4 = \qty{1.366e-3}{kg \cdot m^2} \\
+    \end{split}
+\end{equation}
+Die Berechnung der Unsicherheiten erfolgt nach \ref{eq:TraegeitsmomentUnsicherheit}. Damit ergibt sich:
+\begin{equation}
+    \begin{split}
+        \Delta I_1 = \qty{0.06e-3}{kg \cdot m^2} \\
+        \Delta I_2 = \qty{0.05e-3}{kg \cdot m^2} \\
+        \Delta I_3 = \qty{0.03e-3}{kg \cdot m^2} \\
+        \Delta I_4 = \qty{0.012e-3}{kg \cdot m^2} \\
+    \end{split}
+\end{equation}
+Insgesamt sind also die bestimmten Trägheitsmomente:
+\begin{equation}
+    \begin{split}
+        I_1 = (8.61 \pm 0.06) \times 10^{-3} \si{kg \cdot m^2} \\
+        I_2 = (5.18 \pm 0.05) \times 10^{-3} \si{kg \cdot m^2} \\
+        I_3 = (2.76 \pm 0.03) \times 10^{-3} \si{kg \cdot m^2} \\
+        I_4 = (1.366 \pm 0.012) \times 10^{-3} \si{kg \cdot m^2}
+    \end{split}
+\end{equation}
+Im Diagram \ref{fig:TraegheitsmomentAbhR2} sind die Trägheitsmoment gegen $a^2$ aufgetragen.
+Nach dem Satz von Steiner sollte gelten:
+\begin{equation}
+    I_{ges} =2m_za^2 + I_s + 2I_z \quad (= bx + c)
+    \label{eq:SteinerII}
+\end{equation}
+Wobei $I_s$ das Trägheitsmoment des Stabs, $I_z$ das Trägheitsmoment der Zylinder und $m_z$ die Masse der Zylinders sind. \\ Somit würde für den Graph bei Gültigkeit des Satz von Steiner 
+ein linearer zusammenhang zwischen $I$ und $a^2$ mit der Steigung $b = 2m_z$ und einem y-Achsenabschnitt von $c = I_s + 2I_z$ erwartet werden. 
+Im Plot ist gut erkennbar, dass die Daten tatsächlich auf einen linearen zusammenhang 
+schließen lassen, wodurch der Satz von Steiner durch die Daten bestätigt ist. \\ 
+Mithilfe von Python wurde eine Ausgleichsgerade durch die Werte gelegt. 
+Diese hat eine Steigung von $b = (0.775 \pm 0.008)\si{kg}$ und einen y-Achsen Abschnitt von $c = (8.28 \pm 0.18) \times 10^{-4} \si{kg \cdot m^2}$.
+Somit haben die zwei Zylinder nach Gleichung \ref{eq:SteinerII} eine Masse von:
+\begin{equation}
+    m_z = \frac{c}{2} = (0.388 \pm 0.004) \si{kg}
+\end{equation}
+Die Summe der Trägheitsmomente des Stabs und der beiden Zylinder (jeweils für eine Achse durch den Schwerpunkt) liegt bei:
+\begin{equation}
+    I_s + 2I_z = (8.28 \pm 0.18) \times 10^{-4} \si{kg \cdot m^2}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./Images/PlotV.png}
+    \caption{Diagram $I(a^2)$}
+    \label{fig:TraegheitsmomentAbhR2}
+\end{figure}
+Auch diese Werte sind plausibel:
+\begin{list}{$\bullet$}{}
+    \item Die gesamten Hantel hat eine Masse von ca. 900g, was mit der Zylindermasse von je ca. 388g eine Stabmasse von ca. 124g bedeuten würde (realistisch)
+    \item $I_s + 2I_z \approx 8.28 \times 10^{-4} \si{kg \cdot m^2}$ ist ein wenig geringer als $I_4 \approx 13.66 \times 10^{-4} \si{kg \cdot m^2}$. Auch dies ist realistisch, da $I_s + 2I_z$
+    einen Spezialfall des Aufbaus mit $a = 0$ beschreibt.
+\end{list}
+
+
 
 \newpage
 \chapter{Anhang}
-\section{SCRIPTS}
+\section{Python Scripts}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\lstdefinestyle{matlab}{
+\lstdefinestyle{python}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
@@ -360,5 +461,57 @@ gut miteinander übereinstimmen. Auch der Wert, der aus den experimentell bestim
     showtabs=false,                  
     tabsize=2
 }
+\newpage
+\section{TV V}
+\subsubsection*{Plot: Lineare Abhängigkeit zwischen $I$ und $a^2$}
+\textit{Anmerkung: Das Skript wurde mithilfe von ChatGPT programmmiert und dann verfeinert.}
+\begin{scriptsize}
+\lstset{style=python}
+\begin{lstlisting}[language=python]
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    I = np.array([8.61, 5.18, 2.76, 1.366]) * 1e-3
+    dI = np.array([0.06, 0.05, 0.03, 0.012]) * 1e-3
+
+    a = np.array([100.45, 74.35, 49.45, 26.45])  # mm
+    da = np.array([0.05, 0.05, 0.05, 0.05])
+
+    # Umrechnung in Meter
+    a = a * 1e-3
+    da = da * 1e-3
+
+    # a^2 und Fehler
+    a2 = a**2
+    da2 = 2 * a * da
+
+    p, cov = np.polyfit(a2, I, 1, w=1/dI, cov=True)
+
+    m, b = p
+    dm, db = np.sqrt(np.diag(cov))
+
+    # Fitlinie
+    x_fit = np.linspace(min(a2)*0.9, max(a2)*1.1, 100)
+    y_fit = m * x_fit + b
+
+    # Plot
+    plt.errorbar(a2, I, xerr=da2, yerr=dI, fmt='o', capsize=4, label="Messdaten")
+
+    plt.plot(
+        x_fit,
+        y_fit,
+        label=rf"Fit: $I=( {m:.3e})a^2 + ({b:.3e})$"
+    )
+
+    plt.xlabel(r"$a^2\ (\mathrm{m}^2)$")
+    plt.ylabel("I (kg*m^2)")
+    plt.title(r"$I$ gegen $a^2$")
+    plt.grid(True)
+    plt.legend()
+
+    plt.savefig("./Images/PlotV.png", dpi=500)
+    # plt.show()
+\end{lstlisting}
+\end{scriptsize}
 
 \end{document}
