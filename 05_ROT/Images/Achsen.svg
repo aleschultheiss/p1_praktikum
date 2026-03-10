@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="81.239738mm"
+   height="115.07333mm"
+   viewBox="0 0 81.239738 115.07333"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="Achsen.svg"
+   inkscape:export-filename="AchsenQuader.png"
+   inkscape:export-xdpi="1000"
+   inkscape:export-ydpi="1000"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showborder="false"
+     inkscape:zoom="2"
+     inkscape:cx="39.5"
+     inkscape:cy="191.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="276.47876"
+       y="158.39192"
+       width="112.78353"
+       height="28.637825"
+       id="rect7" />
+    <rect
+       x="255.75"
+       y="96.5"
+       width="79.25"
+       height="25.75"
+       id="rect6" />
+    <rect
+       x="166.17009"
+       y="270.8219"
+       width="131.52187"
+       height="57.27565"
+       id="rect4" />
+    <rect
+       x="439"
+       y="255"
+       width="224"
+       height="201"
+       id="rect3" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-35.832041,-20.515882)">
+    <rect
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       id="rect1"
+       width="51.715137"
+       height="84.004288"
+       x="35.964333"
+       y="51.452625" />
+    <path
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.34554;stroke-opacity:1"
+       d="M 87.703436,51.489894 116.84463,20.63451"
+       id="path1" />
+    <path
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.345962;stroke-opacity:1"
+       d="M 87.769266,135.46553 116.94602,104.57249"
+       id="path1-5" />
+    <path
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.344416;stroke-opacity:1"
+       d="M 36.005718,51.404584 65.052041,20.649649"
+       id="path1-5-2" />
+    <path
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.251419;stroke-opacity:1"
+       d="m 64.924763,20.653004 6.87532,-0.0011 45.212777,-0.007"
+       id="path2"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-opacity:0.560828;stroke:#000000;stroke-width:0.319277;stroke-opacity:1"
+       d="m 116.89386,20.516273 9e-5,11.112356 0.002,73.075931"
+       id="path2-7"
+       sodipodi:nodetypes="ccc" />
+    <ellipse
+       style="fill:#00bf00;fill-opacity:1;stroke:none;stroke-width:0.137;stroke-dasharray:none;stroke-opacity:1"
+       id="path3"
+       cx="61.167664"
+       cy="92.699265"
+       rx="1.931704"
+       ry="1.9317039" />
+    <ellipse
+       style="fill:#ffff10;fill-opacity:1;stroke:#000000;stroke-width:0.037;stroke-dasharray:none;stroke-opacity:1"
+       id="path3-9"
+       cx="87.698875"
+       cy="51.519302"
+       rx="1.931704"
+       ry="1.9317039" />
+    <ellipse
+       style="fill:#0019eb;fill-opacity:1;stroke:none;stroke-width:0.153656;stroke-dasharray:none;stroke-opacity:1"
+       id="path3-6"
+       cx="116.30867"
+       cy="63.50597"
+       rx="1.8147737"
+       ry="2.5865142"
+       transform="rotate(9.6844936)" />
+    <ellipse
+       style="fill:#f40000;fill-opacity:1;stroke:none;stroke-width:0.134998;stroke-dasharray:none;stroke-opacity:1"
+       id="path3-6-6"
+       cx="83.794197"
+       cy="-3.5668941"
+       rx="1.6786269"
+       ry="2.1584375"
+       transform="matrix(0.88997269,0.45601382,-0.6803421,0.73289469,0,0)" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-22.263551,3.8820899)"
+       id="text3"
+       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);display:inline;fill:#0019eb;fill-opacity:1;stroke:none;stroke-width:0.517795;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="439"
+         y="274.41064"
+         id="tspan1">Achse 1</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text4"
+       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#00bf00;fill-opacity:1;stroke:none;stroke-width:0.517795;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#00bf00;fill-opacity:1;stroke:none;stroke-width:0.137;stroke-dasharray:none;stroke-opacity:1"
+       x="51.823563"
+       y="85.686607"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="stroke-width:0.137"
+         x="51.823563"
+         y="85.686607">Achse 3</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text6"
+       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#f40000;fill-opacity:1;stroke:none;stroke-width:0.517795;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="255.75"
+         y="115.91064"
+         id="tspan2">Achse 2</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,5.3320271,0.74835421)"
+       id="text7"
+       style="font-size:21.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect7);display:inline;fill:#f40000;fill-opacity:1;stroke:#000000;stroke-width:0.377953;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="276.47852"
+         y="177.80322"
+         id="tspan4"><tspan
+           style="fill:#ffff10"
+           id="tspan3">Achse 4</tspan></tspan></text>
+  </g>
+</svg>
