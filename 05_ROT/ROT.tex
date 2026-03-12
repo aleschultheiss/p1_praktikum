@@ -130,6 +130,441 @@ Der scheinbare Gewichtsverlust ist somit keine tatsächliche Verringerung von Ma
 
 \newpage
 \section{Teilversuch II:}
+\noindent
+Zur experimentellen Bestimmung des Trägheitsradius wurden die gemessenen Steighöhen \(h_n\) gegen die Quadrate der zugehörigen Periodendauern \(T_n^2\) aufgetragen. Nach der theoretischen Beziehung
+\[
+h_n=\frac12\,\frac{g}{1+R_J^2/r^2}\left(\frac{T_n}{2}\right)^2
+\]
+wird ein linearer Zusammenhang zwischen \(h_n\) und \(T_n^2\) erwartet. Das aufgenommene Diagramm zeigt näherungsweise tatsächlich einen linearen Verlauf. Ein linearer Fit der Messwerte ergibt eine Gerade der Form
+\[
+h_n = a\,T_n^2 + b
+\]
+mit der Steigung
+\[
+a = 0{,}515\,\mathrm{cm/s^2}
+\]
+und dem Achsenabschnitt
+\[
+b = 24{,}566\,\mathrm{cm}.
+\]
+Die Messpunkte streuen leicht um die Ausgleichsgerade, was auf Ableseunsicherheiten, Reibungsverluste sowie mögliche kleine Taumelbewegungen des Maxwellschen Rads zurückgeführt werden kann. Insgesamt bestätigt das Diagramm jedoch den theoretisch erwarteten linearen Zusammenhang zwischen \(h_n\) und \(T_n^2\) und bildet damit die Grundlage für die spätere Bestimmung des Trägheitsradius.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./Images/diagramm1.png}
+    \caption{Maxwellsches Rad: $h_n$ gegen $T_n^2$}
+    \label{fig:Maxwellsches Rad: $h_n$ gegen $T_n^2$}
+\end{figure}
+
+\noindent
+Durch lineare Regression der Messwerte im Diagramm \(h_n\) gegen \(T_n^2\) ergibt sich eine Ausgleichsgerade der Form
+\[
+h_n = a\,T_n^2 + b
+\]
+mit dem Ordinatenschnittpunkt
+\[
+b = (24{,}6 \pm 3{,}6)\,\mathrm{cm}.
+\]
+Der experimentell bestimmte Wert für die minimale Höhe beträgt
+\[
+h_{\min} = (22{,}8 \pm 0{,}2)\,\mathrm{cm}.
+\]
+Die Differenz zwischen beiden Werten beträgt
+\[
+|b-h_{\min}| = 1{,}8\,\mathrm{cm}
+\]
+und liegt damit innerhalb der Unsicherheit des Fitparameters \(b\). Der Ordinatenschnittpunkt stimmt somit im Rahmen der Unsicherheit mit dem gemessenen Wert \(h_{\min}\) überein.
+
+\noindent
+Aus der linearen Regression der Messwerte im Diagramm \(h_n\) gegen \(T_n^2\) ergibt sich für die Steigung der Ausgleichsgeraden
+\[
+a = (0{,}515 \pm 0{,}051)\,\mathrm{\frac{cm}{s^2}}.
+\]
+
+\noindent
+Mit der bestimmten Steigung
+\[
+a = (0{,}515 \pm 0{,}051)\,\mathrm{\frac{cm}{s^2}}
+\]
+ergibt sich für die dimensionslose Größe
+\[
+y=\frac{g}{8a}
+\]
+unter Verwendung von
+\[
+g = 981\,\mathrm{\frac{cm}{s^2}}
+\]
+der Wert
+\[
+y=\frac{981}{8\cdot 0{,}515}=238{,}1.
+\]
+Da \(g\) als fehlerfrei angenommen wird, folgt für die Unsicherheit nach Gauß:
+\[
+\Delta y=\left|\frac{\partial y}{\partial a}\right|\Delta a
+\]
+mit
+\[
+\frac{\partial y}{\partial a}=-\frac{g}{8a^2}.
+\]
+Damit erhält man
+\[
+\Delta y=\frac{g}{8a^2}\,\Delta a
+=\frac{981}{8\cdot (0{,}515)^2}\cdot 0{,}051
+\approx 23{,}6.
+\]
+Somit ergibt sich insgesamt
+\[
+y = 238 \pm 24.
+\]
+
+\noindent
+Aus der zuvor bestimmten dimensionslosen Größe
+\[
+y=\frac{g}{8a}
+\]
+lässt sich der Trägheitsradius des Maxwellschen Rads mit
+\[
+R_J=r\sqrt{y-1}
+\]
+berechnen. Dabei ist zu beachten, dass der Wickelradius \(r\) als Mittelwert aus dem Stangenradius ohne und mit aufgewickeltem Faden bestimmt wird:
+\[
+r=\frac{r_{\text{ohne}}+r_{\text{mit}}}{2}.
+\]
+Mit
+\[
+r_{\text{ohne}}=4{,}05\pm0{,}03\,\mathrm{mm},
+\qquad
+r_{\text{mit}}=6{,}00\pm0{,}03\,\mathrm{mm}
+\]
+ergibt sich
+\[
+r=\frac{4{,}05+6{,}00}{2}\,\mathrm{mm}=5{,}025\,\mathrm{mm}.
+\]
+Für die Unsicherheit von \(r\) folgt bei unabhängigen Fehlern
+\[
+\Delta r=\frac12\sqrt{(\Delta r_{\text{ohne}})^2+(\Delta r_{\text{mit}})^2}
+=\frac12\sqrt{(0{,}03)^2+(0{,}03)^2}\,\mathrm{mm}
+\approx 0{,}021\,\mathrm{mm}.
+\]
+
+\noindent
+Mit dem zuvor bestimmten Wert
+\[
+y=238\pm24
+\]
+erhält man für den dynamisch bestimmten Trägheitsradius
+\[
+R_J=r\sqrt{y-1}
+=5{,}025\cdot\sqrt{237}\,\mathrm{mm}
+\approx 77{,}36\,\mathrm{mm}.
+\]
+
+\noindent
+Der Fehler wird mit der Gaußschen Fehlerfortpflanzung bestimmt:
+\[
+\Delta R_J=
+\sqrt{
+\left(\frac{\partial R_J}{\partial r}\Delta r\right)^2+
+\left(\frac{\partial R_J}{\partial y}\Delta y\right)^2
+}.
+\]
+Mit
+\[
+\frac{\partial R_J}{\partial r}=\sqrt{y-1},
+\qquad
+\frac{\partial R_J}{\partial y}=\frac{r}{2\sqrt{y-1}}
+\]
+folgt
+\[
+\Delta R_J=
+\sqrt{
+\left(\sqrt{y-1}\,\Delta r\right)^2+
+\left(\frac{r}{2\sqrt{y-1}}\,\Delta y\right)^2
+}.
+\]
+Einsetzen der Werte liefert
+\[
+\Delta R_J=
+\sqrt{
+\left(\sqrt{237}\cdot 0{,}021\right)^2+
+\left(\frac{5{,}025}{2\sqrt{237}}\cdot 24\right)^2
+}\,\mathrm{mm}
+\approx 3{,}93\,\mathrm{mm}.
+\]
+Damit ergibt sich aus der dynamischen Methode
+\[
+\boxed{R_{J,\mathrm{dyn}}=(77{,}4\pm3{,}9)\,\mathrm{mm}.}
+\]
+
+\bigskip
+
+\noindent
+Zusätzlich wurde der Trägheitsradius geometrisch aus den gemessenen Abmessungen des Maxwellschen Rads bestimmt. Verwendet wurden die Werte
+\[
+R_1=4{,}05\pm0{,}03\,\mathrm{mm},\quad
+R_2=6{,}00\pm0{,}03\,\mathrm{mm},\quad
+R_3=10{,}00\pm0{,}03\,\mathrm{mm},
+\]
+\[
+R_4=68{,}075\pm0{,}03\,\mathrm{mm},\quad
+R_5=92{,}0\pm1{,}0\,\mathrm{mm},
+\]
+\[
+L_1=137{,}0\pm0{,}5\,\mathrm{mm},\quad
+L_2=61{,}0\pm0{,}5\,\mathrm{mm},\quad
+L_3=6{,}65\pm0{,}03\,\mathrm{mm},\quad
+L_4=4{,}30\pm0{,}03\,\mathrm{mm}.
+\]
+Mit der im Skript angegebenen Formel
+\[
+R_J^2=
+\frac{
+\frac12\Bigl[
+L_1R_1^4
++L_2\left(R_2^4-R_1^4\right)
++L_3\left(R_3^4-R_2^4\right)
++L_3\left(R_5^4-R_4^4\right)
++L_4\left(R_4^4-R_3^4\right)
+\Bigr]
+}{
+L_1R_1^2
++L_2\left(R_2^2-R_1^2\right)
++L_3\left(R_3^2-R_2^2\right)
++L_3\left(R_5^2-R_4^2\right)
++L_4\left(R_4^2-R_3^2\right)
+}
+\]
+ergibt sich numerisch
+\[
+R_{J,\mathrm{geo}}=66{,}047\,\mathrm{mm}.
+\]
+
+\noindent
+Der Fehler des geometrisch bestimmten Trägheitsradius wurde ebenfalls mit der Gaußschen Fehlerfortpflanzung berechnet:
+\[
+\Delta R_{J,\mathrm{geo}}=
+\sqrt{\sum_i\left(\frac{\partial R_J}{\partial x_i}\Delta x_i\right)^2},
+\qquad
+x_i\in\{R_1,R_2,R_3,R_4,R_5,L_1,L_2,L_3,L_4\}.
+\]
+Daraus folgt numerisch
+\[
+\Delta R_{J,\mathrm{geo}}\approx 0{,}780\,\mathrm{mm}.
+\]
+Somit erhält man
+\[
+\boxed{R_{J,\mathrm{geo}}=(66{,}0\pm0{,}8)\,\mathrm{mm}.}
+\]
+
+\bigskip
+
+\noindent
+Zum Vergleich der beiden Methoden betrachtet man die Differenz
+\[
+\Delta = \left|R_{J,\mathrm{dyn}}-R_{J,\mathrm{geo}}\right|
+=|77{,}4-66{,}0|\,\mathrm{mm}
+=11{,}4\,\mathrm{mm}.
+\]
+Die kombinierte Unsicherheit dieser Differenz beträgt
+\[
+u_\Delta=
+\sqrt{
+(\Delta R_{J,\mathrm{dyn}})^2+
+(\Delta R_{J,\mathrm{geo}})^2
+}
+=
+\sqrt{(3{,}9)^2+(0{,}8)^2}\,\mathrm{mm}
+\approx 4{,}0\,\mathrm{mm}.
+\]
+Da
+\[
+\Delta = 11{,}4\,\mathrm{mm} > u_\Delta = 4{,}0\,\mathrm{mm},
+\]
+stimmen die mit beiden Methoden bestimmten Werte für den Trägheitsradius im Rahmen der Unsicherheiten nicht überein. Die dynamische Bestimmung liefert einen größeren Wert als die geometrische Methode. Mögliche Ursachen hierfür sind Reibungsverluste, Taumelbewegungen des Maxwellschen Rads, Unsicherheiten bei der Bestimmung der Umkehrpunkte und Periodendauern sowie Vereinfachungen im zugrunde gelegten Modell.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./Images/Screenshot 2026-03-09 100548.png}
+    \caption{Plots des Ultraschallmessers}
+    \label{fig:Plots des Ultraschallmessers}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./Images/skizze.png}
+    \caption{Skizze}
+    \label{fig:Skizze}
+\end{figure}
+
+\noindent
+Im Rahmen einer qualitativen Skizze stimmen die Erwartungen gut mit den gemessenen Diagrammen überein. Die handgezeichneten Darstellungen dienten lediglich als schematische Vorhersage des Verlaufs und nicht als exakte theoretische Graphen.
+
+\noindent
+Der gemessene Ortsverlauf zeigt wie erwartet eine Folge parabelförmiger Bögen mit abnehmender Amplitude. Damit stimmt er im Wesentlichen mit der Skizze überein. Auch das Geschwindigkeitsdiagramm ist qualitativ passend, da zwischen den Umkehrpunkten ein näherungsweise linearer Verlauf zu erkennen ist.
+Das Beschleunigungsdiagramm weicht am stärksten von der idealisierten Skizze ab. Zwar ist zwischen den Umkehrpunkten im Mittel ein annähernd konstanter Verlauf erkennbar, tatsächlich ist das Signal jedoch stark verrauscht und zeigt deutliche Peaks an den Umkehrpunkten. Dies ist darauf zurückzuführen, dass die Beschleunigung aus den Messdaten numerisch bestimmt wird und dadurch kleine Messfehler, Reibung, Taumelbewegungen sowie die abrupten Richtungsänderungen besonders stark hervortreten.
+
+\noindent
+Insgesamt kann daher gesagt werden, dass die experimentellen Diagramme im Rahmen einer qualitativen Skizze gut mit den Erwartungen übereinstimmen. Die wesentlichen Merkmale des Bewegungsablaufs werden korrekt wiedergegeben, während die Abweichungen durch reale Energieverluste und Messunsicherheiten erklärt werden können.
+
+\bigskip
+
+\noindent
+Der vom Computer berechnete y-Achsenabschnitt beträgt
+\[
+b = (-0{,}007 \pm 0{,}020)\,\mathrm{m}.
+\]
+Zum Vergleich mit dem Nullpunkt wird geprüft, ob der Wert \(0\,\mathrm{m}\) innerhalb des Unsicherheitsintervalls liegt. Es ergibt sich
+\[
+b-\Delta b = -0{,}027\,\mathrm{m},
+\qquad
+b+\Delta b = 0{,}013\,\mathrm{m}.
+\]
+Damit liegt der Nullpunkt innerhalb des Intervalls
+\[
+[-0{,}027\,\mathrm{m},\,0{,}013\,\mathrm{m}].
+\]
+Der y-Achsenabschnitt stimmt somit im Rahmen der Unsicherheit mit dem Nullpunkt überein.
+
+
+\bigskip
+
+\noindent
+Für die mit \texttt{gnuplot} bestimmte Steigung
+\[
+m=(0{,}00549\pm0{,}00030)\,\mathrm{\frac{m}{s^2}}
+\]
+wird zunächst die dimensionslose Größe
+\[
+y=\frac{g}{8m}
+\]
+berechnet. Mit \(g=9{,}81\,\mathrm{m/s^2}\) ergibt sich
+\[
+y=\frac{9{,}81}{8\cdot0{,}00549}=223{,}36.
+\]
+
+\noindent
+Der Wickelradius wurde als Mittelwert aus dem Stangenradius ohne und mit aufgewickeltem Faden bestimmt:
+\[
+r=\frac{r_{\text{ohne}}+r_{\text{mit}}}{2}
+=\frac{4{,}05+6{,}00}{2}\,\mathrm{mm}
+=5{,}025\,\mathrm{mm}
+=0{,}005025\,\mathrm{m}.
+\]
+Für seine Unsicherheit folgt
+\[
+\Delta r=\frac12\sqrt{(\Delta r_{\text{ohne}})^2+(\Delta r_{\text{mit}})^2}
+=\frac12\sqrt{(0{,}03)^2+(0{,}03)^2}\,\mathrm{mm}
+\approx0{,}021\,\mathrm{mm}
+=2{,}1\cdot10^{-5}\,\mathrm{m}.
+\]
+
+\noindent
+Damit ergibt sich für den Trägheitsradius
+\[
+R_J=r\sqrt{y-1}
+=0{,}005025\sqrt{223{,}36-1}\,\mathrm{m}
+=0{,}07493\,\mathrm{m}.
+\]
+Also
+\[
+R_J=74{,}93\,\mathrm{mm}.
+\]
+
+\noindent
+Zur Fehlerrechnung wird zunächst die Unsicherheit von \(y\) bestimmt:
+\[
+\Delta y=\left|\frac{\partial y}{\partial m}\right|\Delta m
+\]
+mit
+\[
+\frac{\partial y}{\partial m}=-\frac{g}{8m^2}.
+\]
+Daraus folgt
+\[
+\Delta y=\frac{g}{8m^2}\Delta m
+=\frac{9{,}81}{8\cdot(0{,}00549)^2}\cdot0{,}00030
+\approx12{,}21.
+\]
+
+\noindent
+Für den Fehler des Trägheitsradius ergibt sich mit der Gaußschen Fehlerfortpflanzung
+\[
+\Delta R_J=
+\sqrt{
+\left(\frac{\partial R_J}{\partial r}\Delta r\right)^2+
+\left(\frac{\partial R_J}{\partial y}\Delta y\right)^2
+}
+\]
+mit
+\[
+\frac{\partial R_J}{\partial r}=\sqrt{y-1},
+\qquad
+\frac{\partial R_J}{\partial y}=\frac{r}{2\sqrt{y-1}}.
+\]
+Damit erhält man
+\[
+\Delta R_J=
+\sqrt{
+\left(\sqrt{y-1}\,\Delta r\right)^2+
+\left(\frac{r}{2\sqrt{y-1}}\Delta y\right)^2
+}
+\approx0{,}00208\,\mathrm{m}.
+\]
+Dies entspricht
+\[
+\Delta R_J=2{,}08\,\mathrm{mm}.
+\]
+
+\noindent
+Somit ergibt sich insgesamt
+\[
+\boxed{R_J=(74{,}9\pm2{,}1)\,\mathrm{mm}.}
+\]
+
+\noindent
+Die manuelle Auswertung und die computergestützte Auswertung liefern für den Trägheitsradius sehr ähnliche Werte. Aus der manuellen Bestimmung ergab sich
+\[
+R_{J,\mathrm{man}}=(77{,}4\pm3{,}9)\,\mathrm{mm},
+\]
+während aus der computergestützten Auswertung mit \texttt{gnuplot}
+\[
+R_{J,\mathrm{comp}}=(74{,}9\pm2{,}1)\,\mathrm{mm}
+\]
+resultiert.
+
+\noindent
+Zur Beurteilung der Übereinstimmung wird die Differenz der beiden Werte betrachtet:
+\[
+\Delta R_J=\left|R_{J,\mathrm{man}}-R_{J,\mathrm{comp}}\right|
+=|77{,}4-74{,}9|\,\mathrm{mm}
+=2{,}5\,\mathrm{mm}.
+\]
+Die kombinierte Unsicherheit beträgt
+\[
+u_{\Delta}=
+\sqrt{(\Delta R_{J,\mathrm{man}})^2+(\Delta R_{J,\mathrm{comp}})^2}
+=
+\sqrt{(3{,}9)^2+(2{,}1)^2}\,\mathrm{mm}
+\approx 4{,}4\,\mathrm{mm}.
+\]
+
+\noindent
+Da
+\[
+\Delta R_J = 2{,}5\,\mathrm{mm} < u_{\Delta} = 4{,}4\,\mathrm{mm},
+\]
+stimmen beide Ergebnisse im Rahmen ihrer Unsicherheiten miteinander überein. Die computergestützte Auswertung liefert jedoch die kleinere Unsicherheit und ist daher als präziser anzusehen.
+
+\noindent
+Dies ist plausibel, da bei der manuellen Methode die Umkehrpunkte und Zeitintervalle per Hand abgelesen werden mussten, wodurch größere Ablese- und Rundungsfehler entstehen. Die computergestützte Auswertung greift dagegen direkt auf die vollständigen Messdaten zu und bestimmt die Steigung der Ausgleichsgeraden objektiver und genauer. Insgesamt bestätigen sich beide Methoden gegenseitig, wobei die computergestützte Auswertung die verlässlichere Bestimmung des Trägheitsradius liefert.
+
+\bigskip
+
+\noindent
+Der Schwerpunkt hat für die Translation eine ähnliche Bedeutung wie der Trägheitsradius für die Rotation. Im Schwerpunkt kann man sich die gesamte Masse eines Körpers für die Beschreibung der Translationsbewegung vereinigt denken. Entsprechend gibt der Trägheitsradius den Abstand an, in dem die gesamte Masse konzentriert sein müsste, um bezüglich einer bestimmten Achse dasselbe Trägheitsmoment zu besitzen. Während der Schwerpunkt also die Lage der Gesamtmasse beschreibt, charakterisiert der Trägheitsradius deren Verteilung relativ zur Drehachse.
+
 
 \newpage
 \section{Teilversuch III: Trägheitsmomente verschiedener Körper}
